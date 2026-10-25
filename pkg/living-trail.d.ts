@@ -58,10 +58,10 @@ export interface InitOutput {
     readonly intounderlyingsource_pull: (a: number, b: any) => any;
     readonly wasm_bindgen__convert__closures_____invoke__h293ea1281f4411d8: (a: number, b: number, c: any, d: any) => void;
     readonly wasm_bindgen__convert__closures_____invoke__h7708a9fa6ee8eb8d: (a: number, b: number, c: any) => [number, number];
-    readonly wasm_bindgen__convert__closures_____invoke__h6e7e09e9b09bfd87: (a: number, b: number, c: any) => void;
-    readonly wasm_bindgen__convert__closures_____invoke__h6e7e09e9b09bfd87_15: (a: number, b: number, c: any) => void;
-    readonly wasm_bindgen__convert__closures_____invoke__hc0eed4f272350b98: (a: number, b: number, c: any) => void;
-    readonly wasm_bindgen__convert__closures_____invoke__h85b7d435e3589927: (a: number, b: number) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__ha74f7e41afa9c259: (a: number, b: number, c: any, d: any) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__h6b94b60819199a6a: (a: number, b: number, c: any) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__h6b94b60819199a6a_15: (a: number, b: number, c: any) => void;
+    readonly wasm_bindgen__convert__closures_____invoke__h79ed837ee310b3f3: (a: number, b: number) => void;
     readonly __wbindgen_malloc: (a: number, b: number) => number;
     readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
     readonly __wbindgen_exn_store: (a: number) => void;
