@@ -100,6 +100,20 @@ Under **Projects & giving**, fill **Project status**, **Project date or reportin
 
 Consent version `support-2026-11-06` records permission for the site team to store details and contact the requester about the specific request; newsletter interest separately permits contact about future newsletter updates. Other request types do not opt people into mailing lists. Update the version when the consent wording or purpose changes.
 
+## Approved page sections
+
+Every content editor has **Page sections**, with four approved patterns: **Editorial text**, **Captioned photograph**, **Photo & story**, and **Invitation**. Add up to eight, edit their content, and use **Move up**, **Move down**, or **Include this section on the page**. **Undo last removal** restores a removed section until the editor is reloaded. Typography, colours, spacing, and responsive behaviour are fixed by the design. The page's standard content remains in place; the added sections follow it, before the footer.
+
+Photographic sections accept the credited collection, uploaded images, or an HTTPS/site-relative image address. Collection selection supplies alt text, caption, credit, and the source link. Adjust horizontal and vertical focus while checking landscape and portrait crops. **Photo & story** offers only left/right photo placement; on phones the photo comes first. Historical collection images retain their full composition on the published page.
+
+Drafts autosave, including order and visibility. **Content checks** identifies missing details. Publishing and scheduling require headings/text for text sections, image/alt text/caption/credit for visible photographic sections, and a complete button for invitations. Hidden sections may remain unfinished, but every stored link must still use an approved address format. Arbitrary HTML, CSS and new layout types are not accepted. Existing page fields and content are preserved during upgrades.
+
+**Preview** saves the current draft and opens the actual public components using a private, expiring snapshot. Choose **Fit window**, **Desktop** (1280 px), **Tablet** (768 px), or **Phone** (390 px). Narrow screens can scroll sideways to inspect a larger viewport. Use **Open full preview** for a separate tab. Previews remain frozen when later edits are made; open a new preview to see newer changes. Publishing, scheduled snapshots and restored revisions all include the section configuration.
+
+Sections are stored as a versioned `page_sections` document in the existing content fields. Saving validates types, lengths, identifiers, addresses and the eight-section limit; publication additionally checks required content. No schema migration or content rewrite is needed. `node tests/sections-cms.cjs` uses the isolated local write-test configuration to verify the complete editor, preview and publication flow; it archives its temporary content afterward.
+
+Hidden sections remain in the staff record and revision history, but are removed from anonymous page data and the public API. A private preview snapshot retains the complete draft for authorized review through its secret link.
+
 ## Photo presentation
 
 The editor offers 35 licensed trail photographs, searchable by place, subject or photographer and filterable into six categories. Choosing one fills its description, dated caption and credit, with links to the original record and license. The public collection at `/credits` shares those records. Uploaded photos are also available; add their descriptions, captions and credits before publishing. Use **Horizontal focus** and **Vertical focus** to keep the important part in the crop. These controls change presentation only and leave the source image untouched. Stories, places, and the Alliance page also offer a taller feature photograph. Archival photographs retain their full composition. The homepage has independent summer focus controls.

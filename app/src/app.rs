@@ -41,6 +41,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="trail-explorer" href=url("/design/explorer.css")/>
         <Stylesheet id="support-journeys" href=url("/design/support.css")/>
         <Stylesheet id="interiors" href=url("/design/interiors.css")/>
+        <Stylesheet id="approved-sections" href=url("/design/sections.css")/>
         <Title text="The Living Trail | Iditarod Historic Trail Alliance"/>
         <Router base=BASE_PATH>
             <AppRouter/>
@@ -92,6 +93,7 @@ pub fn SiteContent(data: Option<crate::cms::Catalog>) -> impl IntoView {
                     <Route ssr=leptos_router::SsrMode::Async path=path!("credits") view=crate::editorial::EditorialCredits/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!(":slug") view=crate::cms::ManagedGeneric/>
                 </Routes>
+                <crate::sections::PageSections/>
             </main>
             <Footer/></div>
     }
