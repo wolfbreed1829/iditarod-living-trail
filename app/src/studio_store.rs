@@ -143,6 +143,12 @@ fn clean(d: &mut Draft) -> Result<()> {
         if k == "map_stop" && !v.is_empty() && !crate::explorer::STOPS.iter().any(|(id,_)|*id==v) {
             return Err("Choose a verified place on the trail map.".into());
         }
+        if ["essay_photo_1","essay_photo_2"].contains(&k.as_str()) && !v.is_empty() && v!="none" && crate::photography::named(v).is_none() {
+            return Err("Choose a supporting photograph from the credited collection.".into());
+        }
+        if k=="story_map" && !["","none","whole-trail"].contains(&v.as_str()) && !crate::explorer::STOPS.iter().any(|(id,_)|*id==v) {
+            return Err("Choose a verified supporting map.".into());
+        }
     }
     Ok(())
 }
@@ -489,6 +495,7 @@ impl Store {
             return Err("That web address is already in use.".into());
         }
         if i.content.kind == "page"
+            && !(i.ever_published && i.content.slug == "stories" && d.slug == "stories")
             && [
                 "admin",
                 "api",
@@ -840,6 +847,17 @@ mod tests {
             content: Some(content),
             at: None,
             revision: None,
+        }
+    }
+    #[test]
+    fn seeded_story_index_can_be_edited_but_new_pages_cannot_claim_reserved_routes() {
+        let (_lock,s,u)=setup();
+        let existing={let db=s.db.lock().unwrap();all_items(&db).unwrap().into_iter().find(|i|i.content.kind=="page"&&i.content.slug=="stories").unwrap()};
+        let mut content=existing.editable();content.fields.insert("image".into(),"/images/dawn.webp".into());content.fields.insert("image_alt".into(),"Winter light".into());
+        let updated=s.change(&u,existing.content.id,change(existing.version,"publish",content)).unwrap();assert_eq!(updated.content.field("image"),"/images/dawn.webp");
+        for slug in ["admin","api","places","stories","credits"] {
+            let page=s.create(&u,"page").unwrap();let mut content=draft("Reserved route check");content.slug=slug.into();
+            assert!(s.change(&u,page.content.id,change(page.version,"publish",content)).is_err(),"new page claimed {slug}");
         }
     }
     #[test]

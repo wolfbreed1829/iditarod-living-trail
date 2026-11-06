@@ -1,0 +1,140 @@
+[
+  {
+    "name": "winter",
+    "source": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod",
+    "credit": "Bureau of Land Management",
+    "license": "Public domain / U.S. government work",
+    "changes": "Resized and converted to WebP. Display crops vary by viewport.",
+    "file": "/images/winter.webp",
+    "small_file": "/images/winter-small.webp",
+    "caption": "Dog team near Tripod Flats Public Shelter Cabin on the Iditarod Trail.",
+    "alt": "Musher and dog team traveling through snow near Tripod Flats Public Shelter Cabin.",
+    "category": "Winter landscapes",
+    "license_url": "https://www.blm.gov/info/notices",
+    "historical": false,
+    "dimensions": [
+      1200,
+      676
+    ],
+    "small_dimensions": [
+      800,
+      451
+    ],
+    "rights_evidence": "Source and credited author retained from the original trail collection. Linked source record and license accompany the image."
+  },
+  {
+    "name": "dawn",
+    "source": "https://www.flickr.com/photos/mypubliclands/36599186731/",
+    "credit": "Bob Wick / Bureau of Land Management",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop",
+    "file": "/images/dawn.webp",
+    "small_file": "/images/dawn-small.webp",
+    "caption": "Winter light on the Iditarod National Historic Trail, March 11, 2016.",
+    "alt": "Snowy winter landscape along the Iditarod National Historic Trail.",
+    "category": "Winter landscapes",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "historical": false,
+    "dimensions": [
+      1024,
+      399
+    ],
+    "small_dimensions": [
+      800,
+      312
+    ],
+    "rights_evidence": "Source and credited author retained from the original trail collection. Linked source record and license accompany the image."
+  },
+  {
+    "name": "dogs",
+    "source": "https://www.flickr.com/photos/mypubliclands/36738421625/",
+    "credit": "Bob Wick / Bureau of Land Management",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop",
+    "file": "/images/dogs.webp",
+    "small_file": "/images/dogs-small.webp",
+    "caption": "Sled dogs on the Iditarod National Historic Trail, from the BLM trail collection.",
+    "alt": "A sled dog team resting in the snow along the Iditarod Trail.",
+    "category": "Winter landscapes",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "historical": false,
+    "dimensions": [
+      1024,
+      442
+    ],
+    "small_dimensions": [
+      800,
+      345
+    ],
+    "rights_evidence": "Source and credited author retained from the original trail collection. Linked source record and license accompany the image."
+  },
+  {
+    "name": "cycling",
+    "source": "https://www.flickr.com/photos/mypubliclands/36568558672/",
+    "credit": "Bob Wick / Bureau of Land Management",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop",
+    "file": "/images/cycling.webp",
+    "small_file": "/images/cycling-small.webp",
+    "caption": "Winter cyclists on the Iditarod National Historic Trail, from the BLM trail collection.",
+    "alt": "Winter cyclists traveling a snowy trail through open Alaska country.",
+    "category": "Winter landscapes",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "historical": false,
+    "dimensions": [
+      1024,
+      683
+    ],
+    "small_dimensions": [
+      800,
+      534
+    ],
+    "rights_evidence": "Source and credited author retained from the original trail collection. Linked source record and license accompany the image."
+  },
+  {
+    "name": "summer",
+    "source": "https://www.flickr.com/photos/alaska_region/29533359703/",
+    "credit": "USDA Forest Service Alaska Region",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop",
+    "file": "/images/summer.webp",
+    "small_file": "/images/summer-small.webp",
+    "caption": "Meares Glacier and Unakwik Inlet, Chugach National Forest, July 27, 2006. A regional landscape beyond the historic trail corridor.",
+    "alt": "Aerial view of Meares Glacier meeting Unakwik Inlet in Chugach National Forest.",
+    "category": "Summer travel",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "historical": false,
+    "dimensions": [
+      1024,
+      683
+    ],
+    "small_dimensions": [
+      800,
+      534
+    ],
+    "rights_evidence": "Source and credited author retained from the original trail collection. Linked source record and license accompany the image."
+  },
+  {
+    "name": "waterfront",
+    "source": "https://www.nps.gov/kefj/blogs/one-fjord-to-another.htm",
+    "credit": "NPS / Max Odland",
+    "license": "Public domain",
+    "changes": "Resized, WebP conversion, responsive display crop",
+    "file": "/images/waterfront.webp",
+    "small_file": "/images/waterfront-small.webp",
+    "caption": "Resurrection Bay from Seward, published by the National Park Service in May 2013.",
+    "alt": "Resurrection Bay seen from the waterfront in Seward, Alaska.",
+    "category": "Communities",
+    "license_url": "https://www.nps.gov/aboutus/disclaimer.htm",
+    "historical": false,
+    "dimensions": [
+      440,
+      293
+    ],
+    "small_dimensions": [
+      440,
+      293
+    ],
+    "rights_evidence": "Source and credited author retained from the original trail collection. Linked source record and license accompany the image."
+  }
+]

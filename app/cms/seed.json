@@ -32,7 +32,13 @@
     "summary": "Discover the people, traditions, and landscapes that connect the trail’s past to its living present.",
     "body": "",
     "fields": {
-      "category": "LEARN & DISCOVER"
+      "category": "LEARN & DISCOVER",
+      "image": "/images/library-heritage/unalakleet-street-2013.webp",
+      "image_alt": "Colorful buildings, a curved-roof shed, and a small boat beside an unpaved lane in Unalakleet.",
+      "credit": "Joseph / The Cabin On The Road",
+      "photo_caption": "Buildings and boats in Unalakleet, Alaska, October 15, 2013.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -42,7 +48,13 @@
     "summary": "Find visitor information, classroom resources, and stories from the trail’s archives.",
     "body": "",
     "fields": {
-      "category": "EXPLORE. LEARN. GO FURTHER."
+      "category": "EXPLORE. LEARN. GO FURTHER.",
+      "image": "/images/library-heritage/mcgrath-post-office-1914.webp",
+      "image_alt": "Three people stand outside the log McGrath Post Office in a black-and-white photograph from September 1914.",
+      "credit": "Photographer unidentified / University of Washington Libraries, Special Collections, PH Coll 495.2-46b (AWC4749)",
+      "photo_caption": "A man, woman, and child outside the McGrath Post Office, Alaska, September 1914. Historical photograph from the Alaska Engineering Commission collection.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -53,8 +65,12 @@
     "body": "The Iditarod Historic Trail Alliance is a statewide nonprofit organization founded in 1999. Its work connects education, history, recreation, and stewardship.\n\nThrough partnerships with communities, landowners, agencies, and volunteers, the Alliance helps keep the trail’s heritage present and its future possible.",
     "fields": {
       "category": "THE IDITAROD HISTORIC TRAIL ALLIANCE",
-      "image": "/images/winter.webp",
-      "image_alt": "A musher and dog team traveling the Iditarod Trail"
+      "image": "/images/library-travel/tripod-flats-repairs.webp",
+      "image_alt": "A BLM worker uses a drill beside the log-built Tripod Flats cabin, with a ladder on its snowy red roof.",
+      "credit": "Kevin Keeler / BLM",
+      "photo_caption": "BLM staff making repairs at Tripod Flats cabin on the Iditarod National Historic Trail; published by BLM March 4, 2021.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -64,7 +80,13 @@
     "summary": "Help protect the trail, share its stories, and inspire the next generation of stewards.",
     "body": "",
     "fields": {
-      "category": "GET INVOLVED"
+      "category": "GET INVOLVED",
+      "image": "/images/library-travel/volunteer-training.webp",
+      "image_alt": "A group gathers with trail tools on a wooded slope above Turnagain Arm, with snowy mountains across the water.",
+      "credit": "NPS / Alaska Region",
+      "photo_caption": "Trail volunteer training at McHugh Creek, Chugach State Park, April 22, 2017.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -74,7 +96,13 @@
     "summary": "Books, gifts, and everyday reminders of a remarkable connection.",
     "body": "",
     "fields": {
-      "category": "THE TRAIL SHOP"
+      "category": "THE TRAIL SHOP",
+      "image": "/images/editorial/seward-trail-monument.webp",
+      "image_alt": "Trail monument in Seward, Alaska, July 2021.",
+      "credit": "NPS / Victoria Stauffenberg",
+      "photo_caption": "Trail monument in Seward, Alaska, July 2021.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -88,10 +116,13 @@
       "region": "Southern trail",
       "season": "All seasons",
       "activity": "Coast & culture",
-      "image": "/images/waterfront.webp",
-      "image_alt": "Mountains across Resurrection Bay from the Seward waterfront",
-      "credit": "Resurrection Bay from Seward · NPS / Max Odland",
-      "url": "https://www.iditarod100.org/plan-your-trip.html"
+      "image": "/images/library-heritage/seward-downtown-2019.webp",
+      "image_alt": "Colorful storefronts at a Seward street corner below green mountain slopes.",
+      "credit": "Enrico Blasutto",
+      "url": "https://www.iditarod100.org/plan-your-trip.html",
+      "photo_caption": "Downtown buildings in Seward, Alaska, June 17, 2019.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -105,10 +136,13 @@
       "region": "Southcentral Alaska",
       "season": "Summer",
       "activity": "Hiking & exploring",
-      "image": "/images/summer.webp",
-      "image_alt": "An aerial view of a glacier and inlet in Chugach National Forest",
-      "credit": "Chugach National Forest regional landscape · USDA Forest Service. Not a view of Crow Pass.",
-      "url": "https://dnr.alaska.gov/parks/aspunits/chugach/recops.htm"
+      "image": "/images/library-travel/crow-pass-hikers.webp",
+      "image_alt": "Hikers with backpacks follow a rocky path beside a small alpine lake, beneath steep mountain slopes.",
+      "credit": "Frank Kovalchek",
+      "url": "https://dnr.alaska.gov/parks/aspunits/chugach/recops.htm",
+      "photo_caption": "Hikers returning from Crow Pass and Raven Glacier near Girdwood, Alaska, summer 2009.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -122,10 +156,13 @@
       "region": "Across the trail",
       "season": "Winter",
       "activity": "Winter travel",
-      "image": "/images/cycling.webp",
-      "image_alt": "Two people riding fat tire bicycles along the snow-covered Iditarod Trail",
-      "credit": "Winter cycling on the Iditarod Trail · Bob Wick / BLM",
-      "url": "https://www.blm.gov/visit/iditarod-trail"
+      "image": "/images/library-travel/winter-powder.webp",
+      "image_alt": "Parallel tracks wind between snow-covered spruce trees toward distant hills in low winter sunlight.",
+      "credit": "Kevin Keeler / BLM",
+      "url": "https://www.blm.gov/visit/iditarod-trail",
+      "photo_caption": "Fresh snow crossed by snowmachine tracks on the Iditarod National Historic Trail, Alaska, February 6, 2011.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -136,9 +173,13 @@
     "body": "Long before a named gold-rush route appeared on maps, Alaska Native travel networks connected communities across this landscape. Those connections belong at the beginning of the trail's story, and remain part of its living present.\n\nLater, the movement of mail, supplies, and people linked coastal ports and Interior settlements. The trail carries many histories, shaped by the communities along it and the seasons that make travel possible.\n\nPreserving this heritage means listening as well as looking. The University of Alaska Fairbanks' Project Jukebox brings together recorded voices and personal perspectives. Follow those stories to learn from the people who know the trail.",
     "fields": {
       "category": "HISTORY & HERITAGE",
-      "image": "/images/dawn.webp",
-      "image_alt": "Winter light on mountains and spruce along the Iditarod Trail",
-      "url": "https://jukebox.uaf.edu/"
+      "image": "/images/library-heritage/kaltag-yukon-2002.webp",
+      "image_alt": "An aerial view of Kaltag homes and roads beside the broad Yukon River.",
+      "url": "https://jukebox.uaf.edu/",
+      "credit": "Polly Wheeler / U.S. Fish and Wildlife Service",
+      "photo_caption": "Kaltag village and the Yukon River, Alaska; U.S. Fish and Wildlife Service image dated September 24, 2002.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -149,9 +190,13 @@
     "body": "A winter trail is a relationship with a changing landscape. Snow, frozen rivers, and seasonal knowledge shape where and how people travel.\n\nDog teams are part of that story. So are the people who maintain routes, share knowledge, and connect neighboring communities. Today the trail also welcomes different forms of recreation, from skiing to winter cycling.\n\nThe historic trail is a network, with different landowners, conditions, and access requirements. Learning about it is an invitation to understand the landscape before planning a journey through it.",
     "fields": {
       "category": "LIFE ON THE TRAIL",
-      "image": "/images/dogs.webp",
-      "image_alt": "A sled dog team resting on straw in the snow",
-      "url": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+      "image": "/images/library-heritage/knik-dog-team-c1912.webp",
+      "image_alt": "Travelers stand beside a harnessed dog team in snowy Knik, with log buildings behind them.",
+      "url": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod",
+      "credit": "John E. Thwaites / University of Washington Libraries, Special Collections, PH Coll 247.45 (THW024)",
+      "photo_caption": "A dog team and travelers departing for the goldfields from Knik, Alaska, circa 1912. Historical photograph.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {
@@ -162,9 +207,13 @@
     "body": "A trail can be an outdoor classroom. Observing a landscape, asking about a place name, and listening to a local story can open new ways of understanding where we live.\n\nThe Alliance's Iditarod Trail to Every Classroom program connects place-based learning with stewardship and community. Its existing resources offer starting points for educators and curious families.\n\nExplore the Junior Trailblazer materials, discover a passport stamp location, or browse the education program. Start with a question, then follow it somewhere new.",
     "fields": {
       "category": "LEARNING & STEWARDSHIP",
-      "image": "/images/summer.webp",
-      "image_alt": "Glacier, mountains, and forest in the Chugach region",
-      "url": "https://www.iditarod100.org/itrec-education-program.html"
+      "image": "/images/library-travel/middle-fork-volunteers.webp",
+      "image_alt": "Two smiling Alaska Trail Stewards wearing hard hats and gloves hold trail tools beside green vegetation.",
+      "url": "https://www.iditarod100.org/itrec-education-program.html",
+      "credit": "NPS / Alaska Region",
+      "photo_caption": "Alaska Trail Stewards on the Middle Fork Trail in Chugach State Park, June 4, 2016.",
+      "image_x": "50",
+      "image_y": "50"
     }
   },
   {

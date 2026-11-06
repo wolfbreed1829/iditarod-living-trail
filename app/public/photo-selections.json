@@ -1,0 +1,145 @@
+[
+  {
+    "type": "page",
+    "slug": "about",
+    "photo": "tripod-flats-repairs",
+    "fields": {
+      "image": "/images/library-travel/tripod-flats-repairs.webp",
+      "image_alt": "A BLM worker uses a drill beside the log-built Tripod Flats cabin, with a ladder on its snowy red roof.",
+      "credit": "Kevin Keeler / BLM",
+      "photo_caption": "BLM staff making repairs at Tripod Flats cabin on the Iditarod National Historic Trail; published by BLM March 4, 2021.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "get-involved",
+    "photo": "volunteer-training",
+    "fields": {
+      "image": "/images/library-travel/volunteer-training.webp",
+      "image_alt": "A group gathers with trail tools on a wooded slope above Turnagain Arm, with snowy mountains across the water.",
+      "credit": "NPS / Alaska Region",
+      "photo_caption": "Trail volunteer training at McHugh Creek, Chugach State Park, April 22, 2017.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "stories",
+    "photo": "unalakleet-street-2013",
+    "fields": {
+      "image": "/images/library-heritage/unalakleet-street-2013.webp",
+      "image_alt": "Colorful buildings, a curved-roof shed, and a small boat beside an unpaved lane in Unalakleet.",
+      "credit": "Joseph / The Cabin On The Road",
+      "photo_caption": "Buildings and boats in Unalakleet, Alaska, October 15, 2013.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "resources",
+    "photo": "mcgrath-post-office-1914",
+    "fields": {
+      "image": "/images/library-heritage/mcgrath-post-office-1914.webp",
+      "image_alt": "Three people stand outside the log McGrath Post Office in a black-and-white photograph from September 1914.",
+      "credit": "Photographer unidentified / University of Washington Libraries, Special Collections, PH Coll 495.2-46b (AWC4749)",
+      "photo_caption": "A man, woman, and child outside the McGrath Post Office, Alaska, September 1914. Historical photograph from the Alaska Engineering Commission collection.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "store",
+    "photo": "seward-trail-monument",
+    "fields": {
+      "image": "/images/editorial/seward-trail-monument.webp",
+      "image_alt": "Trail monument in Seward, Alaska, July 2021.",
+      "credit": "NPS / Victoria Stauffenberg",
+      "photo_caption": "Trail monument in Seward, Alaska, July 2021.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "place",
+    "slug": "seward",
+    "photo": "seward-downtown-2019",
+    "fields": {
+      "image": "/images/library-heritage/seward-downtown-2019.webp",
+      "image_alt": "Colorful storefronts at a Seward street corner below green mountain slopes.",
+      "credit": "Enrico Blasutto",
+      "photo_caption": "Downtown buildings in Seward, Alaska, June 17, 2019.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "place",
+    "slug": "chugach",
+    "photo": "crow-pass-hikers",
+    "fields": {
+      "image": "/images/library-travel/crow-pass-hikers.webp",
+      "image_alt": "Hikers with backpacks follow a rocky path beside a small alpine lake, beneath steep mountain slopes.",
+      "credit": "Frank Kovalchek",
+      "photo_caption": "Hikers returning from Crow Pass and Raven Glacier near Girdwood, Alaska, summer 2009.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "place",
+    "slug": "winter-trail",
+    "photo": "winter-powder",
+    "fields": {
+      "image": "/images/library-travel/winter-powder.webp",
+      "image_alt": "Parallel tracks wind between snow-covered spruce trees toward distant hills in low winter sunlight.",
+      "credit": "Kevin Keeler / BLM",
+      "photo_caption": "Fresh snow crossed by snowmachine tracks on the Iditarod National Historic Trail, Alaska, February 6, 2011.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "story",
+    "slug": "a-living-connection",
+    "photo": "kaltag-yukon-2002",
+    "fields": {
+      "image": "/images/library-heritage/kaltag-yukon-2002.webp",
+      "image_alt": "An aerial view of Kaltag homes and roads beside the broad Yukon River.",
+      "credit": "Polly Wheeler / U.S. Fish and Wildlife Service",
+      "photo_caption": "Kaltag village and the Yukon River, Alaska; U.S. Fish and Wildlife Service image dated September 24, 2002.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "story",
+    "slug": "the-winter-way",
+    "photo": "knik-dog-team-c1912",
+    "fields": {
+      "image": "/images/library-heritage/knik-dog-team-c1912.webp",
+      "image_alt": "Travelers stand beside a harnessed dog team in snowy Knik, with log buildings behind them.",
+      "credit": "John E. Thwaites / University of Washington Libraries, Special Collections, PH Coll 247.45 (THW024)",
+      "photo_caption": "A dog team and travelers departing for the goldfields from Knik, Alaska, circa 1912. Historical photograph.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  },
+  {
+    "type": "story",
+    "slug": "the-next-generation",
+    "photo": "middle-fork-volunteers",
+    "fields": {
+      "image": "/images/library-travel/middle-fork-volunteers.webp",
+      "image_alt": "Two smiling Alaska Trail Stewards wearing hard hats and gloves hold trail tools beside green vegetation.",
+      "credit": "NPS / Alaska Region",
+      "photo_caption": "Alaska Trail Stewards on the Middle Fork Trail in Chugach State Park, June 4, 2016.",
+      "image_x": "50",
+      "image_y": "50"
+    }
+  }
+]

@@ -1,0 +1,305 @@
+{
+  "verified_on": "2026-11-06",
+  "destinations": {
+    "seward": {
+      "heading": "Begin at the water. Follow the first mile.",
+      "orientation": "Southern gateway / Resurrection Bay / town-based heritage",
+      "experiences": [
+        {
+          "title": "Walk the first mile",
+          "copy": "Start at the Trail Blazers statue outside the Alaska SeaLife Center and follow the waterfront path with the Seward Trailblazers' walking brochure.",
+          "url": "https://www.iditarod100.org/mile-1-in-seward.html"
+        },
+        {
+          "title": "See a port in the trail's story",
+          "copy": "Seward became a winter port for the Iditarod gold fields. The town's waterfront provides a starting point for understanding the movement of mail, supplies and people inland.",
+          "url": "https://www.iditarod100.org/seward.html"
+        },
+        {
+          "title": "Look from the present into the past",
+          "copy": "Pair contemporary waterfront views with dated archival photographs, then follow the trail north through the map.",
+          "url": "/explore?place=seward"
+        }
+      ],
+      "planning": [
+        "Begin with a town-based outing. The waterfront walk is different from attempting remote sections of the historic trail.",
+        "Check local access and weather before a walk, especially when snow or ice changes the waterfront.",
+        "Check current visitor information before adding a museum visit or an onward trip to your day."
+      ],
+      "history": "Seward was founded in 1903 as the ocean terminus of the Alaska Central Railway. Gold discoveries in the Iditarod country made it a winter port for inland travel; its place in the national historic trail is commemorated at Mile Zero.",
+      "sources": [
+        "https://www.iditarod100.org/seward.html",
+        "https://www.iditarod100.org/mile-1-in-seward.html",
+        "https://www.iditarod100.org/plan-your-trip.html"
+      ],
+      "brochure": "https://www.iditarod100.org/uploads/5/2/4/5/52459009/seward_brochure.pdf",
+      "map": "seward",
+      "gallery": [
+        "seward-waterfront-archive",
+        "seward-trail-monument"
+      ]
+    },
+    "chugach": {
+      "heading": "Choose your way into Crow Pass country.",
+      "orientation": "Southcentral Alaska / Girdwood and Eagle River / summer hiking",
+      "experiences": [
+        {
+          "title": "Start with a shorter outing",
+          "copy": "The official trail guide allows for shorter day trips from either end. Choose a turnaround that suits your group and current conditions.",
+          "url": "https://dnr.alaska.gov/parks/maps/crowpasstrailguide.pdf"
+        },
+        {
+          "title": "Read the landscape",
+          "copy": "The historic supply route passes mining remains, alpine terrain and glacier views before descending toward the Eagle River valley.",
+          "url": "https://dnr.alaska.gov/parks/maps/crowpasstrailguide.pdf"
+        },
+        {
+          "title": "Watch wildlife from a distance",
+          "copy": "Carry binoculars and look for mountain wildlife without leaving designated trails or approaching animals.",
+          "url": "https://www.adfg.alaska.gov/index.cfm?adfg=viewinglocations.crowpasstrail"
+        }
+      ],
+      "planning": [
+        "Summer focus: Alaska Fish & Game recommends June through September. Winter and spring bring high avalanche risk.",
+        "The full crossing generally takes two or more days. Access is from Crow Creek Trailhead near Girdwood or Eagle River Nature Center.",
+        "The through-route includes unbridged river fords. Consult the official guide and current land-manager information; cold water and mountain weather require serious preparation."
+      ],
+      "sources": [
+        "https://dnr.alaska.gov/parks/maps/crowpasstrailguide.pdf",
+        "https://www.adfg.alaska.gov/index.cfm?adfg=viewinglocations.crowpasstrail",
+        "https://dnr.alaska.gov/parks/aspunits/chugach/recops.htm"
+      ],
+      "map": "crow-pass",
+      "gallery": [
+        "crow-pass-boardwalk",
+        "crow-pass-cabin"
+      ]
+    },
+    "winter-trail": {
+      "heading": "A winter landscape. A journey to prepare for.",
+      "orientation": "Across the historic trail / winter travel / remote routes",
+      "experiences": [
+        {
+          "title": "Understand the winter connection",
+          "copy": "Frozen ground and waterways have long connected communities across this landscape. The historic trail remains a route for local travel as well as recreation.",
+          "url": "https://www.blm.gov/visit/iditarod-trail"
+        },
+        {
+          "title": "Choose a route with local guidance",
+          "copy": "Skiing, dog teams, snowmachines and fat-tire bicycles each require a plan suited to the particular route, land ownership and conditions.",
+          "url": "https://www.blm.gov/visit/iditarod-trail"
+        },
+        {
+          "title": "Explore the history before the journey",
+          "copy": "Read maps and firsthand accounts, then decide which part of the trail matches your experience and preparation.",
+          "url": "https://www.arlis.org/collections/iditarod-historic-trail/"
+        }
+      ],
+      "planning": [
+        "Remote sections demand a high level of self-reliance and proficiency in extreme winter travel and camping.",
+        "The historic trail crosses multiple landowners. A line on an orientation map is not a guarantee of access or current travel conditions.",
+        "Check current information with the relevant land manager and local community before setting out."
+      ],
+      "sources": [
+        "https://www.blm.gov/visit/iditarod-trail",
+        "https://www.iditarod100.org/plan-your-trip.html",
+        "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+      ],
+      "map": "whole-trail",
+      "gallery": [
+        "winter-unalakleet",
+        "old-woman-cabin"
+      ]
+    }
+  },
+  "stories": {
+    "a-living-connection": {
+      "sections": [
+        {
+          "title": "Connections before the gold rush",
+          "copy": "Parts of the later Iditarod route followed travel networks used by Alaska Native communities long before the gold rush. The trail's history begins with those living connections.",
+          "source": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+        },
+        {
+          "title": "Mail, supplies and places to stop",
+          "copy": "Winter routes carried people, mail and supplies between coastal ports and Interior communities. Roadhouses became important stopping places along the route and its branches.",
+          "source": "https://www.iditarod100.org/historic-overview1.html"
+        },
+        {
+          "title": "Listen to the people who kept it",
+          "copy": "UAF's Iditarod National Historic Trail Project Jukebox preserves oral histories about designation, protection and cooperative management. The Alliance funded the project, completed in 2026.",
+          "source": "https://www.uaf.edu/news/iditarod-national-historic-trail-project-jukebox.php"
+        }
+      ],
+      "map": "whole-trail",
+      "gallery": [
+        "knik-dog-team-c1912",
+        "mcgrath-post-office-1914"
+      ],
+      "map_note": "The main historic alignment connects a much wider network of communities and trails. This is an orientation map.",
+      "links": [
+        {
+          "title": "Listen to the trail’s oral histories",
+          "url": "https://jukebox.uaf.edu/iditarodtrail"
+        },
+        {
+          "title": "Explore the historic trail archive",
+          "url": "https://www.arlis.org/collections/iditarod-historic-trail/"
+        },
+        {
+          "title": "Read the Alliance’s historical overview",
+          "url": "https://www.iditarod100.org/historic-overview1.html"
+        }
+      ]
+    },
+    "the-winter-way": {
+      "sections": [
+        {
+          "title": "When the landscape connects",
+          "copy": "The trail is primarily a winter route. Frozen ground changes the possibilities of travel across wetlands, rivers and mountain country.",
+          "source": "https://www.blm.gov/visit/iditarod-trail"
+        },
+        {
+          "title": "A continuing relationship",
+          "copy": "Local travel, dog teams and modern winter recreation are different parts of the trail's continuing life. Conditions and land ownership shape each journey.",
+          "source": "https://www.blm.gov/visit/iditarod-trail"
+        },
+        {
+          "title": "Read the trail before traveling it",
+          "copy": "Preparation begins with reliable maps, local knowledge and a realistic understanding of winter skills. Remote sections call for substantial self-reliance.",
+          "source": "https://www.iditarod100.org/plan-your-trip.html"
+        }
+      ],
+      "map": "whole-trail",
+      "gallery": [
+        "old-woman-mountain",
+        "trail-marker-sunset"
+      ],
+      "map_note": "The main historic alignment connects a much wider network of communities and trails. This is an orientation map.",
+      "links": [
+        {
+          "title": "Plan with the Bureau of Land Management",
+          "url": "https://www.blm.gov/visit/iditarod-trail"
+        },
+        {
+          "title": "Find official trip-planning resources",
+          "url": "https://www.iditarod100.org/plan-your-trip.html"
+        },
+        {
+          "title": "Explore the historic trail archive",
+          "url": "https://www.arlis.org/collections/iditarod-historic-trail/"
+        }
+      ]
+    },
+    "the-next-generation": {
+      "sections": [
+        {
+          "title": "A classroom rooted in place",
+          "copy": "Iditarod Trail to Every Classroom links educators, communities and the natural and cultural resources of the trail through place-based learning and stewardship.",
+          "source": "https://www.iditarod100.org/itrec-education-program.html"
+        },
+        {
+          "title": "Learning becomes stewardship",
+          "copy": "Junior Trailblazer materials invite children and adults to explore historic and present-day uses of the trail. The booklet was developed with BLM Alaska and Chugach National Forest.",
+          "source": "https://www.iditarod100.org/itrec-education-program.html"
+        },
+        {
+          "title": "Make a connection of your own",
+          "copy": "A place name, a local story or a trail visit can become a starting point for curiosity and care. Use the Alliance's learning resources to take the next step.",
+          "source": "https://www.iditarod100.org/junior-trailblazer.html"
+        }
+      ],
+      "map": "whole-trail",
+      "gallery": [
+        "volunteer-training",
+        "crow-pass-boardwalk"
+      ],
+      "map_note": "The main historic alignment connects a much wider network of communities and trails. This is an orientation map.",
+      "links": [
+        {
+          "title": "Explore Iditarod Trail to Every Classroom",
+          "url": "https://www.iditarod100.org/itrec-education-program.html"
+        },
+        {
+          "title": "Discover the Junior Trailblazer materials",
+          "url": "https://www.iditarod100.org/junior-trailblazer.html"
+        },
+        {
+          "title": "Follow the passport stamp program",
+          "url": "https://www.iditarod100.org/passport-stamp-program.html"
+        }
+      ]
+    }
+  },
+  "alliance": {
+    "intro": "The work extends from recognizing historic places to supporting trail projects, education, and the preservation of first-person accounts.",
+    "timeline_heading": "A long history. A shared responsibility.",
+    "timeline": [
+      {
+        "date": "1978",
+        "title": "A national historic trail",
+        "copy": "Congress designates the Iditarod National Historic Trail. The designation recognizes a historic trail network; it is separate from the modern sled dog race.",
+        "source": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+      },
+      {
+        "date": "1999",
+        "title": "The Alliance is founded",
+        "copy": "A statewide nonprofit forms to advance knowledge, appreciation and enjoyment of the historic trail.",
+        "source": "https://www.iditarod100.org/about-us.html"
+      },
+      {
+        "date": "2008–2012",
+        "title": "A centennial, shared",
+        "copy": "The Alliance and its partners commemorate the trail's centennial and bring its history to wider audiences.",
+        "source": "https://www.iditarod100.org/about-us.html"
+      },
+      {
+        "date": "2013",
+        "title": "Marking the way",
+        "copy": "Alliance funding helps community partners and BLM install a system of mileage, place-name and directional signs between the Alaska Range and Yukon River.",
+        "source": "https://www.iditarod100.org/trail-projects.html"
+      },
+      {
+        "date": "2026",
+        "title": "Voices preserved for the future",
+        "copy": "UAF announces completion of the Alliance-funded Iditarod National Historic Trail Project Jukebox, preserving oral histories of trail protection and cooperative management.",
+        "source": "https://www.uaf.edu/news/iditarod-national-historic-trail-project-jukebox.php",
+        "source_date": "2026-09-16"
+      }
+    ],
+    "work_themes": [
+      {
+        "title": "Care for the physical trail",
+        "copy": "The Alliance supports work with partners on the ground. Its documented projects include funding for 2013 waymarking and a 2014 repair effort near Farewell Lake after fire and erosion damaged the route.",
+        "source": "https://www.iditarod100.org/trail-projects.html"
+      },
+      {
+        "title": "Keep the voices and records",
+        "copy": "Preservation includes the stories of people who protected, marked and managed the trail. The Alliance funded UAF's Iditarod National Historic Trail Project Jukebox, completed in 2026.",
+        "source": "https://www.uaf.edu/news/iditarod-national-historic-trail-project-jukebox.php",
+        "action": "Explore the oral-history project",
+        "link": "https://jukebox.uaf.edu/iditarodtrail"
+      },
+      {
+        "title": "Make learning a form of stewardship",
+        "copy": "Iditarod Trail to Every Classroom connects place-based learning, communities and public lands. Junior Trailblazer materials invite families to explore the trail's history and continuing use.",
+        "source": "https://www.iditarod100.org/itrec-education-program.html",
+        "secondary_source": "https://www.iditarod100.org/junior-trailblazer.html"
+      }
+    ],
+    "additional_sources": [
+      {
+        "title": "Alliance stewardship",
+        "url": "https://www.iditarod100.org/stewardship.html"
+      },
+      {
+        "title": "Alliance annual reports",
+        "url": "https://www.iditarod100.org/annual-reports.html"
+      },
+      {
+        "title": "Alliance volunteer connections",
+        "url": "https://www.iditarod100.org/volunteer.html"
+      }
+    ]
+  }
+}

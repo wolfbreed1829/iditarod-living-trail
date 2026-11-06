@@ -120,9 +120,9 @@ pub fn BodyText(text: String) -> impl IntoView {
 #[component]
 pub fn ContentCard(item: Content) -> impl IntoView {
     let href = url(&item.path);
-    let image = item.image();
+    let image = crate::photography::thumbnail(&item);
     view! {<a class="story-card cms-card" href=href>
-        {(!item.field("image").is_empty()).then(||view!{<div class="card-image"><img src=image style=item.image_position() alt=item.field("image_alt") loading="lazy" width="800" height="540"/><span class="circle-arrow"><Icon/></span></div>})}
+        {(!item.field("image").is_empty()).then(||view!{<div class="card-image"><img src=image srcset=crate::photography::srcset(&item) sizes="(max-width: 760px) 100vw, 40vw" style=item.image_position() alt=item.field("image_alt") loading="lazy" width="800" height="540"/><span class="circle-arrow"><Icon/></span></div>})}
         <p class="eyebrow">{item.field("category")}</p><h3>{item.title}</h3><p>{item.summary}</p><span class="text-link">"Explore more"<Icon/></span>
     </a>}
 }
@@ -161,10 +161,10 @@ pub fn ManagedFeature() -> impl IntoView {
 }
 
 #[component]
-pub fn ManagedIntro(slug: &'static str) -> impl IntoView {
+pub fn ManagedIntro(slug: &'static str, #[prop(default=true)] show_photo: bool) -> impl IntoView {
     let item = page(slug).unwrap_or_default();
     view! {<ContentMeta item=item.clone()/><section class="page-intro container"><p class="eyebrow"><span class="small-line"/>{item.field("category")}</p><h1>{item.title.clone()}</h1><p class="intro-copy">{item.summary.clone()}</p></section>
-        {(!item.field("image").is_empty()).then(||view!{<figure class="container cms-intro-photo"><img src=item.image() style=item.image_position() alt=item.field("image_alt")/><figcaption>{item.field("credit")}</figcaption></figure>})}
+        {(show_photo&&!item.field("image").is_empty()).then(||view!{<crate::interiors::HeroPhoto item=item.clone()/>})}
         {(!item.body.is_empty()).then(||view!{<section class="container prose cms-intro-body"><BodyText text=item.body.clone()/></section>})}
         {(!item.field("button_url").is_empty()).then(||view!{<div class="container cms-intro-action"><a class="button button-green" href=url(&item.field("button_url"))>{item.field("button_text")}<Icon/></a></div>})}
     }
@@ -297,7 +297,7 @@ pub fn ManagedResources() -> impl IntoView {
             })
             .collect::<Vec<_>>()
     });
-    view!{<ManagedIntro slug="resources"/><crate::editorial_pages::ResourcePrelude/><section class="container resource-library"><div class="resource-search"><Icon name="search"/><label class="sr-only" for="resource-query">"Search resources"</label><input id="resource-query" type="search" placeholder="Search guides, history, classroom resources…" prop:value=move||query.get() on:input=move|e|query.set(event_target_value(&e))/></div><div class="filter-pills resource-filters" role="group" aria-label="Resource categories">{categories.into_iter().map(|c|{let choice=c.clone();let active=c.clone();let pressed=c.clone();view!{<button class:active=move||category.get()==active aria-pressed=move||(category.get()==pressed).to_string() on:click=move |_|category.set(choice.clone())>{c}</button>}}).collect_view()}</div><p class="results-count" aria-live="polite">{move||format!("{} resources",filtered.get().len())}</p><div class="resource-list">{move||filtered.get().into_iter().map(|i|view!{<a href=format!("{}{}",base.get_value(),i.id) class="resource-row" target="_blank" rel="noopener noreferrer"><span class="resource-icon"><Icon name="book"/></span><div><span class="eyebrow">{i.field("category")}</span><h3>{i.title.clone()}</h3><p>{i.summary.clone()}</p></div><span class="file-type">{i.field("format")}</span><Icon name="external"/></a>}).collect_view()}</div><Show when=move||filtered.get().is_empty()><div class="empty-state"><h2>"Let's try another trail."</h2><p>"No resources match that search."</p><button class="button button-green" on:click=move |_|{query.set(String::new());category.set("All resources".into());}>"Clear search"</button></div></Show></section>}.into_any()
+    view!{<ManagedIntro slug="resources" show_photo=false/><crate::editorial_pages::ResourcePrelude/><section class="container resource-library"><div class="resource-search"><Icon name="search"/><label class="sr-only" for="resource-query">"Search resources"</label><input id="resource-query" type="search" placeholder="Search guides, history, classroom resources…" prop:value=move||query.get() on:input=move|e|query.set(event_target_value(&e))/></div><div class="filter-pills resource-filters" role="group" aria-label="Resource categories">{categories.into_iter().map(|c|{let choice=c.clone();let active=c.clone();let pressed=c.clone();view!{<button class:active=move||category.get()==active aria-pressed=move||(category.get()==pressed).to_string() on:click=move |_|category.set(choice.clone())>{c}</button>}}).collect_view()}</div><p class="results-count" aria-live="polite">{move||format!("{} resources",filtered.get().len())}</p><div class="resource-list">{move||filtered.get().into_iter().map(|i|view!{<a href=format!("{}{}",base.get_value(),i.id) class="resource-row" target="_blank" rel="noopener noreferrer"><span class="resource-icon"><Icon name="book"/></span><div><span class="eyebrow">{i.field("category")}</span><h3>{i.title.clone()}</h3><p>{i.summary.clone()}</p></div><span class="file-type">{i.field("format")}</span><Icon name="external"/></a>}).collect_view()}</div><Show when=move||filtered.get().is_empty()><div class="empty-state"><h2>"Let's try another trail."</h2><p>"No resources match that search."</p><button class="button button-green" on:click=move |_|{query.set(String::new());category.set("All resources".into());}>"Clear search"</button></div></Show></section>}.into_any()
 }
 
 #[component]
