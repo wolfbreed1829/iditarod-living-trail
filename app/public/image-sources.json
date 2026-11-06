@@ -1,0 +1,44 @@
+[
+  {
+    "name": "winter",
+    "source": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod",
+    "credit": "Bureau of Land Management",
+    "license": "US government work",
+    "changes": "Resized and converted to WebP. Display crops vary by viewport."
+  },
+  {
+    "name": "dawn",
+    "source": "https://www.flickr.com/photos/mypubliclands/36599186731/",
+    "credit": "Bob Wick / Bureau of Land Management",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop"
+  },
+  {
+    "name": "dogs",
+    "source": "https://www.flickr.com/photos/mypubliclands/36738421625/",
+    "credit": "Bob Wick / Bureau of Land Management",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop"
+  },
+  {
+    "name": "cycling",
+    "source": "https://www.flickr.com/photos/mypubliclands/36568558672/",
+    "credit": "Bob Wick / Bureau of Land Management",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop"
+  },
+  {
+    "name": "summer",
+    "source": "https://www.flickr.com/photos/alaska_region/29533359703/",
+    "credit": "USDA Forest Service Alaska Region",
+    "license": "CC BY 2.0",
+    "changes": "Resized, WebP conversion, responsive display crop"
+  },
+  {
+    "name": "waterfront",
+    "source": "https://www.nps.gov/kefj/blogs/one-fjord-to-another.htm",
+    "credit": "NPS / Max Odland",
+    "license": "Public domain",
+    "changes": "Resized, WebP conversion, responsive display crop"
+  }
+]

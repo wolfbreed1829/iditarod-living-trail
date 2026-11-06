@@ -1,0 +1,10 @@
+/target/
+/.playwright-mcp/
+/node_modules/
+/test-results/
+/dist/
+*.log
+.env
+/.cms/
+/artifacts/cms-tests/
+/artifacts/native-tests/

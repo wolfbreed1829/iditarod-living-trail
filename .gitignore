@@ -1,0 +1,14 @@
+**/target/
+**/node_modules/
+**/.cms/
+**/.env
+**/.env.*
+**/test-results/
+**/artifacts/native-tests/
+**/artifacts/cms-tests/
+**/dist/
+*.log
+*.sqlite3*
+*.pem
+*.key
+*_ed25519*

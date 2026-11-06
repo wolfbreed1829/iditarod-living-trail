@@ -1,0 +1,33 @@
+name: Rust and Leptos checks
+on:
+  pull_request:
+    paths: ['app/**', 'deploy/**', '.github/workflows/rust.yml']
+  push:
+    branches: [main]
+    paths: ['app/**', 'deploy/**', '.github/workflows/rust.yml']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Install Rust and WASM target
+        run: rustup toolchain install 1.94.1 --profile minimal --target wasm32-unknown-unknown
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            app/target
+          key: ${{ runner.os }}-rust-1.94.1-${{ hashFiles('app/Cargo.lock') }}
+      - name: Content, authentication and proxy tests
+        run: cargo +1.94.1 test --locked --features ssr --lib
+      - name: Compile Leptos browser application
+        run: cargo +1.94.1 check --locked --target wasm32-unknown-unknown --no-default-features --features hydrate
+      - name: Validate server installation script
+        run: bash -n ../deploy/install-review.sh
