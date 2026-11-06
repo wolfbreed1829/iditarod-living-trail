@@ -1,0 +1,6 @@
+{
+  "name": "living-trail-quality-checks",
+  "private": true,
+  "scripts": {"test": "playwright test", "test:cms": "playwright test --config=native.playwright.config.js"},
+  "devDependencies": {"@playwright/test": "^1.56.0", "@axe-core/playwright": "^4.10.2"}
+}

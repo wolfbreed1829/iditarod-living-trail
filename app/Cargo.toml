@@ -1,0 +1,61 @@
+[package]
+name = "living-trail"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "living-trail"
+path = "src/main.rs"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+leptos = { version = "0.8" }
+leptos_router = { version = "0.8" }
+leptos_meta = { version = "0.8" }
+axum = { version = "0.8", features = ["multipart"], optional = true }
+leptos_axum = { version = "0.8", optional = true }
+tokio = { version = "1", features = ["rt-multi-thread", "net", "macros", "time"], optional = true }
+console_error_panic_hook = { version = "0.1", optional = true }
+wasm-bindgen = { version = "0.2", optional = true }
+web-sys = { version = "0.3", features = ["Window", "Storage", "IntersectionObserver", "IntersectionObserverEntry", "IntersectionObserverInit", "Element", "HtmlInputElement", "File", "FileList", "FormData", "HtmlDialogElement"], optional = true }
+js-sys = { version = "0.3", optional = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.38", features = ["bundled", "backup"], optional = true }
+argon2 = { version = "0.5", optional = true }
+rand = { version = "0.8", optional = true }
+sha2 = { version = "0.10", optional = true }
+chrono = { version = "0.4", features = ["serde"], optional = true }
+gloo-net = { version = "0.6", optional = true }
+gloo-timers = { version = "0.3", features = ["futures"], optional = true }
+
+[features]
+hydrate = ["leptos/hydrate", "dep:console_error_panic_hook", "dep:wasm-bindgen", "dep:web-sys", "dep:js-sys", "dep:gloo-net", "dep:gloo-timers"]
+ssr = ["dep:axum", "dep:tokio", "dep:leptos_axum", "dep:rusqlite", "dep:argon2", "dep:rand", "dep:sha2", "dep:chrono", "leptos/ssr", "leptos_meta/ssr", "leptos_router/ssr"]
+
+[profile.release]
+opt-level = "s"
+lto = "thin"
+
+[profile.wasm-release]
+inherits = "release"
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[package.metadata.leptos]
+output-name = "living-trail"
+site-root = "target/site"
+site-pkg-dir = "pkg"
+style-file = "style/main.css"
+assets-dir = "public"
+site-addr = "0.0.0.0:3107"
+reload-port = 3108
+bin-features = ["ssr"]
+bin-default-features = false
+lib-features = ["hydrate"]
+lib-default-features = false
+lib-profile-release = "wasm-release"

@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-05T22:34:08.699312+00:00",
+  "stack": [
+    "Rust",
+    "Leptos",
+    "Axum",
+    "SQLite"
+  ],
+  "cms": "http://localhost:3107/admin",
+  "content_records": 22,
+  "migration_values_verified": true,
+  "database_integrity": "ok",
+  "tests": {
+    "storage": 6,
+    "native_browser": 7,
+    "public_site": 19,
+    "total_passed": 32
+  },
+  "deployment": "local",
+  "integrations": "External service shortcuts only; no payment, donor, or email sync."
+}

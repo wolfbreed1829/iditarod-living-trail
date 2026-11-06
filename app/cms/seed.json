@@ -1,0 +1,277 @@
+[
+  {
+    "type": "page",
+    "slug": "home",
+    "title": "A trail through Alaska.",
+    "summary": "Follow the landscapes, stories, and communities that make this trail a living legacy.",
+    "body": "",
+    "fields": {
+      "category": "ALASKA’S IDITAROD NATIONAL HISTORIC TRAIL",
+      "headline_accent": "A connection across generations.",
+      "image": "/images/dawn.webp",
+      "image_alt": "Winter light across the Iditarod landscape",
+      "summer_image": "/images/summer.webp",
+      "button_text": "Find your trail",
+      "button_url": "/explore"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "explore",
+    "title": "Find your kind of adventure.",
+    "summary": "From a coastal afternoon to a winter journey, discover a connection that feels like yours.",
+    "body": "",
+    "fields": {
+      "category": "PLAN A TRIP"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "stories",
+    "title": "Every mile has a story.",
+    "summary": "Discover the people, traditions, and landscapes that connect the trail’s past to its living present.",
+    "body": "",
+    "fields": {
+      "category": "LEARN & DISCOVER"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "resources",
+    "title": "A good place to start.",
+    "summary": "Find visitor information, classroom resources, and stories from the trail’s archives.",
+    "body": "",
+    "fields": {
+      "category": "EXPLORE. LEARN. GO FURTHER."
+    }
+  },
+  {
+    "type": "page",
+    "slug": "about",
+    "title": "Connected by a trail. United by its future.",
+    "summary": "The Alliance brings people together to promote, preserve, and protect the Iditarod National Historic Trail.",
+    "body": "The Iditarod Historic Trail Alliance is a statewide nonprofit organization founded in 1999. Its work connects education, history, recreation, and stewardship.\n\nThrough partnerships with communities, landowners, agencies, and volunteers, the Alliance helps keep the trail’s heritage present and its future possible.",
+    "fields": {
+      "category": "THE IDITAROD HISTORIC TRAIL ALLIANCE",
+      "image": "/images/winter.webp",
+      "image_alt": "A musher and dog team traveling the Iditarod Trail"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "get-involved",
+    "title": "The next chapter includes you.",
+    "summary": "Help protect the trail, share its stories, and inspire the next generation of stewards.",
+    "body": "",
+    "fields": {
+      "category": "GET INVOLVED"
+    }
+  },
+  {
+    "type": "page",
+    "slug": "store",
+    "title": "Carry a little of the trail.",
+    "summary": "Books, gifts, and everyday reminders of a remarkable connection.",
+    "body": "",
+    "fields": {
+      "category": "THE TRAIL SHOP"
+    }
+  },
+  {
+    "type": "place",
+    "slug": "seward",
+    "title": "Seward & Resurrection Bay",
+    "summary": "Begin where the mountains meet the sea.",
+    "body": "At the southern end of the historic route, Seward offers an approachable connection to the trail. Start with the waterfront, discover local history, and explore the relationship between a coastal community and the journeys that began here.",
+    "fields": {
+      "category": "Southern trail",
+      "region": "Southern trail",
+      "season": "All seasons",
+      "activity": "Coast & culture",
+      "image": "/images/waterfront.webp",
+      "image_alt": "Mountains across Resurrection Bay from the Seward waterfront",
+      "credit": "Resurrection Bay from Seward · NPS / Max Odland",
+      "url": "https://www.iditarod100.org/plan-your-trip.html"
+    }
+  },
+  {
+    "type": "place",
+    "slug": "chugach",
+    "title": "Chugach country",
+    "summary": "Find a new perspective in Southcentral Alaska.",
+    "body": "The southern trail passes through a landscape of mountains, forests, and water. Explore official visitor resources for the Chugach region and historic trail connections, including Crow Pass. Choose an outing suited to your experience and check with the relevant land manager before setting out.",
+    "fields": {
+      "category": "Southcentral Alaska",
+      "region": "Southcentral Alaska",
+      "season": "Summer",
+      "activity": "Hiking & exploring",
+      "image": "/images/summer.webp",
+      "image_alt": "An aerial view of a glacier and inlet in Chugach National Forest",
+      "credit": "Chugach National Forest regional landscape · USDA Forest Service. Not a view of Crow Pass.",
+      "url": "https://dnr.alaska.gov/parks/aspunits/chugach/recops.htm"
+    }
+  },
+  {
+    "type": "place",
+    "slug": "winter-trail",
+    "title": "The winter trail",
+    "summary": "Experience the season that shaped the trail.",
+    "body": "Snow and frozen ground connect a landscape that changes dramatically through the year. Skiers, dog teams, snowmachines, and winter cyclists continue a long relationship with winter travel. Remote sections require substantial preparation and local knowledge; begin with the BLM visitor resources.",
+    "fields": {
+      "category": "Across the trail",
+      "region": "Across the trail",
+      "season": "Winter",
+      "activity": "Winter travel",
+      "image": "/images/cycling.webp",
+      "image_alt": "Two people riding fat tire bicycles along the snow-covered Iditarod Trail",
+      "credit": "Winter cycling on the Iditarod Trail · Bob Wick / BLM",
+      "url": "https://www.blm.gov/visit/iditarod-trail"
+    }
+  },
+  {
+    "type": "story",
+    "slug": "a-living-connection",
+    "title": "A living connection across Alaska",
+    "summary": "The story of the trail begins with connection: between places, between people, and between generations.",
+    "body": "Long before a named gold-rush route appeared on maps, Alaska Native travel networks connected communities across this landscape. Those connections belong at the beginning of the trail's story, and remain part of its living present.\n\nLater, the movement of mail, supplies, and people linked coastal ports and Interior settlements. The trail carries many histories, shaped by the communities along it and the seasons that make travel possible.\n\nPreserving this heritage means listening as well as looking. The University of Alaska Fairbanks' Project Jukebox brings together recorded voices and personal perspectives. Follow those stories to learn from the people who know the trail.",
+    "fields": {
+      "category": "HISTORY & HERITAGE",
+      "image": "/images/dawn.webp",
+      "image_alt": "Winter light on mountains and spruce along the Iditarod Trail",
+      "url": "https://jukebox.uaf.edu/"
+    }
+  },
+  {
+    "type": "story",
+    "slug": "the-winter-way",
+    "title": "The winter way",
+    "summary": "For generations, winter has opened a way across Alaska.",
+    "body": "A winter trail is a relationship with a changing landscape. Snow, frozen rivers, and seasonal knowledge shape where and how people travel.\n\nDog teams are part of that story. So are the people who maintain routes, share knowledge, and connect neighboring communities. Today the trail also welcomes different forms of recreation, from skiing to winter cycling.\n\nThe historic trail is a network, with different landowners, conditions, and access requirements. Learning about it is an invitation to understand the landscape before planning a journey through it.",
+    "fields": {
+      "category": "LIFE ON THE TRAIL",
+      "image": "/images/dogs.webp",
+      "image_alt": "A sled dog team resting on straw in the snow",
+      "url": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+    }
+  },
+  {
+    "type": "story",
+    "slug": "the-next-generation",
+    "title": "The next generation of trail stories",
+    "summary": "A place becomes more meaningful when we learn how to care for it.",
+    "body": "A trail can be an outdoor classroom. Observing a landscape, asking about a place name, and listening to a local story can open new ways of understanding where we live.\n\nThe Alliance's Iditarod Trail to Every Classroom program connects place-based learning with stewardship and community. Its existing resources offer starting points for educators and curious families.\n\nExplore the Junior Trailblazer materials, discover a passport stamp location, or browse the education program. Start with a question, then follow it somewhere new.",
+    "fields": {
+      "category": "LEARNING & STEWARDSHIP",
+      "image": "/images/summer.webp",
+      "image_alt": "Glacier, mountains, and forest in the Chugach region",
+      "url": "https://www.iditarod100.org/itrec-education-program.html"
+    }
+  },
+  {
+    "type": "resource",
+    "slug": "visitor-guide",
+    "title": "Visitor guide",
+    "summary": "A guide to the historic trail, its communities, and ways to experience it.",
+    "body": "",
+    "fields": {
+      "category": "Explore",
+      "url": "https://www.iditarod100.org/uploads/5/2/4/5/52459009/inht-vg.pdf",
+      "format": "PDF"
+    }
+  },
+  {
+    "type": "resource",
+    "slug": "maps",
+    "title": "Maps & trail information",
+    "summary": "Official BLM information to begin your research.",
+    "body": "",
+    "fields": {
+      "category": "Explore",
+      "url": "https://www.blm.gov/visit/iditarod-trail",
+      "format": "WEBSITE"
+    }
+  },
+  {
+    "type": "resource",
+    "slug": "itrec",
+    "title": "Iditarod Trail to Every Classroom",
+    "summary": "Discover the Alliance’s place-based education program.",
+    "body": "",
+    "fields": {
+      "category": "Learn",
+      "url": "https://www.iditarod100.org/itrec-education-program.html",
+      "format": "WEBSITE"
+    }
+  },
+  {
+    "type": "resource",
+    "slug": "junior-trailblazer",
+    "title": "Junior Trailblazer",
+    "summary": "A trail activity booklet for curious young explorers.",
+    "body": "",
+    "fields": {
+      "category": "Learn",
+      "url": "https://www.iditarod100.org/uploads/5/2/4/5/52459009/iditarod_jrweb.pdf",
+      "format": "PDF"
+    }
+  },
+  {
+    "type": "resource",
+    "slug": "jukebox",
+    "title": "Project Jukebox",
+    "summary": "Explore oral histories through the University of Alaska Fairbanks.",
+    "body": "",
+    "fields": {
+      "category": "History",
+      "url": "https://jukebox.uaf.edu/",
+      "format": "WEBSITE"
+    }
+  },
+  {
+    "type": "resource",
+    "slug": "collections",
+    "title": "Historic trail collections",
+    "summary": "Discover documents, photographs, and research in the ARLIS collection.",
+    "body": "",
+    "fields": {
+      "category": "History",
+      "url": "https://www.arlis.org/collections/iditarod-historic-trail/",
+      "format": "ARCHIVE"
+    }
+  },
+  {
+    "type": "resource",
+    "slug": "passport",
+    "title": "Passport stamp program",
+    "summary": "Find the Alliance’s information about trail passport locations.",
+    "body": "",
+    "fields": {
+      "category": "Explore",
+      "url": "https://www.iditarod100.org/passport-stamp-program.html",
+      "format": "WEBSITE"
+    }
+  },
+  {
+    "type": "event",
+    "slug": "volunteer-opportunity",
+    "title": "Your next volunteer opportunity",
+    "summary": "Add the details of an upcoming stewardship day.",
+    "body": "",
+    "status": "draft",
+    "fields": {
+      "category": "Volunteering"
+    }
+  },
+  {
+    "type": "campaign",
+    "slug": "support-the-trail",
+    "title": "Help keep the connection alive.",
+    "summary": "Support the stories, places, and communities of the historic trail.",
+    "body": "",
+    "status": "draft",
+    "fields": {
+      "category": "Giving",
+      "button_text": "Support the trail"
+    }
+  }
+]
