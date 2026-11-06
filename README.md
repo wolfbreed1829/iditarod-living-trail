@@ -2,7 +2,12 @@
 
 Rust + Leptos website and Trail Studio CMS for the Iditarod Historic Trail Alliance review.
 
-The complete application source is in [`app/`](app/). The existing GitHub Pages export remains available at https://wolfbreed1829.github.io/iditarod-living-trail/. A full Azure review deployment is being prepared; it runs the website and authenticated CMS together, with persistent SQLite storage.
+The complete application source is in [`app/`](app/).
+
+- [Live website](https://iditarod-review-1829.eastus2.cloudapp.azure.com/)
+- [Trail Studio CMS](https://iditarod-review-1829.eastus2.cloudapp.azure.com/admin)
+
+The Azure review instance runs the website and authenticated CMS together, with HTTPS, persistent SQLite storage, and nightly local backups. Request reviewer credentials from the project administrator; passwords are not stored in GitHub. The earlier [GitHub Pages export](https://wolfbreed1829.github.io/iditarod-living-trail/) remains a static design preview.
 
 ## Run locally
 

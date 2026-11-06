@@ -4,15 +4,17 @@ Independent, responsive design preview for the Iditarod Historic Trail Alliance.
 
 ## Live preview
 
-https://wolfbreed1829.github.io/iditarod-living-trail/
+https://iditarod-review-1829.eastus2.cloudapp.azure.com/
 
-Guided walkthrough: https://wolfbreed1829.github.io/iditarod-living-trail/preview/
+Staff CMS: https://iditarod-review-1829.eastus2.cloudapp.azure.com/admin
+
+Guided walkthrough: https://iditarod-review-1829.eastus2.cloudapp.azure.com/preview/
 
 The editable Rust source is tracked in the repository under `app/`. The repository root also retains the earlier static GitHub Pages export.
 
 ## Working CMS
 
-The project includes **Trail Studio**, a native Rust/Leptos CMS backed by SQLite with persistent content, private drafts, live previews, scheduling, document replacement, media, roles, and revision recovery. See [CMS setup and operations](cms/README.md) for local startup, staff login, backups, and integration boundaries. The CMS is local; the existing GitHub Pages link remains the static proposal demo.
+The project includes **Trail Studio**, a native Rust/Leptos CMS backed by SQLite with persistent content, private drafts, live previews, scheduling, document replacement, media, roles, and revision recovery. See [CMS setup and operations](cms/README.md) for local startup, staff login, backups, and integration boundaries. The full review system runs on Azure; [deployment operations](../deploy/README.md) describe hosting, backups, and costs. The earlier GitHub Pages link remains a static proposal demo.
 
 ## Motion and interactive journey
 
@@ -75,4 +77,4 @@ For a different preview origin, set `DEMO_URL`. For a subdirectory deployment, a
 - The route illustration is decorative and clearly labeled, not GIS or a navigation map.
 - Photo credits and links are at `/credits`; font licenses are included in `public/fonts/`.
 
-Production work still includes final CMS/platform selection, approved content migration, actual Square/CRM/email integrations, privacy decisions, manual accessibility review, training, and support arrangements. The RFP and FAQ require these to be scoped separately from this demonstration.
+Production work still includes approved content migration, actual Square/CRM/email integrations, privacy decisions, manual accessibility review, training, and support arrangements. The RFP and FAQ require these to be scoped separately from this demonstration.

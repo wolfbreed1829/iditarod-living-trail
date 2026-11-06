@@ -65,9 +65,9 @@ LEPTOS_SITE_ROOT=/opt/living-trail/site
 LEPTOS_SITE_ADDR=127.0.0.1:3107
 ```
 
-`TRAIL_ORIGIN` must exactly match the browser's origin. Mutations require that origin and a per-session CSRF token. Sessions use HttpOnly, SameSite=Strict cookies, with Secure enabled for HTTPS. Login attempts are limited by network peer address; account for a reverse proxy when choosing production rate limits. Bootstrap administrator environment values are required only for a new empty database. Limit filesystem access to the service account and administrators.
+`TRAIL_ORIGIN` must exactly match the browser's origin. Mutations require that origin and a per-session CSRF token. Sessions use HttpOnly, SameSite=Strict cookies, with Secure enabled for HTTPS. Login attempts are limited by client address. Behind the local Caddy proxy, set `TRAIL_TRUST_PROXY=1`; forwarded addresses are accepted only from loopback peers. Bootstrap administrator environment values are required only for a new empty database. Limit filesystem access to the service account and administrators.
 
-This is running locally. Production hosting, domain setup, actual Square/CRM/email integrations and their accounts are separate deployment work. The GitHub Pages proposal remains a standalone static demo and cannot host the CMS.
+The review instance runs on [Azure](https://iditarod-review-1829.eastus2.cloudapp.azure.com/admin), with HTTPS, persistent SQLite storage, and nightly local backups. See [Azure operations](../../deploy/README.md). A custom production domain and actual Square/CRM/email integrations remain separate work. The GitHub Pages proposal is a standalone static demo.
 
 ## Verification
 
