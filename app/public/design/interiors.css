@@ -1,4 +1,5 @@
 /* Photographic field guides and magazine interiors. */
+.destination-experience-grid article>span,.planning-notes>div>span{color:#4e6345!important}
 .interior-content-actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:28px}.interior-content-actions:empty{display:none}
 .field-journal .interior-hero-photo.photo-tall>img{height:min(70vw,850px)}
 @media(max-width:800px){.field-journal .interior-hero-photo.photo-tall>img{height:470px}}
