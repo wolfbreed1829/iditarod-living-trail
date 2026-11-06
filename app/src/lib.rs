@@ -7,9 +7,11 @@ pub mod data;
 pub mod editorial;
 pub mod editorial_pages;
 pub mod explorer;
+pub mod interiors;
 pub mod motion;
 pub mod pages;
 pub mod paths;
+pub mod photography;
 pub mod studio;
 #[cfg(feature = "ssr")]
 pub mod studio_api;

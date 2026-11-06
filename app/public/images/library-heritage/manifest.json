@@ -1,0 +1,290 @@
+[
+  {
+    "name": "seward-downtown-2019",
+    "original_source": "https://commons.wikimedia.org/wiki/File:Seward,_Alaska_ENBLA18.jpg",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Seward%2C_Alaska_ENBLA18.jpg/1280px-Seward%2C_Alaska_ENBLA18.jpg",
+    "credit": "Enrico Blasutto",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "caption": "Downtown buildings in Seward, Alaska, June 17, 2019.",
+    "alt": "Colorful storefronts at a Seward street corner below green mountain slopes.",
+    "category": "Communities",
+    "historical": false,
+    "original_dimensions": [
+      8688,
+      5792
+    ],
+    "rights_evidence": "The photographer published this as their own work on Wikimedia Commons under CC BY-SA 4.0.",
+    "recommended_use": "Seward destination guide hero or contemporary community photo essay. This photograph does not establish current business opening hours.",
+    "source": "https://commons.wikimedia.org/wiki/File:Seward,_Alaska_ENBLA18.jpg",
+    "file": "/images/library-heritage/seward-downtown-2019.webp",
+    "small_file": "/images/library-heritage/seward-downtown-2019-small.webp",
+    "dimensions": [
+      1280,
+      853
+    ],
+    "small_dimensions": [
+      600,
+      400
+    ],
+    "bytes": 340686,
+    "small_bytes": 58156,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. These image derivatives are distributed under CC BY-SA 4.0. Used the Wikimedia-hosted display derivative at its native size; no upscaling."
+  },
+  {
+    "name": "knik-hall-2009",
+    "original_source": "https://www.flickr.com/photos/bytehead/3568887346/",
+    "credit": "Bryan Pryce",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "caption": "Knik Hall at the historic Knik townsite, Alaska, May 1, 2009 (photograph EXIF date).",
+    "alt": "The red wooden Knik Hall museum with white window frames and an exterior staircase.",
+    "category": "History & buildings",
+    "historical": false,
+    "original_dimensions": [
+      3072,
+      2304
+    ],
+    "rights_evidence": "The source identifies Knik Hall at Knik Site, National Register reference 73000379. Commons verified the photographer’s Flickr CC BY-SA 2.0 license on September 2, 2016.",
+    "recommended_use": "Alliance heritage, preservation, or Knik destination sections. The date describes the photograph, not the building’s construction.",
+    "source": "https://commons.wikimedia.org/wiki/File:Knik_Hall,_Knik_Site,_Alaska.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Knik_Hall%2C_Knik_Site%2C_Alaska.jpg",
+    "file": "/images/library-heritage/knik-hall-2009.webp",
+    "small_file": "/images/library-heritage/knik-hall-2009-small.webp",
+    "dimensions": [
+      1440,
+      1080
+    ],
+    "small_dimensions": [
+      600,
+      450
+    ],
+    "bytes": 131578,
+    "small_bytes": 33598,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. These image derivatives are distributed under CC BY-SA 2.0."
+  },
+  {
+    "name": "kaltag-yukon-2002",
+    "original_source": "https://digitalmedia.fws.gov/cdm/singleitem/collection/natdiglib/id/5139/rec/1",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Kaltag_Alaska.jpg/960px-Kaltag_Alaska.jpg",
+    "credit": "Polly Wheeler / U.S. Fish and Wildlife Service",
+    "license": "Public domain (United States)",
+    "license_url": "https://commons.wikimedia.org/wiki/File:Kaltag_Alaska.jpg#Licensing",
+    "caption": "Kaltag village and the Yukon River, Alaska; U.S. Fish and Wildlife Service image dated September 24, 2002.",
+    "alt": "An aerial view of Kaltag homes and roads beside the broad Yukon River.",
+    "category": "Communities",
+    "historical": false,
+    "original_dimensions": [
+      1050,
+      722
+    ],
+    "rights_evidence": "Commons identifies the photographer and the original USFWS National Digital Library record and marks this as an official-duty USFWS photograph in the public domain. The legacy library URL now redirects to FWS image search.",
+    "recommended_use": "Community context in About or route interpretation; do not label this a current aerial survey. The date is retained as given in the source record.",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaltag_Alaska.jpg",
+    "file": "/images/library-heritage/kaltag-yukon-2002.webp",
+    "small_file": "/images/library-heritage/kaltag-yukon-2002-small.webp",
+    "dimensions": [
+      960,
+      660
+    ],
+    "small_dimensions": [
+      600,
+      413
+    ],
+    "bytes": 66322,
+    "small_bytes": 27436,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. Used the Wikimedia-hosted display derivative at its native size; no upscaling."
+  },
+  {
+    "name": "knik-dog-team-c1912",
+    "original_source": "https://digitalcollections.lib.washington.edu/digital/collection/thwaites/id/110",
+    "download_url": "https://digitalcollections.lib.washington.edu/iiif/2/thwaites:110/full/full/0/default.jpg",
+    "credit": "John E. Thwaites / University of Washington Libraries, Special Collections, PH Coll 247.45 (THW024)",
+    "license": "Public domain (United States)",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "caption": "A dog team and travelers departing for the goldfields from Knik, Alaska, circa 1912. Historical photograph.",
+    "alt": "Travelers stand beside a harnessed dog team in snowy Knik, with log buildings behind them.",
+    "category": "History & buildings",
+    "historical": true,
+    "original_dimensions": [
+      768,
+      481
+    ],
+    "rights_evidence": "Commons identifies the University of Washington John E. Thwaites collection and marks the photograph public domain due to copyright expiration. The institutional source records the original caption, Off for the gold diggings, Knik, Alaska. The scan’s institutional credit border is retained.",
+    "recommended_use": "Historical travel photo sequence or history timeline. Preserve circa 1912; this photograph is not a modern sled-dog race or a verified mail-delivery scene.",
+    "source": "https://commons.wikimedia.org/wiki/File:Dogsledding_to_the_gold_fields,_Knik,_ca_1912_(THWAITES_110).jpeg",
+    "file": "/images/library-heritage/knik-dog-team-c1912.webp",
+    "small_file": "/images/library-heritage/knik-dog-team-c1912-small.webp",
+    "dimensions": [
+      768,
+      481
+    ],
+    "small_dimensions": [
+      600,
+      376
+    ],
+    "bytes": 42492,
+    "small_bytes": 25576,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. Institutional credit marks in the original scan are retained."
+  },
+  {
+    "name": "mcgrath-post-office-1914",
+    "original_source": "https://digitalcollections.lib.washington.edu/digital/collection/alaskawcanada/id/3904",
+    "download_url": "https://digitalcollections.lib.washington.edu/iiif/2/alaskawcanada:3904/full/full/0/default.jpg",
+    "credit": "Photographer unidentified / University of Washington Libraries, Special Collections, PH Coll 495.2-46b (AWC4749)",
+    "license": "Public domain (United States)",
+    "license_url": "https://commons.wikimedia.org/wiki/File:Man,_woman_and_child_in_front_of_McGrath_Post_Office,_McGrath,_Alaska,_September_1914_(AL%2BCA_3904).jpg#Summary",
+    "caption": "A man, woman, and child outside the McGrath Post Office, Alaska, September 1914. Historical photograph from the Alaska Engineering Commission collection.",
+    "alt": "Three people stand outside the log McGrath Post Office in a black-and-white photograph from September 1914.",
+    "category": "History & buildings",
+    "historical": true,
+    "original_dimensions": [
+      768,
+      431
+    ],
+    "rights_evidence": "The University of Washington record identifies the Alaska Engineering Commission collection and September 1914 date. Commons marks the photograph public domain in the United States due to copyright expiration. The institutional credit mark in the scan is retained.",
+    "recommended_use": "Mail, community, and historic-building photo essays. The people are not identified by name in the source; do not invent identities or family relationships.",
+    "source": "https://commons.wikimedia.org/wiki/File:Man,_woman_and_child_in_front_of_McGrath_Post_Office,_McGrath,_Alaska,_September_1914_(AL%2BCA_3904).jpg",
+    "file": "/images/library-heritage/mcgrath-post-office-1914.webp",
+    "small_file": "/images/library-heritage/mcgrath-post-office-1914-small.webp",
+    "dimensions": [
+      768,
+      431
+    ],
+    "small_dimensions": [
+      600,
+      337
+    ],
+    "bytes": 47928,
+    "small_bytes": 30956,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. Institutional credit marks in the original scan are retained."
+  },
+  {
+    "name": "safety-roadhouse-habs",
+    "source": "https://www.loc.gov/pictures/item/ak0024.photos.001490p/",
+    "original_source": "https://www.loc.gov/pictures/item/ak0024.photos.001490p/",
+    "download_url": "https://cdn.loc.gov/master/pnp/habshaer/ak/ak0000/ak0024/photos/001490pu.tif",
+    "credit": "Historic American Buildings Survey / Library of Congress, HABS AK,9-SEW,2-L--2",
+    "license": "Public domain (United States)",
+    "license_url": "https://www.loc.gov/pictures/item/ak0024.photos.001490p/",
+    "caption": "Safety Roadhouse at Port Safety, Alaska. Archival Historic American Buildings Survey photograph; the photograph date is not supplied by the Library of Congress.",
+    "alt": "A black-and-white archival view of the front and side of Safety Roadhouse on the open coastal landscape at Port Safety.",
+    "category": "History & buildings",
+    "historical": true,
+    "original_dimensions": [
+      4939,
+      3939
+    ],
+    "rights_evidence": "The LOC record identifies the HABS photograph, lists it as unrestricted, and states no known restrictions on images made by the U.S. Government. Commons also identifies this image as an official-duty National Park Service work. Documentation compiled after 1933 is a collection description, not an asserted photograph year.",
+    "recommended_use": "Preservation and shelter-history sections. Do not assign a precise photograph year or present it as the roadhouse’s current condition.",
+    "file": "/images/library-heritage/safety-roadhouse-habs.webp",
+    "small_file": "/images/library-heritage/safety-roadhouse-habs-small.webp",
+    "dimensions": [
+      1440,
+      1148
+    ],
+    "small_dimensions": [
+      600,
+      478
+    ],
+    "bytes": 151214,
+    "small_bytes": 27596,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop."
+  },
+  {
+    "name": "unalakleet-fish-house-2013",
+    "original_source": "https://www.flickr.com/photos/umnak/10313311413/",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Fish_House_%2810313311413%29.jpg/1280px-Fish_House_%2810313311413%29.jpg",
+    "credit": "Joseph / The Cabin On The Road",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "caption": "A fish-house frame and driftwood along the shore at Unalakleet, Alaska, October 15, 2013.",
+    "alt": "A wooden fish-house frame stands among driftwood on the Unalakleet shore beside pale blue water.",
+    "category": "Communities",
+    "historical": false,
+    "original_dimensions": [
+      2531,
+      1424
+    ],
+    "rights_evidence": "The photographer’s source identifies the subject as Fish House and supplies coordinates in Unalakleet, 63.874292, -160.795211. Commons verified the Flickr CC BY-SA 2.0 license on February 26, 2018.",
+    "recommended_use": "A coastal-life detail in an Unalakleet photo sequence. Do not claim the structure’s owner, cultural affiliation, age, or use beyond the source description.",
+    "source": "https://commons.wikimedia.org/wiki/File:Fish_House_(10313311413).jpg",
+    "file": "/images/library-heritage/unalakleet-fish-house-2013.webp",
+    "small_file": "/images/library-heritage/unalakleet-fish-house-2013-small.webp",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "small_dimensions": [
+      600,
+      338
+    ],
+    "bytes": 191496,
+    "small_bytes": 39392,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. These image derivatives are distributed under CC BY-SA 2.0. Used the Wikimedia-hosted display derivative at its native size; no upscaling."
+  },
+  {
+    "name": "unalakleet-street-2013",
+    "original_source": "https://www.flickr.com/photos/umnak/10302038295/",
+    "credit": "Joseph / The Cabin On The Road",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "caption": "Buildings and boats in Unalakleet, Alaska, October 15, 2013.",
+    "alt": "Colorful buildings, a curved-roof shed, and a small boat beside an unpaved lane in Unalakleet.",
+    "category": "Communities",
+    "historical": false,
+    "original_dimensions": [
+      3264,
+      2448
+    ],
+    "rights_evidence": "The photographer identifies the location as Unalakleet and supplies coordinates, 63.871701, -160.786821. Commons verified the Flickr CC BY-SA 2.0 license on November 26, 2015.",
+    "recommended_use": "A dated detail in a wider Unalakleet photo sequence, paired with landscape and other community images; do not portray it as representative of every home or present condition.",
+    "source": "https://commons.wikimedia.org/wiki/File:Right_now-_Unalakleet_(10302038295).jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Right_now-_Unalakleet_%2810302038295%29.jpg",
+    "file": "/images/library-heritage/unalakleet-street-2013.webp",
+    "small_file": "/images/library-heritage/unalakleet-street-2013-small.webp",
+    "dimensions": [
+      1440,
+      1080
+    ],
+    "small_dimensions": [
+      600,
+      450
+    ],
+    "bytes": 122448,
+    "small_bytes": 26038,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. These image derivatives are distributed under CC BY-SA 2.0."
+  },
+  {
+    "name": "nome-sunrise-2011",
+    "source": "https://commons.wikimedia.org/wiki/File:Nome_Sunrise_(6091008110).jpg",
+    "original_source": "https://www.flickr.com/photos/umnak/6091008110/",
+    "download_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Nome_Sunrise_%286091008110%29.jpg/1280px-Nome_Sunrise_%286091008110%29.jpg",
+    "credit": "Joseph / The Cabin On The Road",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "caption": "Sunrise over the Nome shoreline, Alaska, August 27, 2011.",
+    "alt": "Warm sunrise light crosses the sea beside Nome’s rocky shoreline and beach.",
+    "category": "Communities",
+    "historical": false,
+    "original_dimensions": [
+      3225,
+      2265
+    ],
+    "rights_evidence": "The photographer identifies Nome Sunrise and supplies coordinates at Nome, 64.496123, -165.398912. Commons verified the Flickr CC BY-SA 2.0 license on February 26, 2018.",
+    "recommended_use": "Nome destination or coastal community photo essay; this is a shoreline photograph, not a photograph of Front Street buildings.",
+    "file": "/images/library-heritage/nome-sunrise-2011.webp",
+    "small_file": "/images/library-heritage/nome-sunrise-2011-small.webp",
+    "dimensions": [
+      1280,
+      899
+    ],
+    "small_dimensions": [
+      600,
+      421
+    ],
+    "bytes": 147394,
+    "small_bytes": 23074,
+    "changes": "Resized where necessary and converted to WebP; no subject alteration or additional crop. These image derivatives are distributed under CC BY-SA 2.0. Used the Wikimedia-hosted display derivative at its native size; no upscaling."
+  }
+]

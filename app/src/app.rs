@@ -39,6 +39,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="editorial" href=url("/design/editorial.css")/>
         <Stylesheet id="editorial-pages" href="/design/pages.css"/>
         <Stylesheet id="trail-explorer" href=url("/design/explorer.css")/>
+        <Stylesheet id="interiors" href=url("/design/interiors.css")/>
         <Title text="The Living Trail | Iditarod Historic Trail Alliance"/>
         <Router base=BASE_PATH>
             <AppRouter/>

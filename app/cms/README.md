@@ -88,11 +88,15 @@ The separate **Service shortcuts** section holds staff dashboard links. Those ad
 
 ## Photo presentation
 
-The editor offers a collection of 17 credited trail photographs. Choosing one fills its description and credit. Uploaded photos are also available; add their descriptions and credits before publishing. Use **Horizontal focus** and **Vertical focus** to keep the important part in the crop. These controls change presentation only and leave the source image untouched. Stories, places, and the Alliance page also offer a taller feature photograph. The homepage has independent summer focus controls.
+The editor offers 35 licensed trail photographs, searchable by place, subject or photographer and filterable into six categories. Choosing one fills its description, dated caption and credit, with links to the original record and license. The public collection at `/credits` shares those records. Uploaded photos are also available; add their descriptions, captions and credits before publishing. Use **Horizontal focus** and **Vertical focus** to keep the important part in the crop. These controls change presentation only and leave the source image untouched. Stories, places, and the Alliance page also offer a taller feature photograph. Archival photographs retain their full composition. The homepage has independent summer focus controls.
+
+Stories include **Photo sequence & map** controls for two supporting photographs and a geographic locator. Leave a selection at its editorial default, choose another collection image, or remove it. The collection supplies verified captions and credits. Even a one-paragraph story displays both selected images. All choices remain private until publication.
+
+Place guides have optional **Visit notes**, **Season notes** and **Access notes**. Existing guides include sourced activities, planning information and supporting photography. New places use the same destination layout with their own CMS content and optional map connection. The map opens the interactive trail explorer.
 
 ### Editing a mapped place
 
-In a place editor, **Trail explorer → Place on the map** connects that entry to one of six verified locations. Publishing uses the entry's introduction and photo in the homepage and Explore map. Add **Explorer history**, its source, a dated **Explorer photo caption**, and separate **Summer ideas** / **Winter ideas** (one activity per line, up to six). **Visitor information address** provides the planning link. Blank history and activity fields retain the researched defaults. Coordinates and seasonal planning notes remain fixed.
+In a place editor, **Trail explorer → Place on the map** connects that entry to one of six verified locations. Publishing uses the entry's introduction and photo in the homepage and Explore map. Add **Explorer history**, its source, a dated **Photo caption**, and separate **Summer ideas** / **Winter ideas** (one activity per line, up to six). **Visitor information address** provides the planning link. Blank history and activity fields retain the researched defaults. Coordinates and seasonal planning notes remain fixed.
 
 Only one published or scheduled entry can own a location. Draft changes stay private. To return to the original field guide, clear the map connection and publish. Existing entries are not connected or rewritten automatically during an upgrade.
 

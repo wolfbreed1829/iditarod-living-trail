@@ -72,6 +72,10 @@ The public browser check uses Chrome and covers 11 routes at desktop, tablet, an
 
 Run `node tests/trail-explorer.cjs` with the same `EDITORIAL_URL` to check all six places, shared seasonal state, regional pins, deep links, keyboard controls and mobile list/map browsing. This suite is read-only and writes screenshots and its report to `artifacts/explorer` unless `EDITORIAL_ARTIFACT_DIR` is set.
 
+Run `node tests/interiors.cjs` against the prepared review content to check the destination guides, magazine stories, Alliance history and searchable photo library at 1440, 768, 390 and 360 pixels. It also checks accessibility, image loading, distinct lead photographs, library filters and map links. `node tests/interiors-cms.cjs` uses the isolated local write-test configuration below to verify photo search, captions, story sequences, locator maps, private previews and publication. Reports go to `artifacts/interiors` or `EDITORIAL_ARTIFACT_DIR`.
+
+The collection is assembled from image manifests in `public/images/`, with original records, licenses and transformation notes. Historical material retains its dated or explicitly undated context. `public/interior-content.json` holds source-backed planning and historical material; `public/photo-selections.json` records the initial page selections. Seed updates apply only to a new installation. Existing content is preserved during server upgrades; editors select and publish photos through Trail Studio.
+
 For editor checks, start an **isolated** instance with `scripts/start-native-test.ps1`. Set `EDITORIAL_URL` to `http://localhost:3110`, `EDITORIAL_WRITE_TESTS` to `1`, and provide `TRAIL_TEST_LOGIN` and `TRAIL_TEST_PASSWORD` privately for that test account. Run `npm run test:editorial:cms`. The check refuses non-local hosts. It creates and archives a test story, verifies photo metadata, crops, preview, publication, private drafts and revisions, and restores the homepage draft after checking featured-story selection. The older proposal suite remains available as `test:legacy`; `test:cms` retains the original native API and role suite.
 
 ## Review boundaries
