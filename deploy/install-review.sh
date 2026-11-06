@@ -18,6 +18,11 @@ release_dir="/opt/living-trail/releases/$(date -u +%Y%m%dT%H%M%SZ)"
 install -d "$release_dir"
 tar -xzf "$release_archive" -C "$release_dir" --no-same-owner
 chmod 0755 "$release_dir/living-trail" "$release_dir/caddy"
+# Plain cargo SSR builds request _bg.wasm; cargo-leptos emits .wasm.
+# Both names refer to the identical browser module.
+if [[ -f "$release_dir/site/pkg/living-trail.wasm" && ! -e "$release_dir/site/pkg/living-trail_bg.wasm" ]]; then
+  ln -s living-trail.wasm "$release_dir/site/pkg/living-trail_bg.wasm"
+fi
 if [[ ! -f /var/lib/living-trail/trail.sqlite3 ]]; then
   tar -xzf "$data_archive" -C /var/lib/living-trail --no-same-owner
   chown -R livingtrail:livingtrail /var/lib/living-trail
