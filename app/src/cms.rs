@@ -198,7 +198,7 @@ pub fn ManagedExplore() -> impl IntoView {
             })
             .collect::<Vec<_>>()
     });
-    view!{<ManagedIntro slug="explore"/><section class="container section"><div class="filter-bar"><div class="filter-pills" role="group" aria-label="Filter by season">{["All","Summer","Winter"].into_iter().map(|s|view!{<button class:active=move||season.get()==s aria-pressed=move||(season.get()==s).to_string() on:click=move |_|season.set(s.into())>{if s=="All"{"All seasons"}else{s}}</button>}).collect_view()}</div><label class="region-select"><span class="sr-only">"Region"</span><select prop:value=move||region.get() on:change=move|e|region.set(event_target_value(&e))><option>"All regions"</option>{regions.into_iter().map(|r|view!{<option>{r}</option>}).collect_view()}</select></label><label class="search-field"><Icon name="search"/><span class="sr-only">"Search places"</span><input type="search" placeholder="Find a place or activity" prop:value=move||query.get() on:input=move|e|query.set(event_target_value(&e))/></label></div><p class="results-count" aria-live="polite">{move||format!("{} places to begin",filtered.get().len())}</p><div class="three-grid places-results">{move||filtered.get().into_iter().map(|item|view!{<ContentCard item/>}).collect_view()}</div><Show when=move||filtered.get().is_empty()><div class="empty-state"><h2>"A different path, perhaps?"</h2><p>"Try another season, region, or search."</p><button class="button button-green" on:click=move |_|{season.set("All".into());region.set("All regions".into());query.set(String::new());}>"Clear filters"</button></div></Show></section>}.into_any()
+    view!{<ManagedIntro slug="explore"/><crate::editorial::TrailAtlas/><section class="container section"><div class="filter-bar"><div class="filter-pills" role="group" aria-label="Filter by season">{["All","Summer","Winter"].into_iter().map(|s|view!{<button class:active=move||season.get()==s aria-pressed=move||(season.get()==s).to_string() on:click=move |_|season.set(s.into())>{if s=="All"{"All seasons"}else{s}}</button>}).collect_view()}</div><label class="region-select"><span class="sr-only">"Region"</span><select prop:value=move||region.get() on:change=move|e|region.set(event_target_value(&e))><option>"All regions"</option>{regions.into_iter().map(|r|view!{<option>{r}</option>}).collect_view()}</select></label><label class="search-field"><Icon name="search"/><span class="sr-only">"Search places"</span><input type="search" placeholder="Find a place or activity" prop:value=move||query.get() on:input=move|e|query.set(event_target_value(&e))/></label></div><p class="results-count" aria-live="polite">{move||format!("{} places to begin",filtered.get().len())}</p><div class="three-grid places-results">{move||filtered.get().into_iter().map(|item|view!{<ContentCard item/>}).collect_view()}</div><Show when=move||filtered.get().is_empty()><div class="empty-state"><h2>"A different path, perhaps?"</h2><p>"Try another season, region, or search."</p><button class="button button-green" on:click=move |_|{season.set("All".into());region.set("All regions".into());query.set(String::new());}>"Clear filters"</button></div></Show></section>}.into_any()
 }
 
 #[component]
@@ -211,6 +211,7 @@ pub fn ManagedStories() -> impl IntoView {
 
 #[component]
 pub fn Article(item: Content) -> impl IntoView {
+    if item.kind == "place" || item.kind == "story" { return view!{<crate::editorial::JournalArticle item/>}.into_any(); }
     let kind = item.kind.clone();
     let data = catalog().unwrap_or_default();
     let resource_url = if data.preview_id == Some(item.id) {
@@ -229,7 +230,7 @@ pub fn Article(item: Content) -> impl IntoView {
             {(kind=="event").then(||view!{<dl><div><dt>"Starts (UTC)"</dt><dd>{item.field("start")}</dd></div><div><dt>"Ends (UTC)"</dt><dd>{item.field("end")}</dd></div><div><dt>"Location"</dt><dd>{item.field("location")}</dd></div></dl>})}
             <a class="text-link" href=url("/resources")>"Visitor & learning resources"<Icon/></a>
         </aside></div>
-    }
+    }.into_any()
 }
 
 #[component]
@@ -315,7 +316,7 @@ pub fn CmsPreview() -> impl IntoView {
     let item = c.items.into_iter().find(|i| Some(i.id) == c.preview_id);
     view! {<Meta name="robots" content="noindex, nofollow"/><div class="cms-preview-banner">"PRIVATE DRAFT PREVIEW · Your public website has not changed."</div>{match item {
         Some(i) if i.kind=="page"=>match i.slug.as_str(){
-            "home"=>view!{<pages::Home/>}.into_any(),"explore"=>view!{<ManagedExplore/>}.into_any(),"stories"=>view!{<ManagedStories/>}.into_any(),"resources"=>view!{<ManagedResources/>}.into_any(),"get-involved"=>view!{<ManagedSupport/>}.into_any(),"store"=>view!{<pages::Store/>}.into_any(),_=>view!{<Article item=i/>}.into_any()},
+            "home"=>view!{<crate::editorial::EditorialHome/>}.into_any(),"explore"=>view!{<ManagedExplore/>}.into_any(),"stories"=>view!{<ManagedStories/>}.into_any(),"resources"=>view!{<ManagedResources/>}.into_any(),"get-involved"=>view!{<ManagedSupport/>}.into_any(),"store"=>view!{<pages::Store/>}.into_any(),_=>view!{<Article item=i/>}.into_any()},
         Some(i)=>view!{<Article item=i/>}.into_any(),None=>view!{<Missing/>}.into_any(),
     }}}
 }

@@ -30,6 +30,6 @@ jobs:
       - name: Compile Leptos browser application
         run: cargo +1.94.1 check --locked --target wasm32-unknown-unknown --no-default-features --features hydrate
       - name: Validate server installation script
-        run: bash -n ../deploy/install-review.sh
+        run: bash -n ../deploy/install-review.sh ../deploy/upgrade-review.sh
       - name: Verify live SQLite backup archive
         run: python3 -m unittest discover -s ../deploy -p 'test_*.py'

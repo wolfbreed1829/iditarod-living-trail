@@ -1,0 +1,31 @@
+{
+  "verified_on": "2026-11-06",
+  "official_website": "https://www.iditarod100.org/",
+  "logo": {
+    "file": "/images/editorial/alliance-official-logo.png",
+    "source_page": "https://www.iditarod100.org/",
+    "download_url": "https://www.iditarod100.org/uploads/5/2/4/5/52459009/1431184159.png",
+    "dimensions": [
+      928,
+      108
+    ],
+    "bytes": 106216,
+    "description": "Official horizontal burgundy banner with the Iditarod National Historic Trail badge, Alliance name, and circular tripod emblem.",
+    "rights": "Official Alliance identity asset; not licensed as public domain or Creative Commons. Preserve the mark and use only to identify the Alliance in this proposed website.",
+    "changes": "None."
+  },
+  "public_destinations": {
+    "support": "https://www.iditarod100.org/support-us.html",
+    "donation_link_on_support_page": "https://square.link/u/DxkZlEIO?src=embed",
+    "store": "https://www.iditarod100.org/store.html",
+    "newsletters": "https://www.iditarod100.org/newsletters.html",
+    "newsletter_archive": "https://www.iditarod100.org/newsletter-archive.html"
+  },
+  "notes": [
+    "Public links are research references only; no payment, store, or mailing-list integration was configured.",
+    "The official newsletter page describes The Tripod as the IHTA member newsletter and provides PDF issues; a standalone public email signup destination was not found.",
+    "The official store is served on the existing Weebly site.",
+    "The /donate.html and /membership.html paths return 404 and should not be used.",
+    "The existing /images/summer.webp source (https://www.flickr.com/photos/alaska_region/29533359703/) describes Meares Glacier and Unakwik Inlet in Prince William Sound; do not caption it as a specific Iditarod Trail section."
+  ]
+}

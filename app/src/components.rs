@@ -31,7 +31,7 @@ pub fn Icon(#[prop(default = "arrow")] name: &'static str) -> impl IntoView {
 pub fn Brand() -> impl IntoView {
     view! {<a class="brand" href=url("/") aria-label="Iditarod Historic Trail Alliance home">
         <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="29" stroke="currentColor" stroke-width="1"/><path d="M10 39 25 17 35 31 42 22 55 40M22 40l9-13 9 13M30 45l-6 5 9 5" stroke="currentColor" stroke-width="1.5"/><path d="m24 18 2 9 5-3M41 23l2 9 5-2" stroke="currentColor" stroke-width="1"/></svg>
-        <span><strong>"IDITAROD"</strong><span>"HISTORIC TRAIL ALLIANCE"</span></span>
+        <span><strong>"IDITAROD"</strong>" "<span>"HISTORIC TRAIL ALLIANCE"</span></span>
     </a>}
 }
 
@@ -45,7 +45,7 @@ pub fn Header() -> impl IntoView {
         open.set(false);
     });
     view! {
-        <div class="preview-strip"><span>"A new chapter for a historic trail"</span><a href=url("/preview")>"Explore the design preview"<span aria-hidden="true">" ↗"</span></a></div>
+        <div class="trail-masthead" role="region" aria-label="Trail information"><span>"ALASKA?S IDITAROD NATIONAL HISTORIC TRAIL"</span><a href=url("/about")>"A living legacy, since 1978"<Icon name="external"/></a></div>
         <header class="site-header" on:keydown=move |ev| {if ev.key() == "Escape" {open.set(false)}}>
             <div class="header-inner"><Brand/>
                 <nav id="main-nav" class:open=move || open.get() aria-label="Main navigation">
@@ -121,9 +121,9 @@ pub fn Footer() -> impl IntoView {
         <div class="footer-grid"><div><Brand/><p class="footer-mission">"Connecting people to the history, landscapes, and living communities of the Iditarod National Historic Trail."</p></div>
             <div><p class="footer-label">"FIND YOUR TRAIL"</p><a href=url("/explore")>"Plan a trip"</a><a href=url("/stories")>"Stories & history"</a><a href=url("/resources")>"For educators & explorers"</a><a href=url("/store")>"Trail shop"</a></div>
             <div><p class="footer-label">"MAKE A CONNECTION"</p><a href=url("/about")>"About the Alliance"</a><a href=url("/get-involved")>"Membership & giving"</a><a href=url("/get-involved#volunteer")>"Volunteer"</a><a href="https://www.iditarod100.org/contact-us.html" target="_blank" rel="noopener noreferrer">"Contact the Alliance ↗"</a></div>
-            <div class="footer-note"><span class="compass" aria-hidden="true">"✳"</span><p>"A trail for all seasons."<br/>"A legacy for everyone."</p><a href=url("/preview") class="text-link">"About this preview"<Icon/></a></div>
+            <div class="footer-note"><span class="compass" aria-hidden="true">"✳"</span><p>"A trail for all seasons."<br/>"A legacy for everyone."</p><a href=url("/about") class="text-link">"The story of the Alliance"<Icon/></a></div>
         </div>
-        <div class="footer-bottom"><span>"Independent design preview · 2026"</span><span>"Seward to Nome. Then, now, and always."</span><a href=url("/credits")>"Photo credits & sources"</a></div>
+        <div class="footer-bottom"><span>"Iditarod Historic Trail Alliance"</span><span>"Seward to Nome. Then, now, and always."</span><a href=url("/credits")>"Photo credits & sources"</a></div>
     </div></footer>}
 }
 

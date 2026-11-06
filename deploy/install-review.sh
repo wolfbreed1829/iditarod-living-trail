@@ -69,7 +69,7 @@ $hostname {
   header X-Robots-Tag "noindex, nofollow"
   header Referrer-Policy "no-referrer"
   header X-Content-Type-Options "nosniff"
-  @assets path /pkg/* /images/* /fonts/* /cms.css /studio.css /studio-native.css /favicon.svg
+  @assets path /design/* /maps/* /pkg/* /images/* /fonts/* /cms.css /studio.css /studio-native.css /favicon.svg
   handle @assets {
     root * /opt/living-trail/current/site
     header Cache-Control "public, max-age=0, must-revalidate"
