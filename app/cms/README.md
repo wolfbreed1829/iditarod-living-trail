@@ -88,6 +88,12 @@ The separate **Service shortcuts** section holds staff dashboard links. Those ad
 
 ## Photo presentation
 
-The editor offers a collection of 13 credited trail photographs. Choosing one fills its description and credit. Uploaded photos are also available; add their descriptions and credits before publishing. Use **Horizontal focus** and **Vertical focus** to keep the important part in the crop. These controls change presentation only and leave the source image untouched. Stories, places, and the Alliance page also offer a taller feature photograph. The homepage has independent summer focus controls.
+The editor offers a collection of 17 credited trail photographs. Choosing one fills its description and credit. Uploaded photos are also available; add their descriptions and credits before publishing. Use **Horizontal focus** and **Vertical focus** to keep the important part in the crop. These controls change presentation only and leave the source image untouched. Stories, places, and the Alliance page also offer a taller feature photograph. The homepage has independent summer focus controls.
+
+### Editing a mapped place
+
+In a place editor, **Trail explorer → Place on the map** connects that entry to one of six verified locations. Publishing uses the entry's introduction and photo in the homepage and Explore map. Add **Explorer history**, its source, a dated **Explorer photo caption**, and separate **Summer ideas** / **Winter ideas** (one activity per line, up to six). **Visitor information address** provides the planning link. Blank history and activity fields retain the researched defaults. Coordinates and seasonal planning notes remain fixed.
+
+Only one published or scheduled entry can own a location. Draft changes stay private. To return to the original field guide, clear the map connection and publish. Existing entries are not connected or rewritten automatically during an upgrade.
 
 The same saved focus is used in the public feature image and content cards. The editor crop is a composition aid; **Preview** shows the actual responsive page. Changes autosave privately and only become public when published. The homepage featured story selection controls the lead story in the trail journal.

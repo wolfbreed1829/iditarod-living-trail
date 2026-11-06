@@ -66,7 +66,8 @@ pub fn Reveal(children: Children) -> impl IntoView {
 
 #[component]
 pub fn SeasonalHero(paused: RwSignal<bool>) -> impl IntoView {
-    let summer = RwSignal::new(false);
+    let trail=crate::explorer::trail_state();
+    let summer = Memo::new(move |_|trail.season.get()==crate::explorer::Season::Summer);
     let content = crate::cms::page("home");
     let title = content
         .as_ref()
@@ -149,8 +150,8 @@ pub fn SeasonalHero(paused: RwSignal<bool>) -> impl IntoView {
                     <span class="reduced-motion-note">"Reduced motion"</span>
                     <div class="season-switch" role="group" aria-label="Landscape season">
                         <span class="season-indicator" aria-hidden="true"/>
-                        <button class:active=move || !summer.get() aria-pressed=move || (!summer.get()).to_string() on:click=move |_|summer.set(false)><Icon name="snow"/>"Winter"</button>
-                        <button class:active=move || summer.get() aria-pressed=move || summer.get().to_string() on:click=move |_|summer.set(true)><Icon name="sun"/>"Summer"</button>
+                        <button class:active=move || !summer.get() aria-pressed=move || (!summer.get()).to_string() on:click=move |_|trail.season.set(crate::explorer::Season::Winter)><Icon name="snow"/>"Winter"</button>
+                        <button class:active=move || summer.get() aria-pressed=move || summer.get().to_string() on:click=move |_|trail.season.set(crate::explorer::Season::Summer)><Icon name="sun"/>"Summer"</button>
                     </div>
                 </div>
             </div>

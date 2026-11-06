@@ -18,7 +18,9 @@ The project includes **Trail Studio**, a native Rust/Leptos CMS backed by SQLite
 
 ## Motion and interactive journey
 
-The homepage uses seasonal photographs, gentle ambient motion, and a Winter/Summer selector. Four keyboard-accessible chapter controls update a geographic historic-trail explorer. Its BLM main-route alignment and Natural Earth coastline are for orientation, not navigation or current conditions. Source notes and photograph attribution are available at `/credits`.
+The homepage leads into a six-place geographic field guide: Seward, Crow Pass, Knik, Iditarod, Unalakleet and Nome. The custom Alaska Albers map combines the BLM main historic alignment with Natural Earth coastlines, rivers and graticule. Nearby Southcentral places expand into a regional view. Keyboard controls, a mobile list/map switch, authentic photography, sourced history and seasonal ideas make every place browsable. This is an orientation map, not navigation or current conditions. Source notes and photograph attribution are available at `/credits`.
+
+The hero and explorer share a Winter/Summer selection, including the published experience filters on `/explore`. Links such as `/explore?place=crow-pass&season=summer#trail-atlas` restore the selected place and season. Default place content lives in `public/maps/explorer-places.json`; editors can override it through the place editor's **Trail explorer** section. Geographic coordinates and planning guidance stay fixed. The reproducible basemap builder and provenance are alongside the JSON.
 
 The hero's Pause motion button stops ambient motion and removes animated transitions while keeping every control functional. The operating system's reduced-motion setting disables animation automatically. Server-rendered content remains readable without JavaScript. Intersection observers are owned and disconnected by their Leptos components, including when navigating away. No animation framework or video download is required; see `src/motion.rs` and the motion section of `style/main.css`.
 
@@ -67,6 +69,8 @@ npm test
 ```
 
 The public browser check uses Chrome and covers 11 routes at desktop, tablet, and phone widths, image loading, overflow, axe audits, resource search, map chapters, seasonal controls, and mobile navigation. It can inspect the Azure URL without changing content. Reports go to `artifacts/editorial`, or `EDITORIAL_ARTIFACT_DIR` if set. Automated checks do not certify full WCAG conformance.
+
+Run `node tests/trail-explorer.cjs` with the same `EDITORIAL_URL` to check all six places, shared seasonal state, regional pins, deep links, keyboard controls and mobile list/map browsing. This suite is read-only and writes screenshots and its report to `artifacts/explorer` unless `EDITORIAL_ARTIFACT_DIR` is set.
 
 For editor checks, start an **isolated** instance with `scripts/start-native-test.ps1`. Set `EDITORIAL_URL` to `http://localhost:3110`, `EDITORIAL_WRITE_TESTS` to `1`, and provide `TRAIL_TEST_LOGIN` and `TRAIL_TEST_PASSWORD` privately for that test account. Run `npm run test:editorial:cms`. The check refuses non-local hosts. It creates and archives a test story, verifies photo metadata, crops, preview, publication, private drafts and revisions, and restores the homepage draft after checking featured-story selection. The older proposal suite remains available as `test:legacy`; `test:cms` retains the original native API and role suite.
 

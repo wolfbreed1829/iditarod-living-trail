@@ -1,0 +1,44 @@
+[
+  {
+    "id":"seward","name":"Seward","region":"Resurrection Bay","subtitle":"Where a thousand stories begin.","x":699.39,"y":583.55,"latitude":60.104168,"longitude":-149.442245,
+    "image":"/images/editorial/seward-harbor.webp","thumbnail":"/images/editorial/seward-harbor-small.webp","alt":"Boats and mountain scenery at Seward Small Boat Harbour","credit":"Mark Nenadov / CC BY 4.0","caption":"Seward Small Boat Harbour, August 2025.",
+    "history":"Seward became a winter port for the Iditarod gold fields, sending mail, supplies, and travelers inland. Today the waterfront marks Mile Zero of the National Historic Trail.","history_url":"https://www.iditarod100.org/seward.html","page":"/places/seward",
+    "summer":{"label":"Coastal discovery","activities":["Mile Zero walking tour","Waterfront photography"],"note":"Begin with the waterfront and the trail's Mile Zero history. Allow time to explore the town, and check local access before setting out.","url":"https://www.iditarod100.org/seward.html","link_label":"Mile Zero & Seward history"},
+    "winter":{"label":"A winter gateway","activities":["Town-based heritage","Winter photography"],"note":"Start with Seward's trail history. Snow, ice, and opening hours can change the day; check local conditions before a waterfront walk.","url":"https://www.iditarod100.org/plan-your-trip.html","link_label":"Plan a winter visit"}
+  },
+  {
+    "id":"crow-pass","name":"Crow Pass","region":"Chugach Mountains","subtitle":"Follow history into the high country.","x":705.91,"y":514.21,"latitude":61.060280,"longitude":-149.116134,
+    "image":"/images/explorer/crow-pass-valley.webp","thumbnail":"/images/explorer/crow-pass-valley-small.webp","alt":"Alpine landscape in Crow Pass Valley, Alaska","credit":"National Park Service, Alaska Region / CC BY 2.0","caption":"Crow Pass Valley, July 2017.",
+    "history":"The Crow Pass trail follows part of the historic Iditarod corridor through the Chugach Mountains, connecting the Girdwood and Eagle River sides of the range.","history_url":"https://dnr.alaska.gov/parks/maps/crowpasstrailguide.pdf","page":"/places/chugach",
+    "summer":{"label":"Summer hiking","activities":["Alpine hiking","Wildlife watching"],"note":"Plan with the official trail guide. Snow can linger; weather, river crossings, and the length of your chosen route require preparation.","url":"https://dnr.alaska.gov/parks/maps/crowpasstrailguide.pdf","link_label":"Official Crow Pass trail guide"},
+    "winter":{"label":"Plan for summer","activities":["Explore the trail guide","Plan a summer hike"],"note":"This is a summer hiking suggestion. Winter and spring avalanche exposure makes the pass unsuitable for a casual winter walk.","url":"https://www.adfg.alaska.gov/index.cfm?adfg=viewinglocations.crowpasstrail","link_label":"Seasonal guidance from Alaska Fish & Game"}
+  },
+  {
+    "id":"knik","name":"Knik","region":"Upper Cook Inlet","subtitle":"A townsite with a trail-sized story.","x":682.98,"y":487.16,"latitude":61.457779,"longitude":-149.728912,
+    "image":"/images/explorer/knik-townsite-cabin.webp","thumbnail":"/images/explorer/knik-townsite-cabin-small.webp","alt":"A cabin at the historic Knik townsite, Alaska","credit":"Cherime MacFarlane / CC BY-SA 3.0","caption":"Historic Knik townsite cabin, September 2014.",
+    "history":"Knik's history reaches beyond its gold-rush years. The community grew as an Upper Cook Inlet trading and supply center, connected to winter routes leading into the Interior.","history_url":"https://www.iditarod100.org/knik.html","page":"/stories/a-living-connection",
+    "summer":{"label":"Heritage discovery","activities":["Townsite history","Historic photography"],"note":"Explore the story of the historic townsite. Confirm local access and seasonal opening hours before visiting heritage sites.","url":"https://www.iditarod100.org/knik.html","link_label":"Discover historic Knik"},
+    "winter":{"label":"Winter trail stories","activities":["Winter travel history","Historic maps"],"note":"Discover the people and winter journeys connected with Knik. Historic routes cross different landowners; this map does not establish public access.","url":"https://www.iditarod100.org/plan-your-trip.html","link_label":"Winter planning resources"}
+  },
+  {
+    "id":"iditarod","name":"Iditarod","region":"Interior Alaska","subtitle":"A name carried far beyond a town.","x":402.84,"y":409.63,"latitude":62.544445,"longitude":-158.095301,
+    "image":"/images/explorer/iditarod-first-street-1910.webp","thumbnail":"/images/explorer/iditarod-first-street-1910-small.webp","alt":"Historical photograph of First Street in Iditarod on July 20, 1910","credit":"C. W. Felch / UW Libraries, Special Collections","caption":"From the archive: First Street, July 20, 1910.",
+    "history":"The Iditarod gold rush helped drive a network of winter supply routes into the Interior. This 1910 photograph captures the town during that early boom; it is not a view of the site today.","history_url":"https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod","page":"/stories/a-living-connection",
+    "summer":{"label":"Explore from the archive","activities":["Archival photography","Historic trail research"],"note":"Explore this remote historic place through photographs and documents. This entry is an invitation to learn, not a suggested summer walking route.","url":"https://www.arlis.org/collections/iditarod-historic-trail/","link_label":"Open the historic trail collections"},
+    "winter":{"label":"The winter supply trail","activities":["Winter journey stories","Historic trail maps"],"note":"Follow the stories of winter travel and supply. Any travel to this remote historic site requires independent planning and current local knowledge.","url":"https://www.arlis.org/collections/iditarod-historic-trail/","link_label":"Explore maps & trail history"}
+  },
+  {
+    "id":"unalakleet","name":"Unalakleet","region":"Norton Sound","subtitle":"Where inland journeys meet the sea.","x":324.26,"y":307.53,"latitude":63.873055,"longitude":-160.788080,
+    "image":"/images/explorer/unalakleet-aerial.webp","thumbnail":"/images/explorer/unalakleet-aerial-small.webp","alt":"Aerial photograph of Unalakleet village at the river mouth on Norton Sound","credit":"Dr. John Cloud / NOAA Central Library","caption":"Unalakleet village and river mouth, August 2010.",
+    "history":"Unalakleet has long connected coastal communities with the Yukon River through the Kaltag Portage. Its trading history is part of a living community story that predates the gold rush.","history_url":"https://www.iditarod100.org/unalakleet.html","page":"/stories/a-living-connection",
+    "summer":{"label":"Community & coast","activities":["Community history","Coastal discovery"],"note":"Begin with the community's story and seek local guidance for a visit. Respect private land, community spaces, and subsistence activities.","url":"https://www.iditarod100.org/unalakleet.html","link_label":"Read Unalakleet's history"},
+    "winter":{"label":"A living winter connection","activities":["Kaltag Portage history","Community trail stories"],"note":"Discover how winter travel connects the coast and Interior. The shoreline and river are not presented here as safe travel routes; seek current local advice.","url":"https://www.iditarod100.org/plan-your-trip.html","link_label":"Plan with local knowledge"}
+  },
+  {
+    "id":"nome","name":"Nome","region":"Bering Sea coast","subtitle":"The journey becomes a legacy.","x":188.01,"y":243.34,"latitude":64.501110,"longitude":-165.406413,
+    "image":"/images/editorial/nome-bering-sea.webp","thumbnail":"/images/editorial/nome-bering-sea-small.webp","alt":"Bering Sea shoreline at Nome, Alaska, with offshore sea ice","credit":"ra64 / CC BY-SA 2.0","caption":"Nome's Bering Sea shoreline, June 2006.",
+    "history":"Nome is the northern gateway of the National Historic Trail. Its gold-rush history sits within a much longer story of Alaska Native life on the Seward Peninsula.","history_url":"https://www.iditarod100.org/nome.html","page":"/stories",
+    "summer":{"label":"Coast & cultural heritage","activities":["Museum discovery","Coastal photography"],"note":"Explore the city's heritage and Bering Sea setting. Check museum information and local guidance when planning time in town.","url":"https://www.nomealaska.org/Facilities/Facility/Details/Carrie-McLain-Memorial-Museum-5","link_label":"Carrie McLain Memorial Museum"},
+    "winter":{"label":"Stories at the trail's end","activities":["Museum discovery","Winter trail heritage"],"note":"Explore the stories of Nome and winter travel through the museum and community resources. Confirm opening hours and current conditions locally.","url":"https://www.nomealaska.org/Facilities/Facility/Details/Carrie-McLain-Memorial-Museum-5","link_label":"Plan a museum visit"}
+  }
+]

@@ -6,6 +6,7 @@ pub mod components;
 pub mod data;
 pub mod editorial;
 pub mod editorial_pages;
+pub mod explorer;
 pub mod motion;
 pub mod pages;
 pub mod paths;

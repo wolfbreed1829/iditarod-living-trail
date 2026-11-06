@@ -12,7 +12,8 @@ fn collection() -> Vec<Photo> {
         Photo{file:"/images/dogs.webp".into(),name:"Sled dogs".into(),alt:"A sled dog team resting in the snow".into(),credit:"Bob Wick / Bureau of Land Management".into()},
         Photo{file:"/images/waterfront.webp".into(),name:"Resurrection Bay".into(),alt:"Resurrection Bay seen from Seward".into(),credit:"NPS / Max Odland".into()},
     ];
-    let editorial:Vec<serde_json::Value>=serde_json::from_str(include_str!("../public/images/editorial/manifest.json")).unwrap_or_default();
+    let mut editorial:Vec<serde_json::Value>=serde_json::from_str(include_str!("../public/images/editorial/manifest.json")).unwrap_or_default();
+    editorial.extend(serde_json::from_str::<Vec<serde_json::Value>>(include_str!("../public/images/explorer/manifest.json")).unwrap_or_default());
     photos.extend(editorial.into_iter().map(|p|{let f=|k:&str|p[k].as_str().unwrap_or_default().to_owned();Photo{file:f("file"),name:f("caption"),alt:f("alt"),credit:f("credit")}}));photos
 }
 

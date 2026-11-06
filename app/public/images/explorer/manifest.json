@@ -1,0 +1,127 @@
+[
+  {
+    "name": "crow-pass-valley",
+    "source": "https://commons.wikimedia.org/wiki/File:Crow_Pass_Valley_-_MK_(39629889905).jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Crow_Pass_Valley_-_MK_%2839629889905%29.jpg",
+    "original_dimensions": [
+      3264,
+      2448
+    ],
+    "dimensions": [
+      1200,
+      900
+    ],
+    "file": "/images/explorer/crow-pass-valley.webp",
+    "small_file": "/images/explorer/crow-pass-valley-small.webp",
+    "bytes": 160396,
+    "small_dimensions": [
+      600,
+      450
+    ],
+    "small_bytes": 39842,
+    "credit": "National Park Service, Alaska Region",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "caption": "Crow Pass Valley, Alaska, July 15, 2017.",
+    "alt": "A rocky alpine valley at Crow Pass with green mountain slopes, low clouds, and glacier ice at the right.",
+    "changes": "Resized and converted to WebP; no crop or subject alteration.",
+    "original_source": "https://www.flickr.com/photos/alaskanps/39629889905/",
+    "rights_evidence": "Wikimedia Commons records the National Park Service Alaska Region Flickr source and a CC BY 2.0 verification on September 26, 2021.",
+    "recommended_use": "Crow Pass geographic explorer stop; the photographed valley is explicitly identified as Crow Pass by the source."
+  },
+  {
+    "name": "knik-townsite-cabin",
+    "source": "https://commons.wikimedia.org/wiki/File:Knik_town_site_cabin.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Knik_town_site_cabin.jpg",
+    "original_dimensions": [
+      5152,
+      3864
+    ],
+    "dimensions": [
+      1200,
+      900
+    ],
+    "file": "/images/explorer/knik-townsite-cabin.webp",
+    "small_file": "/images/explorer/knik-townsite-cabin-small.webp",
+    "bytes": 295130,
+    "small_dimensions": [
+      600,
+      450
+    ],
+    "small_bytes": 76720,
+    "credit": "Cherime MacFarlane",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "caption": "Cabin at the historic Knik townsite, Alaska, September 27, 2014.",
+    "alt": "A low log cabin with a white door stands among birch trees at the historic Knik townsite.",
+    "changes": "Resized and converted to WebP; no crop or subject alteration. These image derivatives are distributed under CC BY-SA 3.0.",
+    "rights_evidence": "The photographer uploaded the image as their own work and explicitly granted CC BY-SA 3.0 on the source page.",
+    "recommended_use": "Knik geographic explorer stop. This is Knik Site, not Knik River. The source locates the camera at 61.458056, -149.728056 and identifies National Register reference 73000379."
+  },
+  {
+    "name": "unalakleet-aerial",
+    "source": "https://commons.wikimedia.org/wiki/File:Unalakleet_aerial_2010.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Unalakleet_aerial_2010.jpg",
+    "original_dimensions": [
+      5184,
+      3456
+    ],
+    "dimensions": [
+      1200,
+      650
+    ],
+    "file": "/images/explorer/unalakleet-aerial.webp",
+    "small_file": "/images/explorer/unalakleet-aerial-small.webp",
+    "bytes": 66438,
+    "small_dimensions": [
+      600,
+      325
+    ],
+    "small_bytes": 18860,
+    "crop_box": [
+      0,
+      650,
+      5184,
+      3456
+    ],
+    "credit": "Dr. John Cloud / NOAA Central Library",
+    "license": "Public domain (United States)",
+    "license_url": "https://commons.wikimedia.org/wiki/File:Unalakleet_aerial_2010.jpg#Licensing",
+    "caption": "Unalakleet village and river mouth, Alaska, August 2010.",
+    "alt": "An aerial view of Unalakleet houses beside the river mouth, with winding waterways and green coastal flats beyond.",
+    "changes": "Cropped the upper 650 pixels from the original 5184 by 3456 image to remove the airplane wing and excess sky, then resized and converted to WebP; no subject alteration.",
+    "original_source": "https://www.photolib.noaa.gov/brs/clind108.htm",
+    "rights_evidence": "NOAA America’s Coastlines Collection image line5221, credited to Dr. John Cloud, NOAA Central Library; Commons identifies it as an official-duty US NOAA work in the public domain.",
+    "recommended_use": "Unalakleet geographic explorer stop; photograph date is August 2010, not the 2012 Commons upload date."
+  },
+  {
+    "name": "iditarod-first-street-1910",
+    "source": "https://commons.wikimedia.org/wiki/File:First_Street,_Iditarod,_July_20,_1910_(AL%2BCA_1147).jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/First_Street%2C_Iditarod%2C_July_20%2C_1910_%28AL%2BCA_1147%29.jpg",
+    "original_dimensions": [
+      768,
+      470
+    ],
+    "dimensions": [
+      768,
+      470
+    ],
+    "file": "/images/explorer/iditarod-first-street-1910.webp",
+    "small_file": "/images/explorer/iditarod-first-street-1910-small.webp",
+    "bytes": 29950,
+    "small_dimensions": [
+      600,
+      367
+    ],
+    "small_bytes": 18534,
+    "credit": "C. W. Felch / University of Washington Libraries, Special Collections, PH Coll 334.Flech7",
+    "license": "Public domain (United States)",
+    "license_url": "https://commons.wikimedia.org/wiki/File:First_Street,_Iditarod,_July_20,_1910_(AL%2BCA_1147).jpg#Summary",
+    "caption": "First Street in Iditarod, Alaska, July 20, 1910. Historical photograph.",
+    "alt": "A black-and-white historical photograph of a broad dirt street, tents, and wooden buildings in Iditarod in July 1910.",
+    "changes": "Converted to WebP and created a smaller version; no additional crop or subject alteration. The Commons source scan had previously been cropped along its border.",
+    "original_source": "https://digitalcollections.lib.washington.edu/digital/collection/alaskawcanada/id/1147",
+    "rights_evidence": "The image bears its photographer, place, date, and a 1910 copyright statement; Commons marks the US-published photograph as public domain due to copyright expiration.",
+    "recommended_use": "Iditarod historic-town explorer stop; always display the July 1910 date. Original is 768px wide and has not been upscaled."
+  }
+]
