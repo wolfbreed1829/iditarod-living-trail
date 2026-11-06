@@ -128,7 +128,7 @@ fn clean(d: &mut Draft) -> Result<()> {
         if k.len() > 60 || v.len() > 4000 {
             return Err("A field is too long.".into());
         }
-        if ["image", "summer_image", "url", "button_url"].contains(&k.as_str()) && !valid_url(v) {
+        if ["image", "summer_image", "url", "button_url", "history_url"].contains(&k.as_str()) && !valid_url(v) {
             return Err(format!(
                 "Use a complete http(s) address or a path beginning with / for {k}."
             ));
@@ -139,6 +139,9 @@ fn clean(d: &mut Draft) -> Result<()> {
         }
         if k == "image_layout" && !["", "wide", "tall"].contains(&v.as_str()) {
             return Err("Choose a wide or tall photo layout.".into());
+        }
+        if k == "map_stop" && !v.is_empty() && !crate::explorer::STOPS.iter().any(|(id,_)|*id==v) {
+            return Err("Choose a verified place on the trail map.".into());
         }
     }
     Ok(())
@@ -517,6 +520,10 @@ impl Store {
                     return Err("Only an editor can publish or schedule content.".into());
                 }
                 ready(&d, &i.content.kind)?;
+                let map_stop=d.field("map_stop");
+                if i.content.kind=="place" && !map_stop.is_empty() && all_items(&db)?.iter().any(|other|other.content.id!=id && other.content.kind=="place" && ((other.status=="publish" && other.content.field("map_stop")==map_stop) || other.schedule.as_ref().is_some_and(|s|s.content.field("map_stop")==map_stop))) {
+                    return Err("Another published or scheduled place already uses this map location. Remove that connection first.".into());
+                }
                 if c.action == "schedule" {
                     let at = c.at.ok_or("Choose a publication time.")?;
                     let dt = DateTime::parse_from_rfc3339(&at)
@@ -834,6 +841,21 @@ mod tests {
             at: None,
             revision: None,
         }
+    }
+    #[test]
+    fn explorer_overrides_are_private_until_published_and_locations_are_unique() {
+        let (_lock,s,u)=setup();let first=s.create(&u,"place").unwrap();
+        let mut d=draft("Nome field guide");d.slug="nome-field-guide".into();d.fields.insert("map_stop".into(),"nome".into());d.fields.insert("trail_history".into(),"Reviewed history".into());
+        let saved=s.change(&u,first.content.id,change(first.version,"save",d.clone())).unwrap();
+        assert!(!s.public(None).unwrap().items.iter().any(|p|p.field("map_stop")=="nome"));
+        let published=s.change(&u,first.content.id,change(saved.version,"publish",d.clone())).unwrap();
+        let stops=crate::explorer::stops_with_content(s.public(None).unwrap().items);
+        assert_eq!(stops[5].history,"Reviewed history");
+        let second=s.create(&u,"place").unwrap();d.slug="second-nome-guide".into();
+        assert!(s.change(&u,second.content.id,change(second.version,"publish",d.clone())).unwrap_err().contains("already uses this map location"));
+        d.fields.insert("map_stop".into(),"invented-location".into());
+        assert!(s.change(&u,second.content.id,change(second.version,"save",d)).unwrap_err().contains("verified place"));
+        assert_eq!(published.content.field("map_stop"),"nome");
     }
     #[test]
     fn photo_presentation_is_validated_and_previewed_without_publishing() {

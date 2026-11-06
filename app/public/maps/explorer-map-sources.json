@@ -1,0 +1,188 @@
+{
+  "retrieved": "2026-11-06",
+  "file": "explorer-base.svg",
+  "viewBox": "0 0 900 700",
+  "purpose": "Decorative geographic base for the interactive six-place explorer. Site code owns all place pins and interactive labels.",
+  "sourceGeometry": {
+    "coastline": "Exact unchanged path strings from trail-orientation.svg",
+    "historicRoute": "Exact unchanged path string from trail-orientation.svg",
+    "sourceFileSha256": {
+      "trail-orientation.svg": "6bfea8ff8272d912892d9ba936fdd147bab5ae427e7f1a3187de02fe3f4b9b2e",
+      "map-sources.json": "66b8aae76d79a0aad4d5ba4adfccf3c497c9150561397b194b7e391d46fdcb7f"
+    }
+  },
+  "projection": "Spherical Alaska Albers equal-area; standard parallels 55/65; central meridian -154; latitude origin 50; R=6371008.8m",
+  "transform": {
+    "scale": 0.000643805620615412,
+    "xOffset": 537.5127201380501,
+    "yOffset": 1311.8732269822196,
+    "formula": "svgX=projectedX*scale+xOffset; svgY=-projectedY*scale+yOffset"
+  },
+  "pinCoordinates": "Use map-sources.json views.trail-orientation.pins without changes.",
+  "styling": {
+    "method": "All colors are SVG presentation attributes, which application CSS class rules can override. No inline style attributes or external resources.",
+    "classes": [
+      "explorer-map-base",
+      "explorer-land",
+      "explorer-water",
+      "explorer-river",
+      "explorer-route",
+      "explorer-route-casing",
+      "explorer-grid",
+      "explorer-water-label",
+      "explorer-land-label"
+    ]
+  },
+  "graticule": {
+    "meridianIntervalDegrees": 5,
+    "parallelIntervalDegrees": 2,
+    "projection": "Same Albers transform as map and pins"
+  },
+  "rivers": [
+    {
+      "name": "Copper",
+      "featureClass": "River",
+      "sourceScaleRank": 6,
+      "vertices": 33
+    },
+    {
+      "name": "Koyukuk",
+      "featureClass": "River",
+      "sourceScaleRank": 6,
+      "vertices": 110
+    },
+    {
+      "name": "Kuskokwim",
+      "featureClass": "River",
+      "sourceScaleRank": 6,
+      "vertices": 79
+    },
+    {
+      "name": "N. Fork Kuskokwim",
+      "featureClass": "River",
+      "sourceScaleRank": 6,
+      "vertices": 19
+    },
+    {
+      "name": "Porcupine",
+      "featureClass": "River",
+      "sourceScaleRank": 6,
+      "vertices": 107
+    },
+    {
+      "name": "Susitna",
+      "featureClass": "River",
+      "sourceScaleRank": 6,
+      "vertices": 39
+    },
+    {
+      "name": "Tanana",
+      "featureClass": "River",
+      "sourceScaleRank": 6,
+      "vertices": 101
+    },
+    {
+      "name": "Yukon",
+      "featureClass": "River",
+      "sourceScaleRank": 3,
+      "vertices": 321
+    }
+  ],
+  "waterLabels": [
+    {
+      "text": "Bering Sea",
+      "longitude": -167.4,
+      "latitude": 61.8,
+      "size": 19,
+      "rotation": -8,
+      "x": 88.84,
+      "y": 421.84,
+      "anchorWithinSourceMarinePolygon": true
+    },
+    {
+      "text": "Norton Sound",
+      "longitude": -163.3,
+      "latitude": 63.95,
+      "size": 15,
+      "rotation": 0,
+      "x": 246.56,
+      "y": 292.52,
+      "anchorWithinSourceMarinePolygon": true
+    },
+    {
+      "text": "Gulf of Alaska",
+      "longitude": -146.9,
+      "latitude": 59.15,
+      "size": 18,
+      "rotation": 0,
+      "x": 796.72,
+      "y": 643.8,
+      "anchorWithinSourceMarinePolygon": true
+    }
+  ],
+  "landLabels": [
+    {
+      "text": "ALASKA",
+      "longitude": -153.4,
+      "latitude": 65.9,
+      "size": 18,
+      "spacing": 4.5,
+      "rotation": 0,
+      "anchor": "middle",
+      "source": "Natural Earth Alaska state polygon",
+      "x": 555.08,
+      "y": 173.24
+    },
+    {
+      "text": "Alaska Range",
+      "longitude": -153.083357,
+      "latitude": 62.583334,
+      "size": 14,
+      "spacing": 1.0,
+      "rotation": -22,
+      "anchor": "start",
+      "source": "USGS GNIS 1397815, first official multipoint position",
+      "x": 567.64,
+      "y": 410.79
+    }
+  ],
+  "notes": [
+    "No place pins, artificial terrain, hill shading, contours or current conditions are drawn.",
+    "Marine label anchors were verified inside the corresponding Natural Earth marine polygons; typography is cartographic placement, not a centroid assertion.",
+    "River geometry is projected from Natural Earth without added bends or invented channels; clipped to the existing coast polygon to avoid coastline/generalization mismatch.",
+    "Alaska Range is a named context label at its first USGS GNIS position. Chugach labels are omitted to preserve clear space around Crow Pass and Knik.",
+    "The historic route is an overview, not a current race course or guarantee of access. Connecting historic trails are excluded by the source dataset."
+  ],
+  "recommendedVisibleCredit": "Historic route: BLM / NPS. Geography: Natural Earth, USGS GNIS. For orientation only; not a navigation map.",
+  "sources": [
+    {
+      "title": "Existing verified coast, BLM/NPS historic route, projection and GNIS place coordinates",
+      "localFile": "map-sources.json",
+      "terms": "See original full credits and BLM supplemental information in map-sources.json."
+    },
+    {
+      "title": "Natural Earth rivers and lake centerlines, 1:50m",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/0e1681ff63fbc58c19dafed9e5b06733512b370d/geojson/ne_50m_rivers_lake_centerlines.geojson",
+      "documentation": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-rivers-lake-centerlines/",
+      "license": "Public domain",
+      "terms": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "commit": "0e1681ff63fbc58c19dafed9e5b06733512b370d"
+    },
+    {
+      "title": "Natural Earth marine area polygons, 1:10m",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/0e1681ff63fbc58c19dafed9e5b06733512b370d/geojson/ne_10m_geography_marine_polys.geojson",
+      "license": "Public domain",
+      "use": "Water-label anchor validation; polygon outlines are not rendered.",
+      "commit": "0e1681ff63fbc58c19dafed9e5b06733512b370d"
+    },
+    {
+      "title": "USGS GNIS Alaska Range, feature 1397815",
+      "url": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1397815&outFields=gaz_id,gaz_name,gaz_featureclass&outSR=4326&f=pjson",
+      "license": "US public-domain geographic names data",
+      "coordinate": [
+        -153.08335727340304,
+        62.58333431792868
+      ]
+    }
+  ]
+}

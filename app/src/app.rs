@@ -38,6 +38,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="cms-layout" href=url("/cms.css")/>
         <Stylesheet id="editorial" href=url("/design/editorial.css")/>
         <Stylesheet id="editorial-pages" href="/design/pages.css"/>
+        <Stylesheet id="trail-explorer" href=url("/design/explorer.css")/>
         <Title text="The Living Trail | Iditarod Historic Trail Alliance"/>
         <Router base=BASE_PATH>
             <AppRouter/>
@@ -47,6 +48,7 @@ pub fn App() -> impl IntoView {
 
 #[component]
 fn AppRouter() -> impl IntoView {
+    crate::explorer::provide_trail_state();
     let location = leptos_router::hooks::use_location();
     view! {<Show when=move||location.pathname.get().starts_with("/admin") fallback=||view!{<crate::cms::CmsGate/>}>
         <Routes fallback=||view!{<crate::studio::Studio/>}>
