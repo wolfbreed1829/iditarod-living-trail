@@ -1,4 +1,5 @@
 """Consistent live SQLite backup, plus immutable media."""
+from contextlib import closing
 import datetime
 import json
 import pathlib
@@ -11,8 +12,8 @@ destination = root / '.cms/backups' / ('rust-' + datetime.datetime.now().strftim
 if not (source / 'trail.sqlite3').exists():
     raise SystemExit('Start Trail Studio first; no native database exists yet.')
 destination.mkdir(parents=True)
-with sqlite3.connect(f'file:{(source / "trail.sqlite3").as_posix()}?mode=ro', uri=True) as db:
-    with sqlite3.connect(destination / 'trail.sqlite3') as backup:
+with closing(sqlite3.connect(f'file:{(source / "trail.sqlite3").as_posix()}?mode=ro', uri=True)) as db:
+    with closing(sqlite3.connect(destination / 'trail.sqlite3')) as backup:
         db.backup(backup)
         result = backup.execute('PRAGMA integrity_check').fetchone()[0]
         if result != 'ok':
