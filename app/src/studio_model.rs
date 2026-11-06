@@ -142,7 +142,7 @@ pub const KINDS: &[(&str, &str)] = &[
     ("place", "Places"),
     ("resource", "Documents"),
     ("event", "Events"),
-    ("campaign", "Giving"),
+    ("campaign", "Projects & giving"),
 ];
 
 /// These destinations alone may be serialized into public pages. Staff service

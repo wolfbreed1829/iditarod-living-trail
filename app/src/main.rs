@@ -74,6 +74,7 @@ async fn main() {
             }),
         )
         .merge(living_trail::studio_api::routes())
+        .merge(living_trail::support_api::routes())
         .leptos_routes(
             &options,
             generate_route_list(|| {

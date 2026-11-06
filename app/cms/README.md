@@ -82,9 +82,23 @@ The browser suite uses an isolated `.cms/native-test` database on port 3110. Pre
 
 ## Optional public service links
 
-An administrator can open **Connections** and add approved HTTPS destinations for the store, donations, memberships, newsletter signup, and volunteering. Saving updates the matching public buttons. Leave a destination empty to keep that service inactive; the site never simulates a completed purchase, gift, or signup. No payment, membership, or mailing-list account is created by the CMS.
+An administrator can open **Connections** and add approved HTTPS destinations for the store, donations, memberships, newsletter signup, and volunteering. Saving updates the matching public journey. Without a destination, support journeys save a giving enquiry, membership enquiry, volunteer offer, or newsletter interest in the private inbox. The shop stays closed without its destination. A linked checkout or signup service handles its own final confirmation; opening a link never counts as a completed payment or subscription.
 
-The separate **Service shortcuts** section holds staff dashboard links. Those addresses are excluded from the public content payload. Passwords and API keys do not belong in these fields. Payment processing and subscriber consent remain with the destination provider. The Azure review deployment deliberately leaves public destinations unconfigured until approval.
+The separate **Service shortcuts** section holds staff dashboard links. Those addresses are excluded from the public content payload. Passwords and API keys do not belong in these fields. Payment processing and final subscription confirmation remain with the destination provider. The Azure review deployment leaves public destinations unconfigured until approval.
+
+## Support requests and projects
+
+**Support requests** is a private inbox for editors and administrators. Requests include contact permission and its text version, a reference, timestamp, area of interest and optional details. Change progress to **In progress** or **Closed**, and save a private follow-up note. These states never assert that a payment was made, a membership created, a volunteer booked or a subscription activated. No automatic emails are sent; staff must check the inbox and arrange any follow-up through an approved process.
+
+Administrators can export a selected request type as CSV or permanently delete a request. Exports include every non-withdrawn request of that type, irrespective of search/status filters. Newsletter interest is not a verified subscriber list. Formula-like CSV values are escaped. Contributors cannot access the inbox or exports.
+
+Visitors receive a private confirmation link only after a successful database write. Reloading that link retrieves the saved record; uncertain network responses can be retried without duplicate records. The receipt contains no contact details. Its secret link can withdraw the request and erase the active name, email, message, amount and staff note. Withdrawal cannot be reversed or exported. Staff deletion invalidates the confirmation. Daily database backups include requests and rotate to the latest 14 copies; exported files need their own handling. Public privacy details are at `/support/privacy`.
+
+Requests live in `support_requests` in the existing SQLite database. Public POSTs require the configured exact Origin, explicit consent and validated fields. A honeypot, body-size limits and a persisted limit of 10 new requests per client per hour reduce abuse. Raw client addresses are not stored in the request record. Private mutations use the normal CMS session, CSRF and version checks. The database migration adds tables without changing existing content or accounts.
+
+Under **Projects & giving**, fill **Project status**, **Project date or reporting period**, **Project source address**, **What support covered**, **How people could help next**, and **Support interest key**. Publishing a project status includes it in **Work supported**. Use one of `trail-care`, `history`, `education`, or `where-needed` for the interest key. Keep completed work, funding commitments and current openings distinct. The four initial records are sourced in `cms/support-projects.json`; they do not publish budgets or restricted fundraising commitments.
+
+Consent version `support-2026-11-06` records permission for the site team to store details and contact the requester about the specific request; newsletter interest separately permits contact about future newsletter updates. Other request types do not opt people into mailing lists. Update the version when the consent wording or purpose changes.
 
 ## Photo presentation
 

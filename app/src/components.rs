@@ -106,9 +106,7 @@ pub fn PageIntro(
 
 #[component]
 pub fn Newsletter() -> impl IntoView {
-    let destination=crate::cms::public_link("newsletter_url");
-    view! {<div class="newsletter"><div><p class="eyebrow">"LET THE TRAIL COME TO YOU"</p><h2>"Stay connected."</h2><p>"Stories, places, and ways to make a difference."</p></div><div class="newsletter-action">{match destination {Some(href)=>view!{<a class="button button-light" href=href target="_blank" rel="noopener noreferrer">"Join the newsletter"<Icon name="external"/></a><p class="form-note">"Choose your updates on the Alliance's signup page."</p>}.into_any(),None=>view!{<a class="button button-light" href=url("/stories")>"Read the trail journal"<Icon/></a><p class="form-note">"Start with a story. Follow where it leads."</p>}.into_any()}}</div></div>}
-
+    view!{<div class="newsletter"><div><p class="eyebrow">"LET THE TRAIL COME TO YOU"</p><h2>"Stay connected."</h2><p>"Stories, places, and ways to make a difference."</p></div><div class="newsletter-action"><a class="button button-light" href=url("/support/newsletter")>"Explore trail updates"<Icon/></a><p class="form-note">"Read The Tripod or register your interest."</p></div></div>}
 }
 
 #[component]
@@ -119,7 +117,7 @@ pub fn Footer() -> impl IntoView {
             <div><p class="footer-label">"MAKE A CONNECTION"</p><a href=url("/about")>"About the Alliance"</a><a href=url("/get-involved")>"Membership & giving"</a><a href=url("/get-involved#volunteer")>"Volunteer"</a><a href="https://www.iditarod100.org/contact-us.html" target="_blank" rel="noopener noreferrer">"Contact the Alliance ↗"</a></div>
             <div class="footer-note"><span class="compass" aria-hidden="true">"✳"</span><p>"A trail for all seasons."<br/>"A legacy for everyone."</p><a href=url("/about") class="text-link">"The story of the Alliance"<Icon/></a></div>
         </div>
-        <div class="footer-bottom"><span>"Iditarod Historic Trail Alliance"</span><span>"Seward to Nome. Then, now, and always."</span><a href=url("/credits")>"Photo credits & sources"</a></div>
+        <div class="footer-bottom"><span>"Iditarod Historic Trail Alliance"</span><span>"Seward to Nome. Then, now, and always."</span><a href=url("/support/privacy")>"Your details & privacy"</a><a href=url("/credits")>"Photo credits & sources"</a></div>
     </div></footer>}
 }
 

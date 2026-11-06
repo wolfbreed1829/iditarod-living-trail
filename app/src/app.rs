@@ -39,6 +39,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="editorial" href=url("/design/editorial.css")/>
         <Stylesheet id="editorial-pages" href="/design/pages.css"/>
         <Stylesheet id="trail-explorer" href=url("/design/explorer.css")/>
+        <Stylesheet id="support-journeys" href=url("/design/support.css")/>
         <Stylesheet id="interiors" href=url("/design/interiors.css")/>
         <Title text="The Living Trail | Iditarod Historic Trail Alliance"/>
         <Router base=BASE_PATH>
@@ -77,6 +78,9 @@ pub fn SiteContent(data: Option<crate::cms::Catalog>) -> impl IntoView {
                     <Route ssr=leptos_router::SsrMode::Async path=path!("stories") view=crate::cms::ManagedStories/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("stories/:slug") view=||view!{<crate::cms::ManagedDetail kind="story"/>}/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("get-involved") view=crate::cms::ManagedSupport/>
+                    <Route ssr=leptos_router::SsrMode::Async path=path!("support/privacy") view=crate::support::Privacy/>
+                    <Route ssr=leptos_router::SsrMode::Async path=path!("support/confirmation/:key") view=crate::support::Confirmation/>
+                    <Route ssr=leptos_router::SsrMode::Async path=path!("support/:kind") view=crate::support::Journey/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("store") view=crate::editorial_pages::TrailShop/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("about") view=crate::cms::ManagedAbout/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("resources") view=crate::cms::ManagedResources/>

@@ -22,6 +22,7 @@ class BackupTest(unittest.TestCase):
             try:
                 db.execute('PRAGMA journal_mode=WAL')
                 db.executescript("CREATE TABLE items (id INTEGER PRIMARY KEY, data TEXT); CREATE TABLE sessions (id TEXT); CREATE TABLE previews (id TEXT); INSERT INTO items VALUES (1, 'published content'); INSERT INTO sessions VALUES ('active session'); INSERT INTO previews VALUES ('private preview');")
+                db.executescript("CREATE TABLE support_requests (id INTEGER PRIMARY KEY, token TEXT, fingerprint TEXT, data TEXT); INSERT INTO support_requests VALUES (1, 'hashed token', 'request fingerprint', 'saved support enquiry');")
                 db.commit()
                 env = dict(os.environ, TRAIL_DATA_DIR=str(source), TRAIL_BACKUP_DIR=str(root / 'backups'))
                 subprocess.run([sys.executable, str(pathlib.Path(__file__).with_name('backup-review.py'))], env=env, check=True, capture_output=True)
@@ -33,6 +34,7 @@ class BackupTest(unittest.TestCase):
                 with closing(sqlite3.connect(f'file:{(extracted / "trail.sqlite3").as_posix()}?immutable=1', uri=True)) as copy:
                     self.assertEqual(copy.execute('PRAGMA integrity_check').fetchone()[0], 'ok')
                     self.assertEqual(copy.execute('SELECT data FROM items').fetchone()[0], 'published content')
+                    self.assertEqual(copy.execute('SELECT data FROM support_requests').fetchone()[0], 'saved support enquiry')
                     self.assertEqual(copy.execute('SELECT count(*) FROM sessions').fetchone()[0], 0)
                     self.assertEqual(copy.execute('SELECT count(*) FROM previews').fetchone()[0], 0)
                 self.assertEqual((extracted / 'uploads/guide.pdf').read_bytes(), b'%PDF-1.4 sample')

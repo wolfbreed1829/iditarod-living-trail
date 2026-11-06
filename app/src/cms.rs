@@ -220,6 +220,7 @@ pub fn ManagedStories() -> impl IntoView {
 
 #[component]
 pub fn Article(item: Content) -> impl IntoView {
+    if item.kind == "campaign" && !item.field("project_status").is_empty() { return view!{<crate::support::ProjectDetail item/>}.into_any(); }
     if item.kind == "place" || item.kind == "story" { return view!{<crate::editorial::JournalArticle item/>}.into_any(); }
     let kind = item.kind.clone();
     let data = catalog().unwrap_or_default();

@@ -13,6 +13,12 @@ pub mod pages;
 pub mod paths;
 pub mod photography;
 pub mod studio;
+pub mod support;
+pub mod support_model;
+#[cfg(feature = "ssr")]
+pub mod support_store;
+#[cfg(feature = "ssr")]
+pub mod support_api;
 #[cfg(feature = "ssr")]
 pub mod studio_api;
 pub mod studio_model;
