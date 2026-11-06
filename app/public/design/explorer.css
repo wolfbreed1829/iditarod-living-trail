@@ -1,4 +1,5 @@
 /* A geographic field guide, composed in the site's paper / evergreen palette. */
+@media(max-width:540px){.explorer-map:not(.regional) .explorer-route{stroke-width:6}.explorer-map:not(.regional) .explorer-route-casing{stroke-width:9}}
 .trail-explorer{--atlas-sea:#d8e3df;--atlas-land:#f0f0e5;--atlas-line:#b47a4e;--atlas-ink:#193e32;--atlas-soft:#e8ece1;background:#183d32;padding:95px 0 40px;color:#f4f1e6;scroll-margin-top:95px}
 .trail-explorer.explorer-summer{--atlas-sea:#cbdcd6;--atlas-land:#e3e8d5;--atlas-soft:#e5ead9}
 .field-journal .explorer-heading{display:grid;grid-template-columns:1.2fr 1fr;gap:10%;align-items:end;margin-bottom:45px}
