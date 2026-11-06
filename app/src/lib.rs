@@ -13,6 +13,7 @@ pub mod pages;
 pub mod paths;
 pub mod photography;
 pub mod section_model;
+pub mod loading;
 pub mod sections;
 pub mod studio;
 pub mod support;

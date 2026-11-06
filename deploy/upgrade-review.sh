@@ -20,10 +20,36 @@ if [[ -f "$next/backup-review.py" ]]; then
   install -m 0755 "$next/backup-review.py" /usr/local/bin/backup-living-trail
 fi
 cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.previous
-python3 - <<'PYCFG'
+python3 - "$next" <<'PYCFG'
 from pathlib import Path
+import hashlib,json,re,shutil,sys
+site=Path(sys.argv[1])/'site'
+# Keep content-addressed bundles across releases: an open old tab can finish
+# its download after an atomic upgrade. Never copy HTML, uploads or CMS data.
+manifest=json.loads((site/'pkg/runtime.json').read_text())
+assets=Path('/opt/living-trail/assets/pkg');assets.mkdir(parents=True,exist_ok=True)
+for kind in ('js','wasm'):
+    name=Path(manifest[kind]).name
+    match=re.fullmatch(r'living-trail\.([a-f0-9]{16})\.(js|wasm)',name)
+    assert match and match[2]==kind,'Invalid bundle name'
+    source=site/'pkg'/name
+    assert hashlib.sha256(source.read_bytes()).hexdigest().startswith(match[1]),'Bundle hash mismatch'
+    for suffix in ('','.br','.gz'):
+        target=assets/(name+suffix)
+        if target.exists():assert target.read_bytes()==Path(str(source)+suffix).read_bytes(),'Immutable asset changed'
+        else:shutil.copyfile(str(source)+suffix,target)
 p=Path('/etc/caddy/Caddyfile');s=p.read_text()
 if '/design/*' not in s:s=s.replace('@assets path /pkg/*', '@assets path /design/* /maps/* /pkg/*')
+if '@versioned_bundle' not in s:
+    s=s.replace('  @assets path', '''  @versioned_bundle path_regexp bundle ^/pkg/living-trail\\.[a-f0-9]{16}\\.(js|wasm)$
+  handle @versioned_bundle {
+    root * /opt/living-trail/assets
+    header Cache-Control "public, max-age=31536000, immutable"
+    file_server {
+      precompressed br gzip
+    }
+  }
+  @assets path''')
 p.write_text(s)
 PYCFG
 "$next/caddy" validate --config /etc/caddy/Caddyfile --adapter caddyfile >/dev/null

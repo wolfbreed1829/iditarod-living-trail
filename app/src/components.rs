@@ -37,17 +37,12 @@ pub fn Brand() -> impl IntoView {
 
 #[component]
 pub fn Header() -> impl IntoView {
-    let open = RwSignal::new(false);
     let location = use_location();
-    Effect::new(move |_| {
-        location.pathname.get();
-        open.set(false);
-    });
     view! {
         <div class="trail-masthead" role="region" aria-label="Trail information"><span>"ALASKA'S IDITAROD NATIONAL HISTORIC TRAIL"</span><a href=url("/about")>"A living legacy, since 1978"<Icon name="external"/></a></div>
-        <header class="site-header" on:keydown=move |ev| {if ev.key() == "Escape" {open.set(false)}}>
+        <header class="site-header">
             <div class="header-inner"><Brand/>
-                <nav id="main-nav" class:open=move || open.get() aria-label="Main navigation">
+                <nav id="main-nav" aria-label="Main navigation">
                     {[ ("/explore", "Plan a trip"), ("/stories", "Learn & discover"), ("/get-involved", "Get involved"), ("/about", "Our alliance") ].into_iter().map(|(href,label)| view!{
                         <a href=url(href) aria-current=move || if location.pathname.get().starts_with(&url(href)) {Some("page")} else {None}>{label}</a>
                     }).collect_view()}
@@ -57,7 +52,11 @@ pub fn Header() -> impl IntoView {
                     <a class="icon-button search-link" href=url("/resources") aria-label="Search resources"><Icon name="search"/></a>
                     <a class="icon-button bag-link" href=url("/store") aria-label="Trail shop"><Icon name="bag"/></a>
                     <a class="button button-green header-support" href=url("/get-involved")>"Support the trail"<Icon/></a>
-                    <button class="icon-button menu-toggle" aria-label=move || if open.get(){"Close menu"}else{"Open menu"} aria-expanded=move || open.get().to_string() aria-controls="main-nav" on:click=move |_| open.update(|v|*v=!*v)>{move || if open.get(){view!{<Icon name="close"/>}}else{view!{<Icon name="menu"/>}}}</button>
+                    <details class="mobile-navigation"><summary class="icon-button menu-toggle" aria-label="Menu"><Icon name="menu"/></summary>
+                        <nav id="mobile-nav" aria-label="Mobile navigation">
+                            {[("/explore", "Plan a trip"), ("/stories", "Learn & discover"), ("/get-involved", "Get involved"), ("/about", "Our alliance"), ("/store", "Trail shop")].into_iter().map(|(href,label)|view!{<a href=url(href)>{label}</a>}).collect_view()}
+                        </nav>
+                    </details>
                 </div>
             </div>
         </header>
