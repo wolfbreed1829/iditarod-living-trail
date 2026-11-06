@@ -27,6 +27,7 @@ Open http://localhost:3107 and http://localhost:3107/admin. A clean installation
 - SQLite storage and backup scripts.
 - Destination guides with planning notes, photo sequences and geographic locator maps; magazine stories and a sourced Alliance history.
 - A searchable collection of 35 licensed photographs with captions, credits, source records and responsive image sizes.
+- Four approved page-section layouts with image focus and metadata, ordering, visibility, publishing checks, and previews at desktop, tablet and phone widths.
 - Documented support projects, real support enquiry forms, persistent confirmations and a private staff inbox with follow-up, withdrawal and export.
 - Azure Linux installation, HTTPS proxy and nightly review backups in [`deploy/`](deploy/).
 

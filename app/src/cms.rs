@@ -230,12 +230,12 @@ pub fn Article(item: Content) -> impl IntoView {
         format!("{}{}", data.download_base, item.id)
     };
     view! {<ContentMeta item=item.clone()/><header class="article-header container"><p class="eyebrow"><span class="small-line"/>{item.field("category")}</p><h1>{item.title.clone()}</h1><p>{item.summary.clone()}</p></header>
-        {(!item.field("image").is_empty()).then(||view!{<figure class="article-photo"><img src=item.image() style=item.image_position() alt=item.field("image_alt")/><figcaption>{item.field("credit")}</figcaption></figure>})}
+        <crate::interiors::HeroPhoto item=item.clone()/>
         <div class="container article-grid section"><article class="prose"><BodyText text=item.body.clone()/>
             {(!item.field("url").is_empty()&&kind!="resource").then(||view!{<a class="text-link" href=url(&item.field("url")) target="_blank" rel="noopener noreferrer">{if kind=="place"{"Official visitor information"}else{"Continue with the original resources"}}<Icon name="external"/></a>})}
             {(!item.field("button_url").is_empty()).then(||view!{<a class="button button-green" href=url(&item.field("button_url"))>{item.field("button_text")}<Icon/></a>})}
             {(kind=="resource").then(||view!{<a class="button button-green" href=resource_url>"Open resource"<Icon name="external"/></a>})}
-        </article><aside class="visit-card"><p class="eyebrow">"THE LIVING TRAIL"</p><h3>"Make a connection."</h3>
+        </article><aside class="visit-card"><p class="eyebrow">"THE LIVING TRAIL"</p><h2>"Make a connection."</h2>
             {(kind=="place").then(||view!{<dl><div><dt>"Region"</dt><dd>{item.field("region")}</dd></div><div><dt>"Explore in"</dt><dd>{item.field("season")}</dd></div><div><dt>"Activities"</dt><dd>{item.field("activity")}</dd></div></dl><p class="form-note">"Confirm current conditions, access, and local guidance before you travel."</p>})}
             {(kind=="event").then(||view!{<dl><div><dt>"Starts (UTC)"</dt><dd>{item.field("start")}</dd></div><div><dt>"Ends (UTC)"</dt><dd>{item.field("end")}</dd></div><div><dt>"Location"</dt><dd>{item.field("location")}</dd></div></dl>})}
             <a class="text-link" href=url("/resources")>"Visitor & learning resources"<Icon/></a>

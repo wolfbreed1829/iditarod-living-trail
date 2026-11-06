@@ -78,6 +78,8 @@ The collection is assembled from image manifests in `public/images/`, with origi
 
 Run `node tests/support-public.cjs` to inspect the project pages and support journeys at four screen widths, including accessibility and real form hydration. This check is read-only and can run against Azure. `node tests/support-workflows.cjs` requires the isolated local write-test configuration below; it checks all four submissions, durable confirmations, lost-response retries, private staff follow-up, withdrawal, exports, and a configured provider handoff. Its temporary records are deleted and service settings restored afterward.
 
+Run `node tests/sections-cms.cjs` with the isolated write-test configuration to check the four approved layouts, image metadata and focus, reordering, hiding, undo, publishing checks, responsive draft previews, and publication parity. Added sections use the same public renderer for pages, stories, destinations, projects and private previews. CMS instructions are in `cms/README.md`.
+
 For editor checks, start an **isolated** instance with `scripts/start-native-test.ps1`. Set `EDITORIAL_URL` to `http://localhost:3110`, `EDITORIAL_WRITE_TESTS` to `1`, and provide `TRAIL_TEST_LOGIN` and `TRAIL_TEST_PASSWORD` privately for that test account. Run `npm run test:editorial:cms`. The check refuses non-local hosts. It creates and archives a test story, verifies photo metadata, crops, preview, publication, private drafts and revisions, and restores the homepage draft after checking featured-story selection. The older proposal suite remains available as `test:legacy`; `test:cms` retains the original native API and role suite.
 
 ## Review boundaries

@@ -12,6 +12,8 @@ pub mod motion;
 pub mod pages;
 pub mod paths;
 pub mod photography;
+pub mod section_model;
+pub mod sections;
 pub mod studio;
 pub mod support;
 pub mod support_model;

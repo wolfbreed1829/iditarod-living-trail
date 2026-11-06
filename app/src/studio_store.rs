@@ -125,9 +125,10 @@ fn clean(d: &mut Draft) -> Result<()> {
         return Err("Use lowercase letters, numbers and hyphens in the address.".into());
     }
     for (k, v) in &d.fields {
-        if k.len() > 60 || v.len() > 4000 {
+        if k.len() > 60 || v.len() > if k == crate::section_model::FIELD {65000} else {4000} {
             return Err("A field is too long.".into());
         }
+        if k == crate::section_model::FIELD { crate::section_model::validate(v)?; }
         if ["image", "summer_image", "url", "button_url", "history_url"].contains(&k.as_str()) && !valid_url(v) {
             return Err(format!(
                 "Use a complete http(s) address or a path beginning with / for {k}."
@@ -159,6 +160,9 @@ fn date(s: &str) -> Option<DateTime<chrono::FixedOffset>> {
         .or_else(|| DateTime::parse_from_rfc3339(&format!("{s}T00:00:00Z")).ok())
 }
 fn ready(d: &Draft, kind: &str) -> Result<()> {
+    let sections=crate::section_model::parse(&d.field(crate::section_model::FIELD))?;
+    let issues=crate::section_model::issues(&sections);
+    if !issues.is_empty(){return Err(issues.join(" "));}
     if d.title.trim().is_empty() || d.slug.is_empty() {
         return Err("Add a headline and web address before publishing.".into());
     }
@@ -637,7 +641,7 @@ impl Store {
         let mut items: Vec<Content> = all_items(&db)?
             .into_iter()
             .filter(|i| i.status == "publish")
-            .map(|i| i.content)
+            .map(|i| crate::section_model::public_content(i.content))
             .filter(|i| i.kind != "event" || date(&i.field("end")).is_none_or(|e| e >= Utc::now()))
             .collect();
         let mut preview_id = None;
@@ -895,6 +899,21 @@ mod tests {
         }
         let published = s.change(&u, item.content.id, change(saved.version, "publish", d)).unwrap();
         assert_eq!(published.content.image_position(), "object-position:22% 78%");
+    }
+    #[test]
+    fn sections_are_private_validated_and_kept_in_revisions() {
+        use crate::section_model::{Section,Sections,FIELD};
+        let (_lock,s,u)=setup();let item=s.create(&u,"page").unwrap();let mut d=draft("Approved sections");
+        let mut section=Section::new(1,"split");let encode=|s:Section|serde_json::to_string(&Sections{version:1,sections:vec![s]}).unwrap();
+        d.fields.insert(FIELD.into(),encode(section.clone()));let saved=s.change(&u,item.content.id,change(item.version,"save",d.clone())).unwrap();
+        assert!(s.change(&u,item.content.id,change(saved.version,"publish",d.clone())).unwrap_err().contains("add a heading"));
+        assert!(!s.public(None).unwrap().items.iter().any(|i|i.id==item.content.id));
+        section.title="A place in the story".into();section.body="Reviewed content".into();section.image="/images/dawn.webp".into();section.alt="Winter light on the trail".into();section.caption="Winter landscape".into();section.credit="Bob Wick / BLM".into();section.x=25;section.y=70;
+        d.fields.insert(FIELD.into(),encode(section.clone()));let published=s.change(&u,item.content.id,change(saved.version,"publish",d.clone())).unwrap();
+        section.title="Private next chapter".into();d.fields.insert(FIELD.into(),encode(section));let saved=s.change(&u,item.content.id,change(published.version,"save",d.clone())).unwrap();
+        let token=s.preview(&u,item.content.id).unwrap();let preview=s.public(Some(token.trim_start_matches("/cms-preview/").to_string())).unwrap();assert!(preview.items.iter().find(|i|i.id==item.content.id).unwrap().field(FIELD).contains("Private next chapter"));
+        assert!(!s.public(None).unwrap().items.iter().find(|i|i.id==item.content.id).unwrap().field(FIELD).contains("Private next chapter"));
+        let updated=s.change(&u,item.content.id,change(saved.version,"publish",d)).unwrap();assert!(updated.history[0].content.field(FIELD).contains("A place in the story"));
     }
     #[test]
     fn public_destinations_are_opt_in_validated_and_separate_from_staff_links() {
