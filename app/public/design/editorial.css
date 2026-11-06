@@ -254,3 +254,6 @@
 @media(max-width:760px){.journal-places .cms-card:first-child .card-image,.field-journal .cms-card .card-image{height:300px;margin-bottom:22px}.credits-gallery{grid-template-columns:1fr;gap:40px}.credit-photo>img{height:280px}.field-journal .credit-photo h2{font-size:27px}.field-journal .credits-detail{width:calc(100% - 40px)}}
 
 .field-journal .journal-story-row .story-order{color:#4e6046}
+
+.field-journal .journal-article-photo.photo-tall>img,.field-journal .alliance-panorama.photo-tall>img{height:760px;max-height:90vh}
+@media(max-width:760px){.field-journal .journal-article-photo.photo-tall>img,.field-journal .alliance-panorama.photo-tall>img{height:500px;max-height:none}}

@@ -133,6 +133,13 @@ fn clean(d: &mut Draft) -> Result<()> {
                 "Use a complete http(s) address or a path beginning with / for {k}."
             ));
         }
+        if ["image_x", "image_y", "summer_x", "summer_y"].contains(&k.as_str())
+            && !v.is_empty() && !v.parse::<u8>().is_ok_and(|n| n <= 100) {
+            return Err("Photo focus must be a number from 0 to 100.".into());
+        }
+        if k == "image_layout" && !["", "wide", "tall"].contains(&v.as_str()) {
+            return Err("Choose a wide or tall photo layout.".into());
+        }
     }
     Ok(())
 }
@@ -827,6 +834,24 @@ mod tests {
             at: None,
             revision: None,
         }
+    }
+    #[test]
+    fn photo_presentation_is_validated_and_previewed_without_publishing() {
+        let (_lock, s, u) = setup();
+        let item = s.create(&u, "story").unwrap();
+        let mut d = draft("A photograph");
+        d.fields.insert("image_x".into(), "22".into());
+        d.fields.insert("image_y".into(), "78".into());
+        d.fields.insert("image_layout".into(), "tall".into());
+        let saved = s.change(&u, item.content.id, change(item.version, "save", d.clone())).unwrap();
+        assert_eq!(saved.editable().field("image_y"), "78");
+        assert!(!s.public(None).unwrap().items.iter().any(|i| i.id == item.content.id));
+        for (key, value) in [("image_x", "101"), ("image_y", "-1"), ("summer_x", "left"), ("image_layout", "arbitrary-css")] {
+            let mut invalid = d.clone();invalid.fields.insert(key.into(), value.into());
+            assert!(s.change(&u, item.content.id, change(saved.version, "save", invalid)).is_err());
+        }
+        let published = s.change(&u, item.content.id, change(saved.version, "publish", d)).unwrap();
+        assert_eq!(published.content.image_position(), "object-position:22% 78%");
     }
     #[test]
     fn public_destinations_are_opt_in_validated_and_separate_from_staff_links() {

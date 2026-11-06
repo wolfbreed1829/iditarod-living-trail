@@ -28,6 +28,11 @@ impl Content {
     pub fn image(&self) -> String {
         url(&self.field("image"))
     }
+    pub fn image_position(&self) -> String {
+        let x = self.field("image_x").parse::<u8>().unwrap_or(50).min(100);
+        let y = self.field("image_y").parse::<u8>().unwrap_or(50).min(100);
+        format!("object-position:{x}% {y}%")
+    }
 }
 #[derive(Clone, Debug, Default, Serialize, Deserialize)]
 pub struct Catalog {
@@ -117,7 +122,7 @@ pub fn ContentCard(item: Content) -> impl IntoView {
     let href = url(&item.path);
     let image = item.image();
     view! {<a class="story-card cms-card" href=href>
-        {(!item.field("image").is_empty()).then(||view!{<div class="card-image"><img src=image alt=item.field("image_alt") loading="lazy" width="800" height="540"/><span class="circle-arrow"><Icon/></span></div>})}
+        {(!item.field("image").is_empty()).then(||view!{<div class="card-image"><img src=image style=item.image_position() alt=item.field("image_alt") loading="lazy" width="800" height="540"/><span class="circle-arrow"><Icon/></span></div>})}
         <p class="eyebrow">{item.field("category")}</p><h3>{item.title}</h3><p>{item.summary}</p><span class="text-link">"Explore more"<Icon/></span>
     </a>}
 }
@@ -152,14 +157,14 @@ pub fn ManagedFeature() -> impl IntoView {
         .or_else(|| stories.iter().find(|s| s.slug == "the-winter-way"))
         .or(stories.first())
         .cloned();
-    view! {<>{story.map(|item|view!{<section class="feature-story"><img src=item.image() alt=item.field("image_alt") loading="lazy"/><div class="feature-story-shade"/><div class="container"><div><p class="eyebrow"><span class="small-line"/>{item.field("category")}</p><h2>{item.title.clone()}</h2><p>{item.summary.clone()}</p><a href=url(&item.path) class="button button-light">"Read the story"<Icon/></a></div></div></section>})}</>}
+    view! {<>{story.map(|item|view!{<section class="feature-story"><img src=item.image() style=item.image_position() alt=item.field("image_alt") loading="lazy"/><div class="feature-story-shade"/><div class="container"><div><p class="eyebrow"><span class="small-line"/>{item.field("category")}</p><h2>{item.title.clone()}</h2><p>{item.summary.clone()}</p><a href=url(&item.path) class="button button-light">"Read the story"<Icon/></a></div></div></section>})}</>}
 }
 
 #[component]
 pub fn ManagedIntro(slug: &'static str) -> impl IntoView {
     let item = page(slug).unwrap_or_default();
     view! {<ContentMeta item=item.clone()/><section class="page-intro container"><p class="eyebrow"><span class="small-line"/>{item.field("category")}</p><h1>{item.title.clone()}</h1><p class="intro-copy">{item.summary.clone()}</p></section>
-        {(!item.field("image").is_empty()).then(||view!{<figure class="container cms-intro-photo"><img src=item.image() alt=item.field("image_alt")/><figcaption>{item.field("credit")}</figcaption></figure>})}
+        {(!item.field("image").is_empty()).then(||view!{<figure class="container cms-intro-photo"><img src=item.image() style=item.image_position() alt=item.field("image_alt")/><figcaption>{item.field("credit")}</figcaption></figure>})}
         {(!item.body.is_empty()).then(||view!{<section class="container prose cms-intro-body"><BodyText text=item.body.clone()/></section>})}
         {(!item.field("button_url").is_empty()).then(||view!{<div class="container cms-intro-action"><a class="button button-green" href=url(&item.field("button_url"))>{item.field("button_text")}<Icon/></a></div>})}
     }
@@ -225,7 +230,7 @@ pub fn Article(item: Content) -> impl IntoView {
         format!("{}{}", data.download_base, item.id)
     };
     view! {<ContentMeta item=item.clone()/><header class="article-header container"><p class="eyebrow"><span class="small-line"/>{item.field("category")}</p><h1>{item.title.clone()}</h1><p>{item.summary.clone()}</p></header>
-        {(!item.field("image").is_empty()).then(||view!{<figure class="article-photo"><img src=item.image() alt=item.field("image_alt")/><figcaption>{item.field("credit")}</figcaption></figure>})}
+        {(!item.field("image").is_empty()).then(||view!{<figure class="article-photo"><img src=item.image() style=item.image_position() alt=item.field("image_alt")/><figcaption>{item.field("credit")}</figcaption></figure>})}
         <div class="container article-grid section"><article class="prose"><BodyText text=item.body.clone()/>
             {(!item.field("url").is_empty()&&kind!="resource").then(||view!{<a class="text-link" href=url(&item.field("url")) target="_blank" rel="noopener noreferrer">{if kind=="place"{"Official visitor information"}else{"Continue with the original resources"}}<Icon name="external"/></a>})}
             {(!item.field("button_url").is_empty()).then(||view!{<a class="button button-green" href=url(&item.field("button_url"))>{item.field("button_text")}<Icon/></a>})}

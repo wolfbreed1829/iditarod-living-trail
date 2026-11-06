@@ -6,11 +6,6 @@ use leptos_meta::Title;
 fn photo(item: &Content) -> String {
     if item.field("image").is_empty() { url("/images/dawn.webp") } else { item.image() }
 }
-fn position(item: &Content) -> String {
-    let x = item.field("image_x").parse::<u8>().unwrap_or(50).min(100);
-    let y = item.field("image_y").parse::<u8>().unwrap_or(50).min(100);
-    format!("object-position:{x}% {y}%")
-}
 fn reading_time(item: &Content) -> usize { item.body.split_whitespace().count().div_ceil(200).max(1) }
 
 #[component]
@@ -43,11 +38,12 @@ pub fn EditorialHome() -> impl IntoView {
 #[component]
 pub fn JournalStories() -> impl IntoView {
     let stories = cms::items("story");
-    let featured = stories.iter().find(|s|s.slug=="a-living-connection").or(stories.first()).cloned();
+    let preferred = cms::page("home").and_then(|p|p.field("featured_story").parse::<u64>().ok());
+    let featured = stories.iter().find(|s|Some(s.id)==preferred).or_else(||stories.iter().find(|s|s.slug=="a-living-connection")).or(stories.first()).cloned();
     let rest: Vec<_> = stories.iter().filter(|s| featured.as_ref().is_none_or(|f|f.id!=s.id)).cloned().collect();
     view! {<section class="journal-stories"><div class="container"><div class="section-heading"><div><span class="section-marker"><span>"04"</span>"THE TRAIL JOURNAL"</span><h2>"Every mile"<br/><em>"carries a story."</em></h2></div><a class="text-link" href=url("/stories")>"All stories"<Icon/></a></div><div class="journal-stories-grid">
-        {featured.map(|s|view!{<a class="journal-lead-story" href=url(&s.path)><div class="journal-story-image"><img src=photo(&s) style=position(&s) alt=s.field("image_alt") loading="lazy" width="1200" height="800"/><span class="journal-image-label">"THE LIVING TRAIL"</span></div><div><span class="eyebrow">{s.field("category")}</span><h3>{s.title.clone()}</h3><p>{s.summary.clone()}</p><span class="text-link">"Read the story"<Icon/></span></div></a>})}
-        <div class="journal-story-list">{rest.into_iter().enumerate().map(|(index,s)|view!{<a class="journal-story-row" href=url(&s.path)><span class="story-order">{format!("0{}",index+2)}</span><div><span class="eyebrow">{s.field("category")}</span><h3>{s.title.clone()}</h3><p>{s.summary.clone()}</p><span class="story-reading">{format!("{} min read",reading_time(&s))}<Icon/></span></div><img src=photo(&s) style=position(&s) alt=s.field("image_alt") loading="lazy" width="320" height="380"/></a>}).collect_view()}<a class="journal-archive-link" href=url("/resources")><Icon name="book"/><div><span class="eyebrow">"A LITTLE DEEPER"</span><h3>"Open the archive."</h3><p>"Maps, history, and resources for curious minds."</p></div><Icon/></a></div>
+        {featured.map(|s|view!{<a class="journal-lead-story" href=url(&s.path)><div class="journal-story-image"><img src=photo(&s) style=s.image_position() alt=s.field("image_alt") loading="lazy" width="1200" height="800"/><span class="journal-image-label">"THE LIVING TRAIL"</span></div><div><span class="eyebrow">{s.field("category")}</span><h3>{s.title.clone()}</h3><p>{s.summary.clone()}</p><span class="text-link">"Read the story"<Icon/></span></div></a>})}
+        <div class="journal-story-list">{rest.into_iter().enumerate().map(|(index,s)|view!{<a class="journal-story-row" href=url(&s.path)><span class="story-order">{format!("0{}",index+2)}</span><div><span class="eyebrow">{s.field("category")}</span><h3>{s.title.clone()}</h3><p>{s.summary.clone()}</p><span class="story-reading">{format!("{} min read",reading_time(&s))}<Icon/></span></div><img src=photo(&s) style=s.image_position() alt=s.field("image_alt") loading="lazy" width="320" height="380"/></a>}).collect_view()}<a class="journal-archive-link" href=url("/resources")><Icon name="book"/><div><span class="eyebrow">"A LITTLE DEEPER"</span><h3>"Open the archive."</h3><p>"Maps, history, and resources for curious minds."</p></div><Icon/></a></div>
     </div></div></section>}
 }
 
@@ -78,7 +74,7 @@ pub fn JournalArticle(item: Content) -> impl IntoView {
     view!{<ContentMeta item=item.clone()/><div class="journal-article" class:place-article=is_place>
         <div class="container breadcrumb"><a href=url(back)>{back_label}</a><span>"/"</span><span>{title.clone()}</span></div>
         <header class="journal-article-header container"><span class="eyebrow"><span class="small-line"/>{label}</span><h1>{title}</h1><div class="article-deck"><p>{item.summary.clone()}</p><span class="article-meta">{if is_place {"A PLACE ON THE TRAIL".to_string()} else {format!("THE TRAIL JOURNAL / {} MIN READ",reading_time(&item))}}</span></div></header>
-        {(!item.field("image").is_empty()).then(||view!{<figure class="journal-article-photo"><img src=photo(&item) style=position(&item) alt=item.field("image_alt") fetchpriority="high" width="1800" height="1100"/><figcaption><span>{item.field("credit")}</span><a href=url("/credits")>"Photography & sources"<Icon name="external"/></a></figcaption></figure>})}
+        {(!item.field("image").is_empty()).then(||view!{<figure class="journal-article-photo" class:photo-tall=item.field("image_layout")=="tall"><img src=photo(&item) style=item.image_position() alt=item.field("image_alt") fetchpriority="high" width="1800" height="1100"/><figcaption><span>{item.field("credit")}</span><a href=url("/credits")>"Photography & sources"<Icon name="external"/></a></figcaption></figure>})}
         <div class="container journal-article-grid"><aside class="article-margin" aria-label="Article navigation"><span class="section-marker"><span>"01"</span>{if is_place {"EXPLORE THIS PLACE"} else {"THE STORY"}}</span><span class="margin-rule"/><a href=url(back) class="text-link">{back_label}<Icon/></a></aside><article class="prose journal-prose"><BodyText text=item.body.clone()/>
             {(!item.field("url").is_empty()).then(||view!{<a class="article-source" href=url(&item.field("url")) target="_blank" rel="noopener noreferrer"><span class="eyebrow">{if is_place {"BEFORE YOU GO"} else {"CONTINUE EXPLORING"}}</span><strong>{if is_place {"Check official visitor information"} else {"Read the original resources"}}</strong><Icon name="external"/></a>})}
             {(!item.field("button_url").is_empty()).then(||view!{<a class="button button-green" href=url(&item.field("button_url"))>{item.field("button_text")}<Icon/></a>})}
