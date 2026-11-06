@@ -36,11 +36,16 @@ pub struct Catalog {
     pub preview_id: Option<u64>,
     #[serde(default)]
     pub download_base: String,
+    #[serde(default)]
+    pub public_links: HashMap<String, String>,
 }
 #[derive(Clone, Copy)]
 pub struct CmsData(pub StoredValue<Option<Catalog>>);
 pub fn catalog() -> Option<Catalog> {
     use_context::<CmsData>().and_then(|data| data.0.get_value())
+}
+pub fn public_link(key: &str) -> Option<String> {
+    catalog()?.public_links.get(key).cloned().filter(|v| !v.is_empty())
 }
 pub fn page(slug: &str) -> Option<Content> {
     catalog()?
@@ -206,7 +211,7 @@ pub fn ManagedStories() -> impl IntoView {
     if catalog().is_none() {
         return view! {<pages::Stories/>}.into_any();
     }
-    view!{<ManagedIntro slug="stories"/><section class="container section"><div class="three-grid">{items("story").into_iter().map(|item|view!{<ContentCard item/>}).collect_view()}</div></section>}.into_any()
+    view!{<crate::editorial_pages::StoriesIndex/>}.into_any()
 }
 
 #[component]
@@ -253,7 +258,7 @@ pub fn ManagedAbout() -> impl IntoView {
         return view! {<pages::About/>}.into_any();
     }
     match page("about") {
-        Some(item) => view! {<Article item/>}.into_any(),
+        Some(_) => view! {<crate::editorial_pages::AlliancePage/>}.into_any(),
         None => view! {<Missing/>}.into_any(),
     }
 }
@@ -288,7 +293,7 @@ pub fn ManagedResources() -> impl IntoView {
             })
             .collect::<Vec<_>>()
     });
-    view!{<ManagedIntro slug="resources"/><section class="container resource-library"><div class="resource-search"><Icon name="search"/><label class="sr-only" for="resource-query">"Search resources"</label><input id="resource-query" type="search" placeholder="Search guides, history, classroom resources…" prop:value=move||query.get() on:input=move|e|query.set(event_target_value(&e))/></div><div class="filter-pills resource-filters" role="group" aria-label="Resource categories">{categories.into_iter().map(|c|{let choice=c.clone();let active=c.clone();let pressed=c.clone();view!{<button class:active=move||category.get()==active aria-pressed=move||(category.get()==pressed).to_string() on:click=move |_|category.set(choice.clone())>{c}</button>}}).collect_view()}</div><p class="results-count" aria-live="polite">{move||format!("{} resources",filtered.get().len())}</p><div class="resource-list">{move||filtered.get().into_iter().map(|i|view!{<a href=format!("{}{}",base.get_value(),i.id) class="resource-row" target="_blank" rel="noopener noreferrer"><span class="resource-icon"><Icon name="book"/></span><div><span class="eyebrow">{i.field("category")}</span><h3>{i.title.clone()}</h3><p>{i.summary.clone()}</p></div><span class="file-type">{i.field("format")}</span><Icon name="external"/></a>}).collect_view()}</div><Show when=move||filtered.get().is_empty()><div class="empty-state"><h2>"Let's try another trail."</h2><p>"No resources match that search."</p><button class="button button-green" on:click=move |_|{query.set(String::new());category.set("All resources".into());}>"Clear search"</button></div></Show></section>}.into_any()
+    view!{<ManagedIntro slug="resources"/><crate::editorial_pages::ResourcePrelude/><section class="container resource-library"><div class="resource-search"><Icon name="search"/><label class="sr-only" for="resource-query">"Search resources"</label><input id="resource-query" type="search" placeholder="Search guides, history, classroom resources…" prop:value=move||query.get() on:input=move|e|query.set(event_target_value(&e))/></div><div class="filter-pills resource-filters" role="group" aria-label="Resource categories">{categories.into_iter().map(|c|{let choice=c.clone();let active=c.clone();let pressed=c.clone();view!{<button class:active=move||category.get()==active aria-pressed=move||(category.get()==pressed).to_string() on:click=move |_|category.set(choice.clone())>{c}</button>}}).collect_view()}</div><p class="results-count" aria-live="polite">{move||format!("{} resources",filtered.get().len())}</p><div class="resource-list">{move||filtered.get().into_iter().map(|i|view!{<a href=format!("{}{}",base.get_value(),i.id) class="resource-row" target="_blank" rel="noopener noreferrer"><span class="resource-icon"><Icon name="book"/></span><div><span class="eyebrow">{i.field("category")}</span><h3>{i.title.clone()}</h3><p>{i.summary.clone()}</p></div><span class="file-type">{i.field("format")}</span><Icon name="external"/></a>}).collect_view()}</div><Show when=move||filtered.get().is_empty()><div class="empty-state"><h2>"Let's try another trail."</h2><p>"No resources match that search."</p><button class="button button-green" on:click=move |_|{query.set(String::new());category.set("All resources".into());}>"Clear search"</button></div></Show></section>}.into_any()
 }
 
 #[component]
@@ -296,7 +301,7 @@ pub fn ManagedSupport() -> impl IntoView {
     if catalog().is_none() {
         return view! {<pages::Support/>}.into_any();
     }
-    view!{<ManagedIntro slug="get-involved"/><section class="container section"><h2>"Ways to make a connection."</h2><div class="three-grid cms-support-grid">{items("campaign").into_iter().map(|item|view!{<ContentCard item/>}).collect_view()}</div><h2>"Events & opportunities"</h2><div class="three-grid cms-support-grid">{items("event").into_iter().map(|item|view!{<ContentCard item/>}).collect_view()}</div><p>"For current membership, giving, and volunteering information, visit the Alliance."</p><a class="button button-green" href="https://www.iditarod100.org/support-us.html" target="_blank" rel="noopener noreferrer">"Support the Alliance"<Icon name="external"/></a></section>}.into_any()
+    view!{<crate::editorial_pages::SupportPage/>}.into_any()
 }
 #[component]
 pub fn ManagedGeneric() -> impl IntoView {
@@ -316,7 +321,7 @@ pub fn CmsPreview() -> impl IntoView {
     let item = c.items.into_iter().find(|i| Some(i.id) == c.preview_id);
     view! {<Meta name="robots" content="noindex, nofollow"/><div class="cms-preview-banner">"PRIVATE DRAFT PREVIEW · Your public website has not changed."</div>{match item {
         Some(i) if i.kind=="page"=>match i.slug.as_str(){
-            "home"=>view!{<crate::editorial::EditorialHome/>}.into_any(),"explore"=>view!{<ManagedExplore/>}.into_any(),"stories"=>view!{<ManagedStories/>}.into_any(),"resources"=>view!{<ManagedResources/>}.into_any(),"get-involved"=>view!{<ManagedSupport/>}.into_any(),"store"=>view!{<pages::Store/>}.into_any(),_=>view!{<Article item=i/>}.into_any()},
+            "home"=>view!{<crate::editorial::EditorialHome/>}.into_any(),"explore"=>view!{<ManagedExplore/>}.into_any(),"stories"=>view!{<ManagedStories/>}.into_any(),"resources"=>view!{<ManagedResources/>}.into_any(),"get-involved"=>view!{<ManagedSupport/>}.into_any(),"store"=>view!{<crate::editorial_pages::TrailShop/>}.into_any(),"about"=>view!{<crate::editorial_pages::AlliancePage/>}.into_any(),_=>view!{<Article item=i/>}.into_any()},
         Some(i)=>view!{<Article item=i/>}.into_any(),None=>view!{<Missing/>}.into_any(),
     }}}
 }

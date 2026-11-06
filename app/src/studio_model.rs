@@ -144,3 +144,13 @@ pub const KINDS: &[(&str, &str)] = &[
     ("event", "Events"),
     ("campaign", "Giving"),
 ];
+
+/// These destinations alone may be serialized into public pages. Staff service
+/// shortcuts remain in the authenticated workspace.
+pub const PUBLIC_LINKS: &[(&str, &str)] = &[
+    ("store_url", "Public store"),
+    ("donation_url", "Donation checkout"),
+    ("membership_url", "Membership checkout"),
+    ("newsletter_url", "Newsletter signup"),
+    ("volunteer_url", "Volunteer information or signup"),
+];

@@ -5,6 +5,7 @@ pub mod cms;
 pub mod components;
 pub mod data;
 pub mod editorial;
+pub mod editorial_pages;
 pub mod motion;
 pub mod pages;
 pub mod paths;

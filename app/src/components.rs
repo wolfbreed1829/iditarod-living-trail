@@ -39,13 +39,12 @@ pub fn Brand() -> impl IntoView {
 pub fn Header() -> impl IntoView {
     let open = RwSignal::new(false);
     let location = use_location();
-    let Cart(cart) = expect_context::<Cart>();
     Effect::new(move |_| {
         location.pathname.get();
         open.set(false);
     });
     view! {
-        <div class="trail-masthead" role="region" aria-label="Trail information"><span>"ALASKA?S IDITAROD NATIONAL HISTORIC TRAIL"</span><a href=url("/about")>"A living legacy, since 1978"<Icon name="external"/></a></div>
+        <div class="trail-masthead" role="region" aria-label="Trail information"><span>"ALASKA'S IDITAROD NATIONAL HISTORIC TRAIL"</span><a href=url("/about")>"A living legacy, since 1978"<Icon name="external"/></a></div>
         <header class="site-header" on:keydown=move |ev| {if ev.key() == "Escape" {open.set(false)}}>
             <div class="header-inner"><Brand/>
                 <nav id="main-nav" class:open=move || open.get() aria-label="Main navigation">
@@ -56,7 +55,7 @@ pub fn Header() -> impl IntoView {
                 </nav>
                 <div class="header-actions">
                     <a class="icon-button search-link" href=url("/resources") aria-label="Search resources"><Icon name="search"/></a>
-                    <a class="icon-button bag-link" href=url("/store#bag") aria-label=move || format!("Trail shop, {} items in bag",cart.get().iter().sum::<u32>())><Icon name="bag"/><Show when=move || {cart.get().iter().sum::<u32>() > 0}><span class="bag-count">{move || cart.get().iter().sum::<u32>()}</span></Show></a>
+                    <a class="icon-button bag-link" href=url("/store") aria-label="Trail shop"><Icon name="bag"/></a>
                     <a class="button button-green header-support" href=url("/get-involved")>"Support the trail"<Icon/></a>
                     <button class="icon-button menu-toggle" aria-label=move || if open.get(){"Close menu"}else{"Open menu"} aria-expanded=move || open.get().to_string() aria-controls="main-nav" on:click=move |_| open.update(|v|*v=!*v)>{move || if open.get(){view!{<Icon name="close"/>}}else{view!{<Icon name="menu"/>}}}</button>
                 </div>
@@ -107,12 +106,9 @@ pub fn PageIntro(
 
 #[component]
 pub fn Newsletter() -> impl IntoView {
-    let sent = RwSignal::new(false);
-    view! {<div class="newsletter"><div><p class="eyebrow">"LET THE TRAIL COME TO YOU"</p><h2>"Stay connected."</h2><p>"Stories, places, and ways to make a difference."</p></div>
-        <div><form on:submit=move |e|{e.prevent_default();sent.set(true);}>
-            <label class="sr-only" for="newsletter-email">"Email address"</label><input id="newsletter-email" type="email" placeholder="Your email address" required disabled=move || sent.get()/><button type="submit" aria-label="Preview newsletter signup" disabled=move || sent.get()><Icon/></button>
-        </form><p class="form-note" role="status">{move || if sent.get(){"You're on the right trail. Demo complete — no email was saved or sent."}else{"Preview signup only. Your email will not be saved."}}</p></div>
-    </div>}
+    let destination=crate::cms::public_link("newsletter_url");
+    view! {<div class="newsletter"><div><p class="eyebrow">"LET THE TRAIL COME TO YOU"</p><h2>"Stay connected."</h2><p>"Stories, places, and ways to make a difference."</p></div><div class="newsletter-action">{match destination {Some(href)=>view!{<a class="button button-light" href=href target="_blank" rel="noopener noreferrer">"Join the newsletter"<Icon name="external"/></a><p class="form-note">"Choose your updates on the Alliance's signup page."</p>}.into_any(),None=>view!{<a class="button button-light" href=url("/stories")>"Read the trail journal"<Icon/></a><p class="form-note">"Start with a story. Follow where it leads."</p>}.into_any()}}</div></div>}
+
 }
 
 #[component]

@@ -79,3 +79,9 @@ npx playwright test -c native.playwright.config.js
 ```
 
 The browser suite uses an isolated `.cms/native-test` database on port 3110. Preserve or move that test directory before a fresh suite run because fixtures deliberately use stable names. The main content database is untouched by tests. Original public-demo tests use `npm test` against a server without `TRAIL_CMS_ENABLED` (set `DEMO_URL` to its address).
+
+## Optional public service links
+
+An administrator can open **Connections** and add approved HTTPS destinations for the store, donations, memberships, newsletter signup, and volunteering. Saving updates the matching public buttons. Leave a destination empty to keep that service inactive; the site never simulates a completed purchase, gift, or signup. No payment, membership, or mailing-list account is created by the CMS.
+
+The separate **Service shortcuts** section holds staff dashboard links. Those addresses are excluded from the public content payload. Passwords and API keys do not belong in these fields. Payment processing and subscriber consent remain with the destination provider. The Azure review deployment deliberately leaves public destinations unconfigured until approval.

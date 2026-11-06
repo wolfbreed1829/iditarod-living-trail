@@ -37,6 +37,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href=url("/pkg/living-trail.css")/>
         <Stylesheet id="cms-layout" href=url("/cms.css")/>
         <Stylesheet id="editorial" href=url("/design/editorial.css")/>
+        <Stylesheet id="editorial-pages" href="/design/pages.css"/>
         <Title text="The Living Trail | Iditarod Historic Trail Alliance"/>
         <Router base=BASE_PATH>
             <AppRouter/>
@@ -73,14 +74,14 @@ pub fn SiteContent(data: Option<crate::cms::Catalog>) -> impl IntoView {
                     <Route ssr=leptos_router::SsrMode::Async path=path!("stories") view=crate::cms::ManagedStories/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("stories/:slug") view=||view!{<crate::cms::ManagedDetail kind="story"/>}/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("get-involved") view=crate::cms::ManagedSupport/>
-                    <Route ssr=leptos_router::SsrMode::Async path=path!("store") view=Store/>
+                    <Route ssr=leptos_router::SsrMode::Async path=path!("store") view=crate::editorial_pages::TrailShop/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("about") view=crate::cms::ManagedAbout/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("resources") view=crate::cms::ManagedResources/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("resources/:slug") view=||view!{<crate::cms::ManagedDetail kind="resource"/>}/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("events/:slug") view=||view!{<crate::cms::ManagedDetail kind="event"/>}/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("campaigns/:slug") view=||view!{<crate::cms::ManagedDetail kind="campaign"/>}/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("cms-preview/:token") view=crate::cms::CmsPreview/>
-                    <Route ssr=leptos_router::SsrMode::Async path=path!("preview") view=Preview/>
+                    <Route ssr=leptos_router::SsrMode::Async path=path!("preview") view=crate::editorial_pages::ReviewGuide/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!("credits") view=crate::editorial::EditorialCredits/>
                     <Route ssr=leptos_router::SsrMode::Async path=path!(":slug") view=crate::cms::ManagedGeneric/>
                 </Routes>
