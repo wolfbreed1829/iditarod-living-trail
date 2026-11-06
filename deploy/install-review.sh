@@ -23,6 +23,23 @@ chmod 0755 "$release_dir/living-trail" "$release_dir/caddy"
 if [[ -f "$release_dir/site/pkg/living-trail.wasm" && ! -e "$release_dir/site/pkg/living-trail_bg.wasm" ]]; then
   ln -s living-trail.wasm "$release_dir/site/pkg/living-trail_bg.wasm"
 fi
+python3 - "$release_dir" <<'PYASSETS'
+import hashlib,json,re,shutil,sys
+from pathlib import Path
+pkg=Path(sys.argv[1])/'site/pkg'
+manifest=json.loads((pkg/'runtime.json').read_text())
+assets=Path('/opt/living-trail/assets/pkg');assets.mkdir(parents=True,exist_ok=True)
+for kind in ('js','wasm'):
+    name=Path(manifest[kind]).name
+    match=re.fullmatch(r'living-trail\.([a-f0-9]{16})\.(js|wasm)',name)
+    assert match and match[2]==kind,'Invalid bundle name'
+    source=pkg/name
+    assert hashlib.sha256(source.read_bytes()).hexdigest().startswith(match[1]),'Bundle hash mismatch'
+    for suffix in ('','.br','.gz'):
+        target=assets/(name+suffix)
+        if target.exists():assert target.read_bytes()==Path(str(source)+suffix).read_bytes(),'Immutable asset changed'
+        else:shutil.copyfile(str(source)+suffix,target)
+PYASSETS
 if [[ ! -f /var/lib/living-trail/trail.sqlite3 ]]; then
   tar -xzf "$data_archive" -C /var/lib/living-trail --no-same-owner
   chown -R livingtrail:livingtrail /var/lib/living-trail
@@ -69,6 +86,14 @@ $hostname {
   header X-Robots-Tag "noindex, nofollow"
   header Referrer-Policy "no-referrer"
   header X-Content-Type-Options "nosniff"
+  @versioned_bundle path_regexp bundle ^/pkg/living-trail\.[a-f0-9]{16}\.(js|wasm)$
+  handle @versioned_bundle {
+    root * /opt/living-trail/assets
+    header Cache-Control "public, max-age=31536000, immutable"
+    file_server {
+      precompressed br gzip
+    }
+  }
   @assets path /design/* /maps/* /pkg/* /images/* /fonts/* /cms.css /studio.css /studio-native.css /favicon.svg
   handle @assets {
     root * /opt/living-trail/current/site

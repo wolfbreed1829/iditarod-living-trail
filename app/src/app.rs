@@ -8,6 +8,7 @@ use leptos_router::{
 };
 
 pub fn shell(options: LeptosOptions) -> impl IntoView {
+    let loading_script = crate::loading::script(&options);
     view! {
         <!DOCTYPE html>
         <html lang="en">
@@ -21,10 +22,13 @@ pub fn shell(options: LeptosOptions) -> impl IntoView {
                 <meta property="og:description" content="A trail through Alaska. A connection across generations. Discover the places, people, and history of Alaska's Iditarod National Historic Trail."/>
                 <link rel="icon" type="image/svg+xml" href=url("/favicon.svg")/>
                 <AutoReload options=options.clone()/>
-                <HydrationScripts options root=BASE_PATH/>
+                <script type="module">{loading_script}</script>
                 <MetaTags/>
             </head>
-            <body><App/></body>
+            <body><App/><aside id="runtime-status" class="runtime-status" aria-label="Page loading" hidden>
+                <p id="runtime-message" role="status" aria-live="polite"/>
+                <button id="runtime-retry" type="button" hidden>"Try again"</button>
+            </aside><noscript><p class="runtime-status">"You can read pages and follow links. Enable JavaScript to use the interactive map, forms, and Trail Studio."</p></noscript></body>
         </html>
     }
 }
@@ -42,6 +46,7 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="support-journeys" href=url("/design/support.css")/>
         <Stylesheet id="interiors" href=url("/design/interiors.css")/>
         <Stylesheet id="approved-sections" href=url("/design/sections.css")/>
+        <Stylesheet id="loading-shell" href=url("/design/loading.css")/>
         <Title text="The Living Trail | Iditarod Historic Trail Alliance"/>
         <Router base=BASE_PATH>
             <AppRouter/>

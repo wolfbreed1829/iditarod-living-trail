@@ -19,7 +19,7 @@ const fs=require('fs'),path=require('path');
   await expect(season('Summer')).toHaveAttribute('aria-pressed','true');
   await expect(page.locator('.explorer-experience h4')).toContainText('Summer');
   await page.locator('.explorer-pin[data-place="nome"]').click();await expect(name()).toHaveText('Nome.');
-  await season('Winter').click();await expect(page.locator('.hero-summer')).toHaveCSS('opacity','0');
+  await season('Winter').click();await expect(page.locator('.hero-winter')).toHaveCSS('opacity','1');
   checks.push('Hero and explorer season controls share state');
   const places=['Seward','Crow Pass','Knik','Iditarod','Unalakleet','Nome'];
   const photos=[];

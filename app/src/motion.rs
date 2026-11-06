@@ -119,11 +119,19 @@ pub fn SeasonalHero(paused: RwSignal<bool>) -> impl IntoView {
     let summer_x=content.as_ref().and_then(|i|i.field("summer_x").parse::<u8>().ok()).unwrap_or(50).min(100);
     let summer_y=content.as_ref().and_then(|i|i.field("summer_y").parse::<u8>().ok()).unwrap_or(50).min(100);
     let summer_position=format!("object-position:{summer_x}% {summer_y}%");
+    let winter_srcset=crate::photography::by_file(&winter_photo).map(|p|p.srcset()).unwrap_or_default();
+    let summer_srcset=crate::photography::by_file(&summer_photo).map(|p|p.srcset()).unwrap_or_default();
+    let winter_photo=StoredValue::new(winter_photo);let summer_photo=StoredValue::new(summer_photo);
+    let winter_srcset=StoredValue::new(winter_srcset);let summer_srcset=StoredValue::new(summer_srcset);
+    let winter_position=StoredValue::new(winter_position);let summer_position=StoredValue::new(summer_position);
     view! {
         <section class="hero cinematic-hero" class:is-summer=move || summer.get()>
             <div class="hero-landscape" aria-hidden="true">
-                <img class="hero-image hero-winter" class:is-active=move || !summer.get() src=winter_photo style=winter_position alt="" fetchpriority="high" width="2200" height="1100"/>
-                <img class="hero-image hero-summer" class:is-active=move || summer.get() src=summer_photo style=summer_position alt="" fetchpriority="low" decoding="async" width="2200" height="1100"/>
+                <img class="hero-image is-active" class:hero-winter=move||!summer.get() class:hero-summer=move||summer.get()
+                    src=move||if summer.get(){summer_photo.get_value()}else{winter_photo.get_value()}
+                    srcset=move||if summer.get(){summer_srcset.get_value()}else{winter_srcset.get_value()} sizes="100vw"
+                    style=move||if summer.get(){summer_position.get_value()}else{winter_position.get_value()}
+                    alt="" fetchpriority="high" decoding="async" width="2200" height="1100"/>
             </div>
             <div class="hero-shade"/>
             <div class="weather-layer" aria-hidden="true">

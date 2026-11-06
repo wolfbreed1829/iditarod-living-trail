@@ -1,0 +1,15 @@
+# Loading contract
+
+The first response contains readable page content. Navigation links and the native mobile menu work without WebAssembly. A small module in the document waits for the runtime, disables enhanced form controls until hydration, announces a delay after 1.2 seconds, and offers a reload after a failed download. It does not show invented progress or retry form submissions. The CMS remains an interactive application.
+
+Run `node deploy/prepare-assets.cjs` after the release frontend build. It creates SHA-256 named JS/WASM, gzip and Brotli variants, and `pkg/runtime.json` for the server shell. It rejects a WASM Brotli artifact above **1,100 KiB** or JS above **15 KiB**. Content-identical builds reuse the same URL.
+
+The upgrade script verifies the hashes and retains these public bundles in `/opt/living-trail/assets/pkg`. Caddy serves them for a year with `immutable` caching and negotiated precompression. Old bundles remain available for tabs open during an upgrade; do not prune files referenced by retained releases. CSS, maps, photographs and fonts continue to revalidate. HTML, CMS APIs, previews and form data remain `no-store`. No service worker or browser storage holds private content. A new browser profile, cleared cache or changed runtime still needs a first download.
+
+Image budgets: **360 KiB per full collection image**, **200 KiB per small derivative**; run `python deploy/check-image-budget.py`. Existing source/license records remain intact. The hero uses the selected season only and responsive image candidates. Below-fold photographs use native lazy loading where applicable. New CMS uploads must be reviewed against the same rendered-page budget; the upload limit is not a performance target.
+
+Browser gate: run `EDITORIAL_URL=... PERF_NETWORK=1 node app/tests/loading.cjs` (environment-variable syntax varies by shell). At 390×844, DPR 2, 1 Mbps download and 150 ms latency, the initial homepage resource budget is **1,800 KiB**, including at most **750 KiB of photographs**. First contentful paint must occur within **5.5 seconds** in this lab profile. Repeat full navigations to Explore, Studio and Home must transfer **zero WASM bytes**. These are reproducible lab budgets, not a field-performance claim. Keep the JSON artifact with release evidence.
+
+For an upgrade archive, copy the release Linux binary to an explicitly selected staging directory, commit the source, then run `python deploy/package-release.py <staging-directory> --pass-number <number>`. The packager prepares compressed assets, includes only this build's hashes, stamps the commit, and writes an adjacent `.tar.gz`. Deploy with `upgrade-review.sh`; it backs up the live database before switching the release.
+
+The same check covers delayed/failed downloads, retry, JavaScript-disabled navigation, skip links, keyboard menu/season controls, reduced motion and accessibility audits. `trail-explorer.cjs` covers map/list keyboard controls; the CMS suite covers form saving and real previews. Honor `prefers-reduced-motion` across the public site and Studio. Do not re-enable decorative animation before hydration.
