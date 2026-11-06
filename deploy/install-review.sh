@@ -68,7 +68,16 @@ $hostname {
   encode zstd gzip
   header X-Robots-Tag "noindex, nofollow"
   header Referrer-Policy "no-referrer"
-  reverse_proxy 127.0.0.1:3107
+  header X-Content-Type-Options "nosniff"
+  @assets path /pkg/* /images/* /fonts/* /cms.css /studio.css /studio-native.css /favicon.svg
+  handle @assets {
+    root * /opt/living-trail/current/site
+    header Cache-Control "public, max-age=0, must-revalidate"
+    file_server
+  }
+  handle {
+    reverse_proxy 127.0.0.1:3107
+  }
 }
 EOF
 cat > /etc/systemd/system/caddy.service <<'EOF'

@@ -27,6 +27,8 @@ sudo bash install-review.sh /tmp/release.tar.gz /tmp/data.tar.gz review-hostname
 
 The installer supplies a `_bg.wasm` alias for plain Cargo SSR builds so their hydration URL matches the cargo-leptos browser output. It does not overwrite an existing database. Later releases update the application symlink while retaining content. It expects a fresh, dedicated Ubuntu VM. Only ports 80 and 443 need public inbound access. Restrict SSH to the administrator's IP. The Rust application listens on loopback port 3107; it trusts forwarded client addresses only from the explicitly enabled local proxy.
 
+Static browser files are served directly by Caddy with conditional cache revalidation. Unhashed scripts always check for a new version before reuse; account, preview, and content responses retain the application's `no-store` policy.
+
 ## Operations
 
 ```sh
