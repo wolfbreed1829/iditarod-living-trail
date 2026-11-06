@@ -101,6 +101,7 @@ Group=livingtrail
 ExecStart=/usr/local/bin/backup-living-trail
 UMask=0077
 NoNewPrivileges=true
+PrivateTmp=true
 ProtectSystem=strict
 ReadWritePaths=/var/backups/living-trail
 EOF
