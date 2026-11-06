@@ -76,13 +76,15 @@ Run `node tests/interiors.cjs` against the prepared review content to check the 
 
 The collection is assembled from image manifests in `public/images/`, with original records, licenses and transformation notes. Historical material retains its dated or explicitly undated context. `public/interior-content.json` holds source-backed planning and historical material; `public/photo-selections.json` records the initial page selections. Seed updates apply only to a new installation. Existing content is preserved during server upgrades; editors select and publish photos through Trail Studio.
 
+Run `node tests/support-public.cjs` to inspect the project pages and support journeys at four screen widths, including accessibility and real form hydration. This check is read-only and can run against Azure. `node tests/support-workflows.cjs` requires the isolated local write-test configuration below; it checks all four submissions, durable confirmations, lost-response retries, private staff follow-up, withdrawal, exports, and a configured provider handoff. Its temporary records are deleted and service settings restored afterward.
+
 For editor checks, start an **isolated** instance with `scripts/start-native-test.ps1`. Set `EDITORIAL_URL` to `http://localhost:3110`, `EDITORIAL_WRITE_TESTS` to `1`, and provide `TRAIL_TEST_LOGIN` and `TRAIL_TEST_PASSWORD` privately for that test account. Run `npm run test:editorial:cms`. The check refuses non-local hosts. It creates and archives a test story, verifies photo metadata, crops, preview, publication, private drafts and revisions, and restores the homepage draft after checking featured-story selection. The older proposal suite remains available as `test:legacy`; `test:cms` retains the original native API and role suite.
 
 ## Review boundaries
 
-- Public store, donation, membership, volunteer and newsletter destinations are optional HTTPS links in **Connections**. They remain inactive on Azure pending approval. The site does not simulate payments, orders, or signup success.
+- Approved checkout and signup destinations are optional HTTPS links in **Connections**. They remain unconfigured on Azure. Native forms save giving/membership enquiries, volunteer offers and newsletter interest to a private staff inbox, with persistent confirmations and withdrawal. No payment, active membership or mailing subscription is implied.
 - Staff service shortcuts remain inside the authenticated workspace. No payment provider, donor system, or mailing account has been activated.
-- Trail Studio at `/admin` uses persistent SQLite. The `/preview` page introduces the actual site and publishing workflow.
+- Trail Studio at `/admin` uses persistent SQLite. `/admin/support` manages support enquiries. The `/preview` route is a site guide with links to real workflows; simulated support and editor screens have been retired.
 - Historical copy and brand treatments are proposed editorial content pending Alliance review.
 - Visitor cards link to original official resources; they are not live conditions or route instructions.
 - The trail explorer uses sourced geographic data and is labeled as an orientation map.

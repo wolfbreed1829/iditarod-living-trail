@@ -140,6 +140,7 @@ fn clean(d: &mut Draft) -> Result<()> {
         if k == "image_layout" && !["", "wide", "tall"].contains(&v.as_str()) {
             return Err("Choose a wide or tall photo layout.".into());
         }
+        if k == "support_interest" && !v.is_empty() && !crate::support_model::AREAS.iter().any(|(key,_)|*key==v) {return Err("Choose a valid support interest key.".into());}
         if k == "map_stop" && !v.is_empty() && !crate::explorer::STOPS.iter().any(|(id,_)|*id==v) {
             return Err("Choose a verified place on the trail map.".into());
         }
@@ -202,6 +203,7 @@ impl Store {
  CREATE TABLE IF NOT EXISTS previews(token TEXT PRIMARY KEY,item_id INTEGER NOT NULL,content TEXT NOT NULL,expires INTEGER NOT NULL);
  CREATE TABLE IF NOT EXISTS media(id TEXT PRIMARY KEY,data TEXT NOT NULL);
  CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY,value TEXT NOT NULL);").map_err(db_error)?;
+        crate::support_store::init(&db)?;
         let s = Self {
             db: Mutex::new(db),
             dir,
@@ -501,6 +503,7 @@ impl Store {
                 "api",
                 "media",
                 "cms-preview",
+                "support",
                 "places",
                 "stories",
                 "events",
@@ -917,7 +920,7 @@ mod tests {
     #[test]
     fn draft_publish_revision_and_stable_slug() {
         let (_lock, s, u) = setup();
-        assert_eq!(s.public(None).unwrap().items.len(), 20);
+        assert_eq!(s.public(None).unwrap().items.len(), 24);
         let i = s.create(&u, "story").unwrap();
         let i = s
             .change(

@@ -13,7 +13,7 @@ use serde::Deserialize;
 use serde_json::{json, Value};
 use std::{collections::HashMap, net::SocketAddr};
 type ApiResult = Result<Response, ApiError>;
-pub struct ApiError(String);
+pub struct ApiError(pub(crate) String);
 impl From<String> for ApiError {
     fn from(s: String) -> Self {
         Self(s)
@@ -23,6 +23,8 @@ impl IntoResponse for ApiError {
     fn into_response(self) -> Response {
         let status = if self.0.starts_with("Conflict:") {
             StatusCode::CONFLICT
+        } else if self.0.starts_with("Too many requests.") {
+            StatusCode::TOO_MANY_REQUESTS
         } else if self.0 == "Sign in to continue." {
             StatusCode::UNAUTHORIZED
         } else if self.0.contains("Only ")
@@ -47,7 +49,7 @@ fn cookie(h: &HeaderMap) -> String {
         .unwrap_or("")
         .to_owned()
 }
-fn origin(h: &HeaderMap) -> Result<(), ApiError> {
+pub(crate) fn origin(h: &HeaderMap) -> Result<(), ApiError> {
     if h.get("origin").and_then(|v| v.to_str().ok()) != Some(store()?.origin.as_str()) {
         return Err(ApiError(
             "The request failed its security check. Reload this page.".into(),
@@ -55,7 +57,7 @@ fn origin(h: &HeaderMap) -> Result<(), ApiError> {
     }
     Ok(())
 }
-fn auth(h: &HeaderMap, write: bool) -> Result<Session, ApiError> {
+pub(crate) fn auth(h: &HeaderMap, write: bool) -> Result<Session, ApiError> {
     let s = store()?.session(&cookie(h))?;
     if write {
         origin(h)?;
@@ -105,7 +107,7 @@ struct Login {
     password: String,
 }
 // Forwarded addresses are accepted only from the explicitly configured loopback proxy.
-fn login_client(h: &HeaderMap, peer: SocketAddr, trust_proxy: bool) -> String {
+pub(crate) fn login_client(h: &HeaderMap, peer: SocketAddr, trust_proxy: bool) -> String {
     if trust_proxy && peer.ip().is_loopback() {
         if let Some(ip) = h.get("x-forwarded-for").and_then(|h|h.to_str().ok())
             .and_then(|value|value.rsplit(',').next())

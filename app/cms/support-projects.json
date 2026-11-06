@@ -1,0 +1,74 @@
+[
+  {
+    "type": "campaign",
+    "slug": "keeping-trail-voices",
+    "title": "Keeping the trail's voices alive",
+    "summary": "The Alliance funded UAF's Iditarod National Historic Trail Project Jukebox, preserving oral histories about trail protection, national designation and cooperative management.",
+    "body": "The Alliance funded UAF's Iditarod National Historic Trail Project Jukebox, preserving oral histories about trail protection, national designation and cooperative management.\n\nThe completed collection is a lasting resource for people learning about the trail. Future support enquiries concern the Alliance’s ongoing mission; this project is not presented as an active fundraising campaign.",
+    "fields": {
+      "category": "WORK SUPPORTED",
+      "project_status": "Completed digital history project",
+      "project_date": "Completed September 2026",
+      "history_url": "https://www.uaf.edu/news/iditarod-national-historic-trail-project-jukebox.php",
+      "supported_costs": "Recording and preserving first-person accounts; access to the completed oral-history collection.",
+      "help_needed": "Offer archival, research, storytelling or outreach skills, or ask about supporting future history work.",
+      "support_interest": "history",
+      "button_text": "Discuss support",
+      "button_url": "/support/giving?interest=history"
+    }
+  },
+  {
+    "type": "campaign",
+    "slug": "rainforest-trail-care",
+    "title": "Caring for rainforest trails",
+    "summary": "The Alliance helped sponsor summer maintenance between Seward and Moose Pass. Alaska Trails and Seward Iditarod Trail Blazers improved drainage, cleared vegetation and repaired wet sections.",
+    "body": "The Alliance helped sponsor summer maintenance between Seward and Moose Pass. Alaska Trails and Seward Iditarod Trail Blazers improved drainage, cleared vegetation and repaired wet sections.\n\nThe Fall 2026 Tripod reports completed maintenance and identifies further work. New workdays and roles must be arranged with the project partners.",
+    "fields": {
+      "category": "WORK SUPPORTED",
+      "project_status": "Maintenance completed; additional work identified",
+      "project_date": "Reported fall 2026",
+      "history_url": "https://www.iditarod100.org/uploads/5/2/4/5/52459009/tripod_fall_2026.pdf",
+      "supported_costs": "Drainage improvements, vegetation clearance and repairs to wet trail sections.",
+      "help_needed": "Ask about future partner workdays, practical trail skills, equipment or transport support.",
+      "support_interest": "trail-care",
+      "button_text": "Discuss support",
+      "button_url": "/support/giving?interest=trail-care"
+    }
+  },
+  {
+    "type": "campaign",
+    "slug": "farewell-lake-clearance",
+    "title": "Opening the Farewell Lake corridor",
+    "summary": "A volunteer crew cleared storm-felled trees near Farewell Lake in February. The Iditarod Trail Committee managed the work; the Alliance funded maintenance supplies, travel and fuel.",
+    "body": "A volunteer crew cleared storm-felled trees near Farewell Lake in February. The Iditarod Trail Committee managed the work; the Alliance funded maintenance supplies, travel and fuel.\n\nThe Fall 2026 Tripod describes this clearance in its account of February work. It is a record of completed work, not a current opening for volunteers.",
+    "fields": {
+      "category": "WORK SUPPORTED",
+      "project_status": "Completed clearance",
+      "project_date": "Reported fall 2026",
+      "history_url": "https://www.iditarod100.org/uploads/5/2/4/5/52459009/tripod_fall_2026.pdf",
+      "supported_costs": "Maintenance supplies, crew travel and fuel for clearing storm-felled trees.",
+      "help_needed": "Share local knowledge, practical skills, or an interest in supporting future maintenance logistics.",
+      "support_interest": "trail-care",
+      "button_text": "Discuss support",
+      "button_url": "/support/giving?interest=trail-care"
+    }
+  },
+  {
+    "type": "campaign",
+    "slug": "storm-repair-support",
+    "title": "Responding after Typhoon Halong",
+    "summary": "The Alliance's FY25 report records funding for storm repairs at Topkok safety cabin and along the trail between Unalakleet and Kaltag.",
+    "body": "The Alliance's FY25 report records funding for storm repairs at Topkok safety cabin and along the trail between Unalakleet and Kaltag.\n\nThe report records the funding and anticipated winter readiness. It does not confirm completion or present-day cabin and trail conditions.",
+    "fields": {
+      "category": "WORK SUPPORTED",
+      "project_status": "Repair funding documented",
+      "project_date": "Late 2025",
+      "history_url": "https://www.iditarod100.org/uploads/5/2/4/5/52459009/iditarod_fy25_annual_report.pdf",
+      "supported_costs": "Funding for storm repairs at Topkok safety cabin and the Unalakleet–Kaltag trail.",
+      "help_needed": "Ask about future shelter and trail needs, or offer relevant skills and equipment. Current repair status should be confirmed with the responsible partners.",
+      "support_interest": "trail-care",
+      "button_text": "Discuss support",
+      "button_url": "/support/giving?interest=trail-care"
+    }
+  }
+]
