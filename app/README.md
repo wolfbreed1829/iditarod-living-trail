@@ -1,6 +1,6 @@
 # The Living Trail
 
-Independent, responsive design preview for the Iditarod Historic Trail Alliance. Built in Rust with Leptos 0.8, Axum server rendering, and WebAssembly hydration. No Sites dependency.
+The proposed website and Trail Studio CMS for the Iditarod Historic Trail Alliance. Built in Rust with Leptos 0.8, Axum server rendering, and WebAssembly hydration. No Sites dependency.
 
 ## Live preview
 
@@ -18,7 +18,7 @@ The project includes **Trail Studio**, a native Rust/Leptos CMS backed by SQLite
 
 ## Motion and interactive journey
 
-The homepage uses a gently moving landscape, drifting winter snow, a staggered headline entrance, and an animated Winter/Summer selector with image crossfades. Scroll reveals introduce the sections and draw the illustrated route. Four keyboard-accessible chapter buttons update its progress, place markers, story, and destination link through Leptos signals.
+The homepage uses seasonal photographs, gentle ambient motion, and a Winter/Summer selector. Four keyboard-accessible chapter controls update a geographic historic-trail explorer. Its BLM main-route alignment and Natural Earth coastline are for orientation, not navigation or current conditions. Source notes and photograph attribution are available at `/credits`.
 
 The hero's Pause motion button stops ambient motion and removes animated transitions while keeping every control functional. The operating system's reduced-motion setting disables animation automatically. Server-rendered content remains readable without JavaScript. Intersection observers are owned and disconnected by their Leptos components, including when navigating away. No animation framework or video download is required; see `src/motion.rs` and the motion section of `style/main.css`.
 
@@ -32,7 +32,7 @@ cargo install cargo-leptos --locked --version 0.3.9
 cargo leptos watch
 ```
 
-Open http://localhost:3107. Content and layouts live in `src/`; styling lives in `style/main.css`; credited, optimized assets live in `public/`.
+Open http://localhost:3107. Enable the full CMS with `./scripts/start-cms.ps1 -Build`. Public compositions live in `src/editorial.rs` and `src/editorial_pages.rs`; CMS editing lives in `src/studio.rs` and `src/studio_photos.rs`. Editorial styles in `public/design/` extend `style/main.css`. Credited assets and source manifests live in `public/`.
 
 ## Build and host
 
@@ -42,9 +42,9 @@ cargo leptos build --release
 
 The server executable is `target/release/living-trail.exe` on Windows. Deploy the corresponding Linux binary on a Linux host, with `target/site`, and set `LEPTOS_OUTPUT_NAME=living-trail`, `LEPTOS_SITE_ROOT=target/site`, and the required `LEPTOS_SITE_ADDR`. `PORT` is also supported. Production host selection must account for the RFP's US hosting and data requirements.
 
-The bid preview can be exported to ordinary static hosting. Pages are rendered by Leptos before export and remain interactive through the same compiled Rust/WASM application. This avoids a sleeping server or a temporary tunnel. The demo has no server-dependent business transactions.
+Use `deploy/upgrade-review.sh` for the existing Azure instance. It backs up SQLite, preserves content, uploads and accounts, activates a matching server/browser release, and rolls back a failed application health check. Never deploy a development database over the review database. Azure is the current full-system review environment.
 
-For a deployment subdirectory, set `TRAIL_BASE_PATH` before building both server and browser bundles:
+The earlier static export workflow is retained for reference. For a deployment subdirectory, set `TRAIL_BASE_PATH` before building both server and browser bundles:
 
 ```powershell
 $env:TRAIL_BASE_PATH='/iditarod-living-trail'
@@ -59,22 +59,25 @@ Upload the contents of `dist/` to that deployment path. Test the exported build 
 ## Quality checks
 
 ```powershell
+cargo test --locked --features ssr --lib
+cargo check --locked --target wasm32-unknown-unknown --no-default-features --features hydrate
 npm ci
+$env:EDITORIAL_URL='http://localhost:3107'
 npm test
 ```
 
-Tests use installed Google Chrome and cover all 15 routes at 360, 768, and 1440 pixels; photo loading; browser errors; the mobile menu; seasonal crossfades; motion pause; reduced motion; keyboard chapter selection; readable content without JavaScript; combined filters; resource search; the timeline; gift and membership previews; cart totals and route persistence; checkout; and editor behavior. Automated axe checks cover core pages. Automated checks do not certify full WCAG conformance.
+The public browser check uses Chrome and covers 11 routes at desktop, tablet, and phone widths, image loading, overflow, axe audits, resource search, map chapters, seasonal controls, and mobile navigation. It can inspect the Azure URL without changing content. Reports go to `artifacts/editorial`, or `EDITORIAL_ARTIFACT_DIR` if set. Automated checks do not certify full WCAG conformance.
 
-For a different preview origin, set `DEMO_URL`. For a subdirectory deployment, also set `TRAIL_BASE_PATH` for the tests.
+For editor checks, start an **isolated** instance with `scripts/start-native-test.ps1`. Set `EDITORIAL_URL` to `http://localhost:3110`, `EDITORIAL_WRITE_TESTS` to `1`, and provide `TRAIL_TEST_LOGIN` and `TRAIL_TEST_PASSWORD` privately for that test account. Run `npm run test:editorial:cms`. The check refuses non-local hosts. It creates and archives a test story, verifies photo metadata, crops, preview, publication, private drafts and revisions, and restores the homepage draft after checking featured-story selection. The older proposal suite remains available as `test:legacy`; `test:cms` retains the original native API and role suite.
 
-## Preview boundaries
+## Review boundaries
 
-- Forms remain in the browser. They do not save or send personal data.
-- Giving, memberships, merchandise, prices, and checkout are clearly labeled concepts. No payments or real orders occur.
-- The small editor on `/preview` remains illustrative. The native Trail Studio dashboard at `/admin` uses SQLite in the same Rust process when `TRAIL_CMS_ENABLED=1`.
+- Public store, donation, membership, volunteer and newsletter destinations are optional HTTPS links in **Connections**. They remain inactive on Azure pending approval. The site does not simulate payments, orders, or signup success.
+- Staff service shortcuts remain inside the authenticated workspace. No payment provider, donor system, or mailing account has been activated.
+- Trail Studio at `/admin` uses persistent SQLite. The `/preview` page introduces the actual site and publishing workflow.
 - Historical copy and brand treatments are proposed editorial content pending Alliance review.
 - Visitor cards link to original official resources; they are not live conditions or route instructions.
-- The route illustration is decorative and clearly labeled, not GIS or a navigation map.
+- The trail explorer uses sourced geographic data and is labeled as an orientation map.
 - Photo credits and links are at `/credits`; font licenses are included in `public/fonts/`.
 
-Production work still includes approved content migration, actual Square/CRM/email integrations, privacy decisions, manual accessibility review, training, and support arrangements. The RFP and FAQ require these to be scoped separately from this demonstration.
+Approved content migration, production service destinations, privacy decisions, manual accessibility review, staff training, support arrangements, and launch acceptance remain part of the handoff. The review domain remains excluded from search indexing.

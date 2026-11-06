@@ -6,3 +6,5 @@
 #trail-studio #save-status{display:block!important}#trail-studio .place-choices{display:grid;gap:10px;margin-top:10px}#trail-studio .place-choices label{display:flex;align-items:center;gap:10px;font-size:12px}#trail-studio .place-choices input{width:auto;min-height:0;display:inline-block}
 
 #trail-studio .badge{color:#43563c;background:#edf1e7;font-size:11px}
+
+.connections-form{max-width:1000px}.connection-section-heading{border-bottom:1px solid var(--line,#d9dfd6);padding-bottom:22px;margin-bottom:25px}.connection-section-heading .eyebrow{font-size:10px;letter-spacing:.14em}.connection-field{padding-bottom:20px;border-bottom:1px solid #e3e7df;margin-bottom:25px}.connection-field>div{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:8px}.connection-state{font-size:11px;color:#586454;background:#eef1e9;padding:5px 9px;border-radius:4px}.connection-state.configured{background:#dfece3;color:#254f36}.connection-field .text-button{margin-top:9px;display:inline-block}.connections-form>.button{margin-bottom:25px}

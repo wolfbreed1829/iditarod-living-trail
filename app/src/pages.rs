@@ -133,48 +133,9 @@ pub fn Support() -> impl IntoView {
     }
 }
 
-const PRODUCTS: [(&str, u32, &str, &str); 3] = [
-    (
-        "The trail field journal",
-        18,
-        "journal",
-        "A place for observations, sketches, and stories from your own trail.",
-    ),
-    (
-        "The living trail patch",
-        12,
-        "patch",
-        "A small reminder of a lasting connection. Illustrated concept patch.",
-    ),
-    (
-        "Seward to Nome print",
-        28,
-        "print",
-        "A beautifully simple interpretation of a remarkable journey.",
-    ),
-];
-
 #[component]
 pub fn Store() -> impl IntoView {
-    let Cart(cart) = expect_context::<Cart>();
-    let message = RwSignal::new(String::new());
-    let receipt = RwSignal::new(None::<u32>);
-    let total = Memo::new(move |_| {
-        cart.get()
-            .iter()
-            .enumerate()
-            .map(|(i, n)| *n * PRODUCTS[i].1)
-            .sum::<u32>()
-    });
-    view! {<Title text="A little piece of the trail | Iditarod"/><PageIntro kicker="THE TRAIL SHOP" title="Carry the connection." description="Thoughtful little reminders of a landscape, a story, and a trail worth keeping."/>
-        <section class="container"><p class="shop-preview-note">"A concept collection for this design preview. Products and prices are illustrative; checkout does not place an order."</p><div class="three-grid products">{PRODUCTS.into_iter().enumerate().map(|(i,(name,price,kind,desc))|view!{<article class="product-card"><div class=format!("product-art art-{kind}")><div class=format!("product-object object-{kind}")><span class="product-small">"THE IDITAROD"</span><svg viewBox="0 0 120 110" fill="none" aria-hidden="true"><path d="M10 80 47 20 66 53 83 30 114 80M36 80l23-36 24 36" stroke="currentColor" stroke-width="1.5"/><path d="M60 81c-25 8 20 10-5 20" stroke="currentColor" stroke-width="2"/><circle cx="91" cy="17" r="8" stroke="currentColor"/></svg><strong>"THE LIVING"<br/>"TRAIL"</strong><span class="product-small">"SEWARD · ALASKA · NOME"</span></div><span class="product-edition">"CONCEPT COLLECTION / 01"</span></div><div class="product-title"><h3>{name}</h3><span>{format!("${price}")}</span></div><p>{desc}</p><button class="button button-bordered full-width" on:click=move |_|{cart.update(|c|c[i]+=1);message.set(format!("{name} added to your bag."));receipt.set(None);}>"Add to bag"<Icon name="bag"/></button><details class="product-details"><summary>"Product details"</summary><p>{match kind{"journal"=>"Concept: a pocket notebook with an illustrated cloth cover. Dimensions and materials would be confirmed with the Alliance.","patch"=>"Concept: a circular embroidered trail patch. Final artwork and production would be confirmed before sale.",_=>"Concept: an art print inspired by the trail. Print dimensions and paper options would be confirmed before sale."}}</p></details></article>}).collect_view()}</div><p class="cart-message" role="status" aria-live="polite">{move||message.get()}</p>
-        <section class="bag-section" id="bag"><div><Eyebrow>"A LITTLE PIECE OF THE TRAIL"</Eyebrow><h2>"Your bag."</h2><p>"Every good journey starts with a little inspiration."</p></div><div class="bag-panel">
-            <Show when=move||receipt.get().is_some()><div class="checkout-confirmation" role="status"><Icon name="check"/><h3>"You're at the end of the demo checkout."</h3><p>{move||format!("Preview subtotal: ${}. No order was placed and no payment was taken.",receipt.get().unwrap_or(0))}</p></div></Show>
-            <Show when=move || {cart.get().iter().sum::<u32>() > 0} fallback=||view!{<p class="empty-bag">"Your bag is ready for a little inspiration. Explore the collection above."</p>}>
-                <div>{PRODUCTS.into_iter().enumerate().map(|(i,(name,price,_,_))|view!{<Show when=move || {cart.get()[i] > 0}><div class="bag-item"><div><strong>{name}</strong><span>{format!("${price} each")}</span></div><div class="quantity"><button aria-label=format!("Remove one {name}") on:click=move |_|{cart.update(|c|c[i]=c[i].saturating_sub(1));receipt.set(None);}>"−"</button><span aria-label="Quantity">{move||cart.get()[i]}</span><button aria-label=format!("Add one {name}") on:click=move |_|{cart.update(|c|c[i]+=1);receipt.set(None);}>"+"</button></div><strong>{move||format!("${}",cart.get()[i]*price)}</strong></div></Show>}).collect_view()}</div><div class="bag-total"><span>"Subtotal"</span><strong>{move||format!("${}",total.get())}</strong></div><p class="form-note">"Demonstration only. No shipping, tax, or payment is collected."</p><button class="button button-green full-width" on:click=move |_|{receipt.set(Some(total.get()));cart.set([0;3]);message.set("Demo checkout complete. No order was placed.".into());}>"Try the demo checkout"<Icon/></button>
-            </Show>
-        </div></section></section>
-    }
+    view!{<crate::editorial_pages::TrailShop/>}
 }
 
 #[component]
@@ -272,5 +233,5 @@ pub fn Credits() -> impl IntoView {
 
 #[component]
 pub fn NotFound() -> impl IntoView {
-    view! {<Title text="A different trail | Iditarod"/><section class="container empty-state not-found"><Eyebrow>"A SMALL DETOUR"</Eyebrow><h1>"This trail ends here."</h1><p>"The page you're looking for isn't part of this preview. There is plenty more to discover."</p><a class="button button-green" href=url("/")>"Back to the beginning"<Icon/></a></section>}
+    view! {<Title text="A different trail | Iditarod"/><section class="container empty-state not-found"><Eyebrow>"A SMALL DETOUR"</Eyebrow><h1>"This trail ends here."</h1><p>"The page you're looking for could not be found. There is plenty more to discover."</p><a class="button button-green" href=url("/")>"Back to the beginning"<Icon/></a></section>}
 }

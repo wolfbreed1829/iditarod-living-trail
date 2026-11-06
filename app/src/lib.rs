@@ -4,6 +4,8 @@ pub mod app;
 pub mod cms;
 pub mod components;
 pub mod data;
+pub mod editorial;
+pub mod editorial_pages;
 pub mod motion;
 pub mod pages;
 pub mod paths;
@@ -19,4 +21,7 @@ pub mod studio_store;
 pub fn hydrate() {
     console_error_panic_hook::set_once();
     leptos::mount::hydrate_body(app::App);
+    if let Some(root) = web_sys::window().and_then(|w| w.document()).and_then(|d| d.document_element()) {
+        let _ = root.set_attribute("data-hydrated", "true");
+    }
 }

@@ -103,6 +103,13 @@ pub fn valid_url(s: &str) -> bool {
                 || s.starts_with("http://")
                 || (s.starts_with('/') && !s.starts_with("//"))))
 }
+fn secure_destination(value: &str) -> bool {
+    if !value.starts_with("https://") || !valid_url(value) { return false; }
+    value.parse::<axum::http::Uri>().is_ok_and(|uri| {
+        uri.host().is_some_and(|host| !host.is_empty())
+            && uri.authority().is_some_and(|authority| !authority.as_str().contains('@'))
+    })
+}
 fn clean(d: &mut Draft) -> Result<()> {
     if d.title.len() > 720 || d.summary.len() > 8000 || d.body.len() > 100000 || d.fields.len() > 40
     {
@@ -125,6 +132,13 @@ fn clean(d: &mut Draft) -> Result<()> {
             return Err(format!(
                 "Use a complete http(s) address or a path beginning with / for {k}."
             ));
+        }
+        if ["image_x", "image_y", "summer_x", "summer_y"].contains(&k.as_str())
+            && !v.is_empty() && !v.parse::<u8>().is_ok_and(|n| n <= 100) {
+            return Err("Photo focus must be a number from 0 to 100.".into());
+        }
+        if k == "image_layout" && !["", "wide", "tall"].contains(&v.as_str()) {
+            return Err("Choose a wide or tall photo layout.".into());
         }
     }
     Ok(())
@@ -627,10 +641,18 @@ impl Store {
             items.retain(|i| i.id != p.id);
             items.push(p);
         }
+        let connections: HashMap<String, String> = serde_json::from_str(
+            &db.query_row("SELECT value FROM settings WHERE key='connections'", [], |r| r.get::<_, String>(0)).map_err(db_error)?
+        ).map_err(|e| e.to_string())?;
+        let public_links = connections.into_iter().filter(|(key, value)| {
+            PUBLIC_LINKS.iter().any(|(allowed, _)| key == allowed)
+                && !value.is_empty() && secure_destination(value)
+        }).collect();
         Ok(Catalog {
             items,
             preview_id,
             download_base: "/api/cms/download/".into(),
+            public_links,
         })
     }
     pub fn tick(&self) -> Result<()> {
@@ -677,12 +699,12 @@ impl Store {
         }
         if data.len() > 8
             || data.iter().any(|(k, v)| {
-                !["square", "donors", "email"].contains(&k.as_str())
-                    || (!v.is_empty() && (!v.starts_with("https://") || !valid_url(v)))
+                !(["square", "donors", "email"].contains(&k.as_str()) || PUBLIC_LINKS.iter().any(|(allowed, _)| k == allowed))
+                    || (!v.is_empty() && !secure_destination(v))
                     || v.len() > 2000
             })
         {
-            return Err("Use HTTPS addresses for Square, donor records and email.".into());
+            return Err("Use a complete HTTPS address for each connection, or leave it blank.".into());
         }
         self.db
             .lock()
@@ -812,6 +834,45 @@ mod tests {
             at: None,
             revision: None,
         }
+    }
+    #[test]
+    fn photo_presentation_is_validated_and_previewed_without_publishing() {
+        let (_lock, s, u) = setup();
+        let item = s.create(&u, "story").unwrap();
+        let mut d = draft("A photograph");
+        d.fields.insert("image_x".into(), "22".into());
+        d.fields.insert("image_y".into(), "78".into());
+        d.fields.insert("image_layout".into(), "tall".into());
+        let saved = s.change(&u, item.content.id, change(item.version, "save", d.clone())).unwrap();
+        assert_eq!(saved.editable().field("image_y"), "78");
+        assert!(!s.public(None).unwrap().items.iter().any(|i| i.id == item.content.id));
+        for (key, value) in [("image_x", "101"), ("image_y", "-1"), ("summer_x", "left"), ("image_layout", "arbitrary-css")] {
+            let mut invalid = d.clone();invalid.fields.insert(key.into(), value.into());
+            assert!(s.change(&u, item.content.id, change(saved.version, "save", invalid)).is_err());
+        }
+        let published = s.change(&u, item.content.id, change(saved.version, "publish", d)).unwrap();
+        assert_eq!(published.content.image_position(), "object-position:22% 78%");
+    }
+    #[test]
+    fn public_destinations_are_opt_in_validated_and_separate_from_staff_links() {
+        let (_lock, s, u) = setup();
+        assert!(s.public(None).unwrap().public_links.is_empty());
+        let settings = HashMap::from([
+            ("square".into(), "https://squareup.com/dashboard".into()),
+            ("donors".into(), "https://example.org/private-records".into()),
+            ("store_url".into(), "https://example.org/shop".into()),
+            ("newsletter_url".into(), String::new()),
+        ]);
+        s.connections(&u, settings).unwrap();
+        assert_eq!(s.public(None).unwrap().public_links, HashMap::from([("store_url".into(), "https://example.org/shop".into())]));
+        for unsafe_url in ["http://example.org", "javascript:alert(1)", "https://", "https://user:password@example.org", "https://example.org/a b"] {
+            assert!(s.connections(&u, HashMap::from([("store_url".into(), unsafe_url.into())])).is_err());
+        }
+        let editor=User { role: "editor".into(), ..u.clone() };
+        assert!(s.connections(&editor, HashMap::new()).is_err());
+        assert_eq!(s.public(None).unwrap().public_links.len(), 1);
+        s.connections(&u, HashMap::new()).unwrap();
+        assert!(s.public(None).unwrap().public_links.is_empty());
     }
     #[test]
     fn draft_publish_revision_and_stable_slug() {

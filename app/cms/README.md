@@ -79,3 +79,15 @@ npx playwright test -c native.playwright.config.js
 ```
 
 The browser suite uses an isolated `.cms/native-test` database on port 3110. Preserve or move that test directory before a fresh suite run because fixtures deliberately use stable names. The main content database is untouched by tests. Original public-demo tests use `npm test` against a server without `TRAIL_CMS_ENABLED` (set `DEMO_URL` to its address).
+
+## Optional public service links
+
+An administrator can open **Connections** and add approved HTTPS destinations for the store, donations, memberships, newsletter signup, and volunteering. Saving updates the matching public buttons. Leave a destination empty to keep that service inactive; the site never simulates a completed purchase, gift, or signup. No payment, membership, or mailing-list account is created by the CMS.
+
+The separate **Service shortcuts** section holds staff dashboard links. Those addresses are excluded from the public content payload. Passwords and API keys do not belong in these fields. Payment processing and subscriber consent remain with the destination provider. The Azure review deployment deliberately leaves public destinations unconfigured until approval.
+
+## Photo presentation
+
+The editor offers a collection of 13 credited trail photographs. Choosing one fills its description and credit. Uploaded photos are also available; add their descriptions and credits before publishing. Use **Horizontal focus** and **Vertical focus** to keep the important part in the crop. These controls change presentation only and leave the source image untouched. Stories, places, and the Alliance page also offer a taller feature photograph. The homepage has independent summer focus controls.
+
+The same saved focus is used in the public feature image and content cards. The editor crop is a composition aid; **Preview** shows the actual responsive page. Changes autosave privately and only become public when published. The homepage featured story selection controls the lead story in the trail journal.

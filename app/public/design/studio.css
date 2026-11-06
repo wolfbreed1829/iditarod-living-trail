@@ -1,0 +1,67 @@
+/* A calm workspace using the public site's editorial materials. */
+#trail-studio{--green:#193d32;--ink:#203e33;--muted:#596b5e;--line:#dce0d4;--cream:#f4f3ec;--sage:#e7ebdf;background:#f4f3ec}
+body:has(#trail-studio){background:#f4f3ec}
+#trail-studio .studio-sidebar{background:#183d32;color:#f5f3e9;border:0;padding-top:32px}
+#trail-studio .studio-brand{padding-bottom:33px}#trail-studio .brand-mark{color:#e1e6cf;font-size:38px}#trail-studio .studio-brand small{color:#c6d0bd}#trail-studio .studio-brand>span{font-size:11px}
+#trail-studio .workspace-label{color:#c2cdb8;font-size:9px;padding-bottom:15px}
+#trail-studio .studio-sidebar nav a{color:#e4eadb!important;border-radius:3px;padding:11px 13px;font-size:12px}
+#trail-studio .studio-sidebar nav a:hover{background:#2b5041}
+#trail-studio .studio-sidebar nav a.selected{background:#e9ecdf;color:#214535!important}
+#trail-studio .studio-sidebar nav a.selected:before{background:#bd9b60;left:0;height:26px;border-radius:0}
+#trail-studio .nav-rule{background:#ffffff29;margin-block:18px}
+#trail-studio .sidebar-foot p{color:#d8dfca!important;font-family:'Trail Serif',Georgia,serif;font-size:20px!important;line-height:1.45!important}
+#trail-studio .sidebar-foot>a{border-color:#ffffff30;color:#eef0e3}#trail-studio .sidebar-foot>a span{color:#c2cdb8;margin-top:5px}
+#trail-studio .studio-topbar{background:#f9f8f2;height:78px}#trail-studio .studio-footer{background:#eeefe6;color:#4b6253}
+#trail-studio .page-heading{margin-bottom:32px}#trail-studio h1{font-size:43px;line-height:1.17;letter-spacing:-1.3px}
+#trail-studio .page-heading p:last-child{font-size:13px!important;margin-top:12px}
+#trail-studio .welcome-card{background:#234b3b;border-radius:4px;min-height:320px;grid-template-columns:1.07fr 1fr}
+#trail-studio .welcome-copy{padding:38px}#trail-studio .welcome-copy h2{font-size:38px!important}#trail-studio .welcome-copy p{font-size:12px!important;line-height:1.8!important}
+#trail-studio .welcome-image:after{background:linear-gradient(90deg,#234b3b 0%,#234b3b08 55%)}
+#trail-studio .stats{background:transparent;border:0;border-radius:0;margin-block:28px;gap:15px}
+#trail-studio .stat{background:#e8ebde;border:1px solid #dce1d0;border-radius:3px;padding:18px 23px}
+#trail-studio .stat strong{font-size:37px;color:#294d3a;margin:0 0 3px}#trail-studio .stat>span{font-size:11px;color:#4c6250}
+#trail-studio .quick-actions{gap:16px}#trail-studio .quick-actions>*{border-radius:3px;background:#fffefa;border:1px solid #dce0d3;min-height:112px;padding:22px}
+#trail-studio .quick-actions strong{font-size:13px}#trail-studio .quick-actions small{font-size:11px;line-height:1.6}
+#trail-studio .panel,#trail-studio .editor-panel{border-radius:4px;background:#fffefa;border-color:#dce0d3;box-shadow:none}
+#trail-studio .panel-heading{padding:24px}#trail-studio .panel-heading h2{font-size:17px!important}
+#trail-studio .content-table th{background:#ecefe3;color:#52654f;font-size:10px;padding:13px 20px}
+#trail-studio .content-table td{font-size:12px;padding-block:19px}#trail-studio .content-title{font-size:13px;font-weight:600}
+#trail-studio .badge{background:#e6ecdc;color:#355037;border-radius:3px;white-space:normal}
+#trail-studio .button{border-radius:3px;min-height:42px;font-size:12px}#trail-studio .button.primary{background:#214c38;border-color:#214c38}
+#trail-studio .field input:not([type=checkbox]):not([type=range]),#trail-studio .field textarea,#trail-studio .field select{background:#fff;border-color:#cdd6c5;border-radius:3px;font-size:14px;min-height:44px}
+#trail-studio .field label,#trail-studio .field>span{font-size:12px;color:#2c4d39;font-weight:600}
+#trail-studio .field small,#trail-studio .small-note{color:#53664f;font-size:12px;line-height:1.75}
+#trail-studio .editor-panel{padding:28px}#trail-studio .editor-panel>h2{font-family:'Trail Serif',Georgia,serif;font-size:25px;font-weight:500;letter-spacing:-.4px;margin-bottom:12px}
+#trail-studio .editor-aside .editor-panel>h2{font-size:23px}#trail-studio .editor-top{margin-bottom:30px;align-items:flex-start}#trail-studio .editor-top h1{font-size:35px;margin-top:16px;max-width:720px}
+#trail-studio #save-status{margin-top:12px;font-size:12px;color:#426344}#trail-studio .notice{border-radius:3px;border:1px solid #cdd8be;background:#e9efdf;color:#325235;font-size:13px}
+#trail-studio .photo-editor-heading{margin-bottom:22px}#trail-studio .photo-editor-heading h2{font-family:'Trail Serif',Georgia,serif;font-size:28px;font-weight:500;margin-bottom:10px}
+#trail-studio .photo-selection{position:relative;margin-bottom:25px;aspect-ratio:16/9;max-height:390px;overflow:hidden;border-radius:3px;background:#e5eade}
+#trail-studio .photo-selection>img{display:block;width:100%;height:100%;object-fit:cover;max-height:none;position:absolute;inset:0}
+#trail-studio .photo-selection.portrait{aspect-ratio:4/5;max-height:550px;width:min(100%,420px);margin-inline:auto}
+#trail-studio .crop-preview-label{position:absolute;bottom:13px;left:13px;background:#173d32e8;color:#fff9e8;padding:5px 9px;font-size:9px;letter-spacing:.12em}
+#trail-studio .focus-controls{border:1px solid #d8dfcf;padding:20px;margin:0 0 25px;border-radius:3px;background:#f4f6ed;min-width:0}
+#trail-studio .focus-controls legend{font-size:13px;font-weight:650;padding-inline:7px;color:#2c4c36}
+#trail-studio .focus-controls>.small-note{margin-bottom:18px}#trail-studio .focus-range{margin-bottom:17px}
+#trail-studio .focus-range>label{display:flex;align-items:center;justify-content:space-between;font-size:12px;font-weight:600;color:#294c35;margin-bottom:8px}
+#trail-studio .focus-range output{font-size:11px;font-variant-numeric:tabular-nums;font-weight:400;color:#4c644d}
+#trail-studio .focus-range input{width:100%;accent-color:#315a3f;cursor:pointer;min-height:26px;margin:0;padding:0}
+#trail-studio .focus-range-labels{display:flex;justify-content:space-between;font-size:10px;color:#566a50;margin-top:2px}
+#trail-studio .photo-library{border-top:1px solid #dce2d2;margin-bottom:25px;padding-top:19px}
+#trail-studio .photo-library>summary{font-size:13px;font-weight:650;cursor:pointer;list-style-position:inside;color:#234a35}
+#trail-studio .photo-library>summary>span{float:right;font-size:10px;font-weight:400;color:#526b4e}
+#trail-studio .photo-library>.small-note{margin-top:15px;margin-bottom:16px}
+#trail-studio .curated-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-height:360px;overflow:auto;padding:4px;margin:12px -4px 0;scrollbar-color:#a6b69a #f0f3e8}
+#trail-studio .curated-photo{background:#f8faf2;border:1px solid #dce2d3;padding:0;border-radius:3px;text-align:left;overflow:hidden;display:flex;flex-direction:column;color:#345033}
+#trail-studio .curated-photo[aria-pressed=true]{border:2px solid #365b3b;background:#e9efdb}
+#trail-studio .curated-photo>img{display:block;height:85px;width:100%;object-fit:cover}
+#trail-studio .curated-photo>span{display:block;padding:8px;font-size:10px;line-height:1.55;overflow-wrap:anywhere}
+#trail-studio .photo-reminder{border-left:3px solid #b68c45;background:#f5edda;padding:16px;font-size:12px;color:#665022;line-height:1.8}
+#trail-studio .summer-presentation{border-top:1px solid #dde3d4;margin-top:24px;padding-top:24px}
+#trail-studio .studio-login .login-photo{background-image:linear-gradient(0deg,#12392ee8,#12392e26),url('/images/editorial/trail-marker-sunset.webp');background-position:center}
+#trail-studio .login-card{background:#fffefa;border:1px solid #dce0d1;border-radius:4px;padding:38px;max-width:440px;width:calc(100% - 70px)}
+#trail-studio .connection-section-heading h2{font-family:'Trail Serif',Georgia,serif;font-size:29px;font-weight:500;margin-bottom:10px}
+@media(max-width:1100px){#trail-studio .welcome-copy{padding:28px}#trail-studio .welcome-copy h2{font-size:32px!important}#trail-studio .quick-actions>*{padding:17px}#trail-studio .stat{padding:16px}#trail-studio .editor-panel{padding:22px}#trail-studio .curated-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){#trail-studio .studio-topbar{height:65px}#trail-studio .studio-sidebar{top:65px;padding-top:22px}#trail-studio .studio-brand{padding-bottom:22px}#trail-studio .sidebar-foot{padding-top:20px}#trail-studio .login-card{max-width:500px;width:calc(100% - 40px);padding:30px;margin:30px auto}#trail-studio .studio-login .login-photo{min-height:300px}}
+@media(max-width:540px){#trail-studio h1{font-size:34px}#trail-studio .welcome-card{min-height:0}#trail-studio .welcome-copy{padding:28px}#trail-studio .welcome-copy h2{font-size:32px!important}#trail-studio .stats{gap:10px;margin-block:20px}#trail-studio .stat{padding:16px}#trail-studio .stat strong{font-size:32px}#trail-studio .quick-actions>*{min-height:85px}#trail-studio .editor-top h1{font-size:30px}#trail-studio .editor-panel{padding:20px}#trail-studio .focus-controls{padding:16px}#trail-studio .photo-library>summary>span{float:none;display:block;margin:5px 0 0 15px}#trail-studio .curated-photo>img{height:75px}#trail-studio .connection-field>div{align-items:flex-start}#trail-studio .connection-state{font-size:10px;white-space:nowrap}#trail-studio .connection-field label{font-size:11px}}
+
+#trail-studio .breadcrumbs{color:#435c4e}#trail-studio .breadcrumbs span{color:#526b58}#trail-studio .studio-brand>.brand-mark{font-size:40px;line-height:1;width:42px;flex:none}#trail-studio .editor-top h1{overflow-wrap:anywhere}

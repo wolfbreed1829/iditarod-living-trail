@@ -47,3 +47,13 @@ Reviewer changes are separate from the local development database. The environme
 The VM, managed disk and public IP incur Azure charges until removed; deallocating the VM stops compute billing but retains disk and public-IP charges. The resource group is tagged `project=iditarod` and `purpose=review` so it can be identified later. Do not remove it while reviews are underway.
 
 The [Azure verification report](../artifacts/azure-review-verification.json) records the live CMS, public pages, restart, and restored-backup checks. The backup regression test uses an open WAL-mode database and verifies that the extracted archive contains content and media without session or preview records.
+
+## Application upgrades
+
+For an existing server, package the stripped Linux executable, matching `site/`, and `backup-review.py` without a data archive. Upload this bundle and `upgrade-review.sh`, then run:
+
+```sh
+sudo bash upgrade-review.sh /tmp/editorial-release.tar.gz editorial-COMMIT
+```
+
+The upgrade takes a SQLite backup, preserves accounts, content and uploads, reuses the installed Caddy executable, switches the release symlink, and checks the application before reporting success. If the application check fails it restores the previous release. Keep matching server and browser builds in every bundle.

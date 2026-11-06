@@ -1,0 +1,326 @@
+{
+  "retrieved": "2026-11-06",
+  "purpose": "An orientation map of the historic trail, not directions, an access map, or a current race route.",
+  "recommendedVisibleCaption": "Historic trail overview · BLM route, Natural Earth coastline. For orientation only; not a navigation map.",
+  "routeScope": "This BLM centerline represents the historic route. Its source explicitly excludes connecting routes and the dog sled race route. The historic network is broader than this single displayed alignment.",
+  "editorialNotes": [
+    {
+      "text": "BLM describes a 1,000-mile main trail between Seward and Nome plus 1,400 miles of side and connecting trails. Do not label the single displayed alignment as the whole 2,400-mile network.",
+      "source": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+    },
+    {
+      "text": "The network crosses lands under multiple public and private owners. A line on this orientation map is not a statement of permission, safe conditions, or continuous year-round access.",
+      "source": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+    },
+    {
+      "text": "IHTA describes the trail as primarily a winter trail and highlights summer trails in Chugach State Park, Chugach National Forest, Girdwood and Eagle River. Seasonal controls should change the visitor recommendations rather than imply this whole historic alignment is a summer hiking route.",
+      "source": "https://www.iditarod100.org/plan-your-trip.html"
+    },
+    {
+      "text": "The BLM brochure distinguishes the main historic route, connecting historic routes and race routes as three separate map layers. The SVG here contains only the first.",
+      "source": "https://www.blm.gov/sites/blm.gov/files/documents/files/PublicRoom_Alaska_2018-Iditarod-National-Historic-Trail-Brochure.pdf"
+    },
+    {
+      "text": "Girdwood and Crow Pass are geographically close at this map scale. Use one Southcentral cluster pin, reveal details in a panel, or offset only the label with a leader line; do not move the geographic marker."
+    }
+  ],
+  "views": {
+    "trail-orientation": {
+      "file": "trail-orientation.svg",
+      "viewBox": "0 0 900 700",
+      "width": 900,
+      "height": 700,
+      "geographicFocusBounds": [
+        -168.3,
+        58.7,
+        -144.5,
+        67.6
+      ],
+      "boundsOrder": "west,south,east,north",
+      "projection": "Spherical Alaska Albers equal-area; standard parallels 55/65; central meridian -154; latitude origin 50; R=6371008.8m",
+      "transform": {
+        "scale": 0.000643805620615412,
+        "xOffset": 537.5127201380501,
+        "yOffset": 1311.8732269822196,
+        "formula": "svgX=projectedX*scale+xOffset; svgY=-projectedY*scale+yOffset"
+      },
+      "pins": [
+        {
+          "id": "unalakleet",
+          "name": "Unalakleet",
+          "longitude": -160.78808,
+          "latitude": 63.873055,
+          "gnisId": 1411517,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1411517&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 324.26,
+          "y": 307.53
+        },
+        {
+          "id": "iditarod",
+          "name": "Iditarod",
+          "longitude": -158.095301,
+          "latitude": 62.544445,
+          "gnisId": 1403697,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1403697&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 402.84,
+          "y": 409.63
+        },
+        {
+          "id": "nome",
+          "name": "Nome",
+          "longitude": -165.406413,
+          "latitude": 64.50111,
+          "gnisId": 1407125,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1407125&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 188.01,
+          "y": 243.34
+        },
+        {
+          "id": "seward",
+          "name": "Seward",
+          "longitude": -149.442245,
+          "latitude": 60.104168,
+          "gnisId": 1414598,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1414598&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 699.39,
+          "y": 583.55
+        },
+        {
+          "id": "knik",
+          "name": "Knik",
+          "longitude": -149.728912,
+          "latitude": 61.457779,
+          "gnisId": 1404853,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1404853&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 682.98,
+          "y": 487.16
+        },
+        {
+          "id": "girdwood",
+          "name": "Girdwood",
+          "longitude": -149.166412,
+          "latitude": 60.942502,
+          "gnisId": 1422161,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1422161&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 704.79,
+          "y": 522.78
+        },
+        {
+          "id": "mcgrath",
+          "name": "McGrath",
+          "longitude": -155.595857,
+          "latitude": 62.956389,
+          "gnisId": 1406131,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1406131&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 485.72,
+          "y": 383.59
+        },
+        {
+          "id": "rainy-pass",
+          "name": "Rainy Pass",
+          "longitude": -153.076968,
+          "latitude": 62.21639,
+          "gnisId": 1408513,
+          "featureClass": "Gap",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1408513&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 568.21,
+          "y": 437.13
+        },
+        {
+          "id": "crow-pass",
+          "name": "Crow Pass",
+          "longitude": -149.116134,
+          "latitude": 61.06028,
+          "gnisId": 1400869,
+          "featureClass": "Gap",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1400869&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 705.91,
+          "y": 514.21
+        }
+      ]
+    },
+    "alaska-overview": {
+      "file": "alaska-overview.svg",
+      "viewBox": "0 0 900 820",
+      "width": 900,
+      "height": 820,
+      "geographicFocusBounds": [
+        -170,
+        57,
+        -139.5,
+        72
+      ],
+      "boundsOrder": "west,south,east,north",
+      "projection": "Spherical Alaska Albers equal-area; standard parallels 55/65; central meridian -154; latitude origin 50; R=6371008.8m",
+      "transform": {
+        "scale": 0.0004625685278830213,
+        "xOffset": 470.4127723048937,
+        "yOffset": 1169.1224286136921,
+        "formula": "svgX=projectedX*scale+xOffset; svgY=-projectedY*scale+yOffset"
+      },
+      "pins": [
+        {
+          "id": "unalakleet",
+          "name": "Unalakleet",
+          "longitude": -160.78808,
+          "latitude": 63.873055,
+          "gnisId": 1411517,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1411517&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 317.19,
+          "y": 447.51
+        },
+        {
+          "id": "iditarod",
+          "name": "Iditarod",
+          "longitude": -158.095301,
+          "latitude": 62.544445,
+          "gnisId": 1403697,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1403697&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 373.65,
+          "y": 520.87
+        },
+        {
+          "id": "nome",
+          "name": "Nome",
+          "longitude": -165.406413,
+          "latitude": 64.50111,
+          "gnisId": 1407125,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1407125&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 219.3,
+          "y": 401.39
+        },
+        {
+          "id": "seward",
+          "name": "Seward",
+          "longitude": -149.442245,
+          "latitude": 60.104168,
+          "gnisId": 1414598,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1414598&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 586.72,
+          "y": 645.83
+        },
+        {
+          "id": "knik",
+          "name": "Knik",
+          "longitude": -149.728912,
+          "latitude": 61.457779,
+          "gnisId": 1404853,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1404853&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 574.93,
+          "y": 576.58
+        },
+        {
+          "id": "girdwood",
+          "name": "Girdwood",
+          "longitude": -149.166412,
+          "latitude": 60.942502,
+          "gnisId": 1422161,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1422161&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 590.6,
+          "y": 602.16
+        },
+        {
+          "id": "mcgrath",
+          "name": "McGrath",
+          "longitude": -155.595857,
+          "latitude": 62.956389,
+          "gnisId": 1406131,
+          "featureClass": "Populated Place",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/3/query?where=gaz_id%3D1406131&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 433.2,
+          "y": 502.16
+        },
+        {
+          "id": "rainy-pass",
+          "name": "Rainy Pass",
+          "longitude": -153.076968,
+          "latitude": 62.21639,
+          "gnisId": 1408513,
+          "featureClass": "Gap",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1408513&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 492.47,
+          "y": 540.63
+        },
+        {
+          "id": "crow-pass",
+          "name": "Crow Pass",
+          "longitude": -149.116134,
+          "latitude": 61.06028,
+          "gnisId": 1400869,
+          "featureClass": "Gap",
+          "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1400869&outFields=*&outSR=4326&f=pjson",
+          "coordinateNote": "First official GNIS location point; approximate label placement, not trail access or a trailhead.",
+          "x": 591.4,
+          "y": 596.01
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "Natural Earth 1:50m states/provinces",
+      "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_1_states_provinces.geojson",
+      "license": "Public domain",
+      "terms": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "changes": "Alaska selected; projected, simplified and clipped in SVG. GeoJSON retains the source geometry."
+    },
+    {
+      "title": "BLM Iditarod National Historic Trail centerline, hosted by NPS",
+      "url": "https://services1.arcgis.com/fBc8EJBxQRMcHlei/arcgis/rest/services/Iditarod_National_Historic_Trail_BLM_Official_Temp/FeatureServer/0",
+      "item": "https://www.arcgis.com/home/item.html?id=37787244e85c450c8247c34eb221954c",
+      "metadata": "https://www.arcgis.com/sharing/rest/content/items/37787244e85c450c8247c34eb221954c/info/metadata/metadata.xml",
+      "credit": "Kevin Keeler - Bureau of Land Management",
+      "licenseInfo": "Should provide/reference 'supplemental information'  when data is presented or published.",
+      "supplementalInformation": "Route segments and historic features recommended for inclusion under the 1986 INHT Comprehensive Management Plan and subsequent BLM Anchorage Field Office delineation. Historic centerline excludes connecting routes and dog sled race route. NPS hosts the data for web mapping. Consult original service/item metadata for full context.",
+      "changes": "Source centerline retained in GeoJSON; projected and simplified by 0.35 SVG pixels for display."
+    },
+    {
+      "title": "USGS The National Map Geographic Names Information System",
+      "url": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer",
+      "license": "US public-domain geographic names data",
+      "changes": "Selected Alaska town and pass points; first official location when GNIS supplies multiple points."
+    },
+    {
+      "title": "USFWS index independently identifying the BLM service as the historic trail official route",
+      "url": "https://www.fws.gov/r7/nwr/Realty/data/LandMappers/Public/Help/HTML/OnlineGISDataServices.html"
+    },
+    {
+      "title": "BLM Iditarod National Historic Trail",
+      "url": "https://www.blm.gov/programs/national-conservation-lands/national-scenic-and-historic-trails/iditarod"
+    },
+    {
+      "title": "IHTA plan your trip",
+      "url": "https://www.iditarod100.org/plan-your-trip.html"
+    }
+  ]
+}

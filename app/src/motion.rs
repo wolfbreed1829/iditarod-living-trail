@@ -114,11 +114,15 @@ pub fn SeasonalHero(paused: RwSignal<bool>) -> impl IntoView {
         .map(|i| i.field("summer_credit"))
         .filter(|s| !s.is_empty())
         .unwrap_or("Chugach National Forest · USDA Forest Service".into());
+    let winter_position=content.as_ref().map(|i|i.image_position()).unwrap_or_else(||"object-position:50% 50%".into());
+    let summer_x=content.as_ref().and_then(|i|i.field("summer_x").parse::<u8>().ok()).unwrap_or(50).min(100);
+    let summer_y=content.as_ref().and_then(|i|i.field("summer_y").parse::<u8>().ok()).unwrap_or(50).min(100);
+    let summer_position=format!("object-position:{summer_x}% {summer_y}%");
     view! {
         <section class="hero cinematic-hero" class:is-summer=move || summer.get()>
             <div class="hero-landscape" aria-hidden="true">
-                <img class="hero-image hero-winter" class:is-active=move || !summer.get() src=winter_photo alt="" fetchpriority="high" width="2200" height="1100"/>
-                <img class="hero-image hero-summer" class:is-active=move || summer.get() src=summer_photo alt="" fetchpriority="low" decoding="async" width="2200" height="1100"/>
+                <img class="hero-image hero-winter" class:is-active=move || !summer.get() src=winter_photo style=winter_position alt="" fetchpriority="high" width="2200" height="1100"/>
+                <img class="hero-image hero-summer" class:is-active=move || summer.get() src=summer_photo style=summer_position alt="" fetchpriority="low" decoding="async" width="2200" height="1100"/>
             </div>
             <div class="hero-shade"/>
             <div class="weather-layer" aria-hidden="true">

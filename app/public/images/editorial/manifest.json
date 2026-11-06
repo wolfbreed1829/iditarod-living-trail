@@ -1,0 +1,198 @@
+[
+  {
+    "name": "seward-trail-monument",
+    "source": "https://npgallery.nps.gov/AssetDetail/1328386b-aa22-4a70-b117-e57eb67b053e",
+    "download_url": "https://npgallery.nps.gov/GetAsset/1328386b-aa22-4a70-b117-e57eb67b053e/proxyhires.jpg",
+    "caption": "Trail monument in Seward, Alaska, July 2021.",
+    "alt": "Trail monument in Seward, Alaska, July 2021.",
+    "credit": "NPS / Victoria Stauffenberg",
+    "license": "Public domain",
+    "license_url": "https://npgallery.nps.gov/AssetDetail/1328386b-aa22-4a70-b117-e57eb67b053e",
+    "original_dimensions": [
+      1999,
+      1499
+    ],
+    "dimensions": [
+      1800,
+      1350
+    ],
+    "file": "/images/editorial/seward-trail-monument.webp",
+    "small_file": "/images/editorial/seward-trail-monument-small.webp",
+    "bytes": 334350,
+    "changes": "Resized and converted to WebP; no subject alteration.",
+    "small_dimensions": [
+      900,
+      675
+    ],
+    "small_bytes": 87124,
+    "recommended_use": "Seward / trail heritage card; keep the monument visible."
+  },
+  {
+    "name": "seward-waterfront-archive",
+    "source": "https://www.usgs.gov/media/images/seward-waterfront",
+    "download_url": "https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/54_seward_earthquake1964.jpg",
+    "caption": "Seward waterfront before the 1964 earthquake; historical image looking south.",
+    "alt": "Seward waterfront before the 1964 earthquake; historical image looking south.",
+    "credit": "USGS Alaska Technical Data Unit, SF-GP-00-0107",
+    "license": "Public domain",
+    "license_url": "https://www.usgs.gov/media/images/seward-waterfront",
+    "original_dimensions": [
+      1799,
+      1176
+    ],
+    "dimensions": [
+      1799,
+      1176
+    ],
+    "file": "/images/editorial/seward-waterfront-archive.webp",
+    "small_file": "/images/editorial/seward-waterfront-archive-small.webp",
+    "bytes": 291138,
+    "changes": "Resized and converted to WebP; no subject alteration.",
+    "small_dimensions": [
+      900,
+      588
+    ],
+    "small_bytes": 107228,
+    "recommended_use": "Archive or history feature; always identify this as before the 1964 earthquake."
+  },
+  {
+    "name": "old-woman-mountain",
+    "source": "https://www.flickr.com/photos/blmalaska/29255783764/",
+    "download_url": "https://live.staticflickr.com/8283/29255783764_3fb55034f4_b.jpg",
+    "caption": "Old Woman Mountain on the Iditarod National Historic Trail between the Yukon River and the Bering Sea.",
+    "alt": "Old Woman Mountain on the Iditarod National Historic Trail between the Yukon River and the Bering Sea.",
+    "credit": "Kevin Keeler / BLM",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "original_dimensions": [
+      1024,
+      576
+    ],
+    "dimensions": [
+      1024,
+      576
+    ],
+    "file": "/images/editorial/old-woman-mountain.webp",
+    "small_file": "/images/editorial/old-woman-mountain-small.webp",
+    "bytes": 109722,
+    "changes": "Resized and converted to WebP; no subject alteration.",
+    "small_dimensions": [
+      900,
+      506
+    ],
+    "small_bytes": 71442,
+    "recommended_use": "Winter route or inland landscape card."
+  },
+  {
+    "name": "trail-marker-sunset",
+    "source": "https://www.flickr.com/photos/blmalaska/30268512965/",
+    "download_url": "https://live.staticflickr.com/5659/30268512965_3395b2fffb_b.jpg",
+    "caption": "A trail marker tripod at sunset between Kaltag and Unalakleet, March 2016.",
+    "alt": "A trail marker tripod at sunset between Kaltag and Unalakleet, March 2016.",
+    "credit": "Bob Wick / BLM",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "original_dimensions": [
+      1024,
+      748
+    ],
+    "dimensions": [
+      1024,
+      748
+    ],
+    "file": "/images/editorial/trail-marker-sunset.webp",
+    "small_file": "/images/editorial/trail-marker-sunset-small.webp",
+    "bytes": 99458,
+    "changes": "Resized and converted to WebP; no subject alteration.",
+    "small_dimensions": [
+      900,
+      657
+    ],
+    "small_bytes": 62342,
+    "recommended_use": "Wayfinding or stewardship feature; strong warm accent image."
+  },
+  {
+    "name": "old-woman-cabin",
+    "source": "https://www.flickr.com/photos/blmalaska/30234194856/",
+    "download_url": "https://live.staticflickr.com/5334/30234194856_6721db8319_b.jpg",
+    "caption": "Aerial view of mushers at the Old Woman Shelter Cabin, March 2016.",
+    "alt": "Aerial view of mushers at the Old Woman Shelter Cabin, March 2016.",
+    "credit": "Bob Wick / BLM",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "original_dimensions": [
+      1023,
+      705
+    ],
+    "dimensions": [
+      1023,
+      705
+    ],
+    "file": "/images/editorial/old-woman-cabin.webp",
+    "small_file": "/images/editorial/old-woman-cabin-small.webp",
+    "bytes": 293494,
+    "changes": "Resized and converted to WebP; no subject alteration.",
+    "small_dimensions": [
+      900,
+      620
+    ],
+    "small_bytes": 198814,
+    "recommended_use": "Trail shelter / preservation story; do not imply volunteer labor is pictured."
+  },
+  {
+    "name": "seward-harbor",
+    "source": "https://commons.wikimedia.org/wiki/File:Seward_Small_Boat_Harbour_on_a_cloudy_day_-_Flickr_-_marknenadov.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Seward_Small_Boat_Harbour_on_a_cloudy_day_-_Flickr_-_marknenadov.jpg",
+    "caption": "Seward Small Boat Harbour on a cloudy day, August 2025.",
+    "alt": "Seward Small Boat Harbour on a cloudy day, August 2025.",
+    "credit": "Mark Nenadov",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "original_dimensions": [
+      4032,
+      3024
+    ],
+    "dimensions": [
+      1800,
+      1350
+    ],
+    "file": "/images/editorial/seward-harbor.webp",
+    "small_file": "/images/editorial/seward-harbor-small.webp",
+    "bytes": 189496,
+    "changes": "Resized and converted to WebP; no subject alteration.",
+    "small_dimensions": [
+      900,
+      675
+    ],
+    "small_bytes": 57484,
+    "recommended_use": "Seward atlas selection / coastal landscape."
+  },
+  {
+    "name": "nome-bering-sea",
+    "source": "https://commons.wikimedia.org/wiki/File:Nome_Alaska_bering_sea.jpg",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Nome_Alaska_bering_sea.jpg",
+    "caption": "Open water on the Bering Sea at Nome, Alaska, June 2006.",
+    "alt": "Driftwood on the shore at Nome beside calm blue Bering Sea water and a band of sea ice.",
+    "credit": "ra64 / Flickr",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "original_dimensions": [
+      2256,
+      1496
+    ],
+    "dimensions": [
+      1800,
+      1194
+    ],
+    "file": "/images/editorial/nome-bering-sea.webp",
+    "small_file": "/images/editorial/nome-bering-sea-small.webp",
+    "bytes": 113210,
+    "changes": "Resized and converted to WebP; no subject alteration. This image derivative is distributed under CC BY-SA 2.0.",
+    "small_dimensions": [
+      900,
+      597
+    ],
+    "small_bytes": 37008,
+    "recommended_use": "Nome atlas selection / Bering Sea coast."
+  }
+]
