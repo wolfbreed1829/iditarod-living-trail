@@ -1,0 +1,34 @@
+{
+  "checked_utc": "2026-11-06T04:42:37.217007+00:00",
+  "url": "https://iditarod-review-1829.eastus2.cloudapp.azure.com/",
+  "cms_url": "https://iditarod-review-1829.eastus2.cloudapp.azure.com/admin",
+  "hosting": {
+    "provider": "Azure",
+    "region": "eastus2",
+    "vm_size": "Standard_F1als_v7",
+    "cpu": 1,
+    "memory_gb": 2
+  },
+  "checks": {
+    "rust_unit_tests": 8,
+    "live_cms_scenarios_passed": 7,
+    "public_routes_200": 15,
+    "public_routes_layout_and_photos_1440px": "passed",
+    "public_html_without_javascript": "passed",
+    "mobile_season_switch_and_menu": "passed after waiting for browser hydration",
+    "reviewer_admin_login": "passed",
+    "secure_session_cookie": "passed",
+    "service_restart_persistence": "passed",
+    "backup_archive_integrity": "passed",
+    "backup_omits_sessions_and_previews": "passed",
+    "backup_download_verified": "passed",
+    "public_cache_revalidation": "304; dynamic responses remain no-store"
+  },
+  "review_content_records": 22,
+  "review_accounts": 2,
+  "limitations": [
+    "Demonstration content",
+    "Square, donor/member systems, email and checkout are not connected",
+    "Nightly backups are on the VM disk; a verified copy was downloaded to the deployment workstation"
+  ]
+}

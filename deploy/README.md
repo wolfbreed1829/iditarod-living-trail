@@ -45,3 +45,5 @@ To restore, stop `living-trail`, retain the current data as a rollback copy, ext
 Reviewer changes are separate from the local development database. The environment uses sample content; Square, donor/member and email services remain external shortcuts, with no transaction processing or automatic synchronization. Nothing sends invitation emails.
 
 The VM, managed disk and public IP incur Azure charges until removed; deallocating the VM stops compute billing but retains disk and public-IP charges. The resource group is tagged `project=iditarod` and `purpose=review` so it can be identified later. Do not remove it while reviews are underway.
+
+The [Azure verification report](../artifacts/azure-review-verification.json) records the live CMS, public pages, restart, and restored-backup checks. The backup regression test uses an open WAL-mode database and verifies that the extracted archive contains content and media without session or preview records.
